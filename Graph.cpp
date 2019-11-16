@@ -60,17 +60,8 @@ struct TCP_index
         G_x.erase(edge_index);
     }
 
-    void cal_weight(map<int, int> trussness) {
-        for(set<int>::iterator i = G_x.begin(); i != G_x.end(); i++) {
-            vector<int> temp_vertes = vector<int> ();
-            temp_vertes = index2edges[*i]->get_vertex();
-            Weight[*i] = get_triangle_weight(block_id, temp_vertes[0], temp_vertes[1], trussness);
-            k_max = max(k_max, Weight[*i]);
-        }
-    }
-
     void create_MST() {
-        // 先计算出Sk
+        // 先计算出Sk（遍历）
         
 
 
@@ -171,13 +162,18 @@ struct Real_Graph
         }
     }
 
-    // 第一次创建G_x
+    // calculate G_x and calculate w_yz
     void cal_G_x() {
         for(set<int>::iterator i = Vertexs.begin(); i != Vertexs.end(); i++) {
+            map<int, set<int>> S_k;
             for(set<int>::iterator z = TCPs[*i]->Neighbors.begin(); z != TCPs[*i]->Neighbors.end(); z++) {
                 for(set<int>::iterator y = TCPs[*i]->Neighbors.begin(); y != z; y++) {
                     if(vertexs2index.count(help_index(*y, *z)) == 1) {
-                        TCPs[*i]->G_x.insert(vertexs2index[help_index(*y, *z)]);
+                        int y_z_index = vertexs2index[help_index(*y, *z)];
+                        TCPs[*i]->G_x.insert(y_z_index);
+                        vector<int> temp_vertes = vector<int> ();
+                        TCPs[*i]->Weight[y_z_index] = get_triangle_weight(*i, *y, *z, trussness);
+                        TCPs[*i]->k_max = max(TCPs[*i]->k_max, TCPs[*i]->Weight[y_z_index]);
                     }
                 }
             }
