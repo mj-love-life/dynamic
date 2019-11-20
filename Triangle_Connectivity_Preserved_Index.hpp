@@ -18,6 +18,7 @@
 #include <boost/bimap/set_of.hpp>
 #include <boost/bimap/vector_of.hpp>
 #include <boost/bimap/tags/tagged.hpp>
+#include <queue>
 
 using namespace boost::bimaps;
 using namespace boost;
@@ -113,19 +114,21 @@ vector<pair<int, int> > sort_map(map<int, int> NBs, bool ascending=false) {
 
 struct TCP_index {
     int unique_id;
-    set<int> NBs;
     int k_max;
 
     // 子图的边
     map<int, int> G_x;
     set<int> MST;
-
+    // 并查集
+    map<int, int> vertex2union;
+    map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs;
     TCP_index(int unique_id) {
         this->unique_id = unique_id;
-        NBs = set<int> ();
+        NBs = map<int, set<pair<int, int>, greater<pair<int, int> > > > ();
         k_max = 0;
         G_x = map<int, int> ();
         MST = set<int> ();
+        vertex2union = map<int, int> ();
     }
 
     void get_k_value(int k) {
@@ -134,11 +137,28 @@ struct TCP_index {
     }
 
     void insert_neighbor(int nb) {
-        NBs.insert(nb);
+        NBs[nb] = set<pair<int, int>, greater<pair<int, int> > > ();
     }
 
-    set<int> getNB() {
+    map<int, set<pair<int, int>, greater<pair<int, int> > > > getNB() {
         return NBs;
+    }
+
+    set<int> get_NB_set() {
+        set<int> result = set<int> ();
+        for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+            result.insert(i->first);
+        }
+        return result;
+    }
+
+    vector<pair<int, int> > get_sortNB(map<int, int> Real_Edges_Trussness) {
+        map<int, int> result = map<int, int> ();
+        for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->first, unique_id))->second;
+            result[i->first] = Real_Edges_Trussness[edge_index];
+        }
+        return sort_map(result, false);
     }
 
     void insert_G_x(int edge_index, int w) {
@@ -153,19 +173,87 @@ struct TCP_index {
         return descending_G_x;
     }
 
+    bool query_in_one_union(int u, int v) {
+        if (vertex2union.count(u) == 0 || vertex2union.count(v) == 0) {
+            if (vertex2union.count(u) == 0) vertex2union[u] = u;
+            if (vertex2union.count(v) == 0) vertex2union[v] = v;
+            return false;
+        }
+        return find_union_index(u) == find_union_index(v);
+    }
+
+    int find_union_index(int u) {
+        return vertex2union[u] == u ? u : find_union_index(vertex2union[u]);
+    }
+
+    void union_two_vertex(int u, int v) {
+        vertex2union[find_union_index(u)] = find_union_index(v);
+    }
+
+    void insert_MST_static(int edge_index) {
+        MST.insert(edge_index);
+        int u = Appear_Edge_id.right.find(edge_index)->second[0];
+        int v = Appear_Edge_id.right.find(edge_index)->second[1];
+        NBs[u].insert(make_pair(G_x[edge_index], v));
+        NBs[v].insert(make_pair(G_x[edge_index], u));
+    }
+
+    set<int> get_MST() {
+        return MST;
+    }
+
+    set<int> compute_Vk(int y, int k) {
+        // 使用bfs来产生
+        set<int> result = set<int> ();
+        result.insert(y);
+        queue<int> index_temp = queue<int> ();
+        for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[y].begin(); i != NBs[y].end() && i->first >= k; i++) {
+            result.insert(i->second);
+            index_temp.push(i->second);
+        }
+        while(index_temp.size() > 0) {
+            int u = index_temp.front();
+            index_temp.pop();
+            for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end() && i->first >= k; i++) {
+                if(result.count(i->second) == 0) {
+                    result.insert(i->second);
+                    index_temp.push(i->second);
+                }
+            }
+        }
+        return result;
+    }
+
     // 查询两个点是否在一个集合中
     void query_in_MST() {
-        // TODO
+        // TODO 
     }
 
     void display() {
         cout << "----------------------------------------" << endl;
         cout << "Block_id is " << unique_id << endl;
-        cout << "Neighbors have : ";
-        for(set<int>::iterator i = NBs.begin(); i != NBs.end(); i++) {
+        cout << "Neighbors have : " << endl;;
+        for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+            cout << i->first << " ";
+            for(set<pair<int, int>, greater<pair<int, int> > >::iterator j = i->second.begin(); j != i->second.end(); j++) {
+                cout << "[" << j->first << ", " << j->second << "], ";
+            }
+            cout << endl;
+        }
+        cout << "k_max is : " << k_max << endl;
+        cout << "Gx is as followed" << endl;
+        for(map<int, int>::iterator i = G_x.begin(); i != G_x.end(); i++) {
+            cout << "index is " << i->first << " : (" << Appear_Edge_id.right.find(i->first)->second[0] << ", " << Appear_Edge_id.right.find(i->first)->second[1] << "), the weight is " << i->second << endl;
+        }
+        cout << "vertex2union is as followed " << endl;
+        for(map<int, int>::iterator i = vertex2union.begin(); i != vertex2union.end(); i++) {
+            cout << i->first << " " << i->second << endl;
+        }
+        cout << "MST is as followed" << endl;
+        for(set<int>::iterator i = MST.begin(); i != MST.end(); i++) {
             cout << *i << " ";
         }
-        cout << endl << "k_max is : " << k_max << endl;
+        cout << endl;
     }
 };
 
@@ -202,7 +290,7 @@ struct Real_Graph {
         max_size = 0;
         for(set<int>::iterator i = Used_Edges.begin(); i != Used_Edges.end(); i++) {
             vector<int> Edge_index = Appear_Edge_id.right.find(*i)->second;
-            result[*i] = get_neighbor_set(Real_Vertexs[Edge_index[0]]->NBs, Real_Vertexs[Edge_index[1]]->NBs);
+            result[*i] = get_neighbor_set(Real_Vertexs[Edge_index[0]]->get_NB_set(), Real_Vertexs[Edge_index[1]]->get_NB_set());
             max_size = max(max_size, int(result[*i].size()));
         }
         deque<pair<int, set<int> > > temp_result(result.begin(), result.end());
@@ -274,32 +362,19 @@ struct Real_Graph {
         Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(x, z))->second]));
     }
 
-    // TODO 下面的函数有待删除
-    // 完成每个点的Gx以及kmax的计算
-    void cal_G_x() {
-        for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
-            for(set<int>::iterator z = i->second->getNB().begin(); z != i->second->getNB().end(); z++) {
-                for(set<int>::iterator y = i->second->getNB().begin(); y != z; y++) {
-                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_help(*y, *z))->second) == 1) {
-                        int y_z_index = Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(*y, *z))->second];
-                        int w_temp = get_triangle_w(i->first, *y, *z);
-                        i->second->insert_G_x(y_z_index, w_temp);
-                    }
-                }
-            }
-        }
-    }
-
     void tcp_index_construction() {
         this->truss_decomposition();
         // this->cal_G_x();
+        clock_t startTime = clock();
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
             // 完成每个点的Gx以及kmax的计算
-            for(set<int>::iterator z = i->second->getNB().begin(); z != i->second->getNB().end(); z++) {
-                for(set<int>::iterator y = i->second->getNB().begin(); y != z; y++) {
-                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_help(*y, *z))->second) == 1) {
-                        int y_z_index = Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(*y, *z))->second];
-                        int w_temp = get_triangle_w(i->first, *y, *z);
+            map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs = i->second->getNB();
+            for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator z = NBs.begin(); z != NBs.end(); z++) {
+                for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator y = z; y != NBs.end(); y++) {
+                    if(y == z) continue;
+                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_help(y->first, z->first))->second) == 1) {
+                        int y_z_index = Appear_Edge_id.left.find(get_edge_help(y->first, z->first))->second;
+                        int w_temp = get_triangle_w(i->first, y->first, z->first);
                         i->second->insert_G_x(y_z_index, w_temp);
                     }
                 }
@@ -307,15 +382,85 @@ struct Real_Graph {
             // 计算生成最小生成树
             // 此处相当于获得Sk
             vector<pair<int, int> > descending_G_x = i->second->get_descending_G_x();
+            int G_x_size = descending_G_x.size();
             int temp_index = 0;
             for(int k = i->second->k_max; k >= 2; k--) {
-                for(;descending_G_x[temp_index].second == k; temp_index++) {
-                    // TODO
+                for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
+                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
+                    if (! i->second->query_in_one_union(y, z)){
+                        i->second->union_two_vertex(y, z);
+                        i->second->insert_MST_static(descending_G_x[temp_index].first);
+                    }
+                }
+                // 如果边的数目等于点的数目-1，则可以终止程序
+                if(i->second->get_MST().size() == NBs.size() - 1) {
+                    break;
+                } 
+            }
+        }
+        cout << "The TCP index construction time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
+    }
+
+    set<int> query_processing(int Vq, int k=0) {
+        if( Real_Vertexs.count(Vq) == 0) {
+            cout << "this Vertex dose not exist in the real graph" << endl;
+            return set<int>();
+        }
+        clock_t startTime = clock();
+        set<int> result = set<int> ();
+        if (k == 0) {
+            k = Real_Vertexs[Vq]->k_max;
+        }
+        set<int> visited = set<int> ();
+        vector<pair<int, int> > Vq_Neighbor = Real_Vertexs[Vq]->get_sortNB(Real_Edges_Trussness);
+        for(int i = 0; i < Vq_Neighbor.size(); i++) {
+            if (Vq_Neighbor[i].second < k) {
+                break;
+            }
+            bool flag = (Vq > Vq_Neighbor[i].first);
+            int vq_u = Appear_Edge_id.left.find(get_edge_help(Vq, Vq_Neighbor[i].first))->second;
+            int temp_count = flag? visited.count(-1 * vq_u) : visited.count(vq_u);
+            if (Vq_Neighbor[i].second >= k && temp_count == 0) {
+                stack<int> Q = stack<int> ();
+                flag ? Q.push(-1 * vq_u): Q.push(vq_u);
+                while(Q.size() > 0) {
+                    int x_y = Q.top();
+                    Q.pop();
+                    if(visited.count(x_y) == 0) {
+                        int x, y;
+                        if(x_y < 0) {
+                            x_y *= (-1);
+                            vector<int> temp = Appear_Edge_id.right.find(x_y)->second;
+                            x = temp[1];
+                            y = temp[0];
+                        }
+                        else {
+                            vector<int> temp = Appear_Edge_id.right.find(x_y)->second;
+                            x = temp[0];
+                            y = temp[1];
+                        }
+                        set<int> Vk_x_y = Real_Vertexs[x]->compute_Vk(y, k);
+                        for(set<int>::iterator z = Vk_x_y.begin(); z != Vk_x_y.end(); z++) {
+                            int x_z = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
+                            if(x > *z) {
+                                x_z *= -1;
+                            }
+                            visited.insert(x_z);
+                            result.insert(x);
+                            result.insert(*z);
+                            x_z *= -1;
+                            if (visited.count(x_z) == 0) {
+                                visited.insert(x_z);
+                            }
+                        }
+                    }
                 }
             }
         }
+        cout << "The query processing time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+        return result;
     }
-
 
     void display() {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
@@ -347,7 +492,7 @@ struct Appear_Graph {
         if(Weight[Appear_Edge_id.left.find(index)->second] >= edge_threshold) {
             real_graph->insert(index);
         }
-
+        
     }
 
     void display_detail(set<int> results) {

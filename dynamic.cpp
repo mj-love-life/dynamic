@@ -100,21 +100,21 @@ int main() {
     cin >> file_name;
     deal_file(file_name);
 
-    graph.real_graph->truss_decomposition();
+    graph.real_graph->tcp_index_construction();
     cout << "global_k_max is : " <<  global_k_max << endl;
-    graph.real_graph->display();
+    //graph.real_graph->display();
     int v_q, k;
     string choice;
     v_q = 1;
     k = 1;
     while(1){
         cout << "which vertex do you want to query: " << endl;
-        getchar();
+        // getchar();
         // v_q = get_id();
-        // cout << "Do you want to choose the k value ? 0 is yes, else is no " <<endl;
-        // getline(cin, choice);
         cin >> v_q;
-        choice = "0";
+        cout << "Do you want to choose the k value ? 0 is yes, else is no " <<endl;
+        getchar();
+        getline(cin, choice);
         if (choice == "0") {
             cout << "The k value you want to query: " << endl;
             cin >> k;
@@ -122,7 +122,7 @@ int main() {
                 break;
             }
             cout << "----------------------K_TRUSS_INDEX-----------------" << endl;
-            //display(graph.real_graph->query_processing(v_q, k));
+            display(graph.real_graph->query_processing(v_q, k));
             // graph.display_detail(graph.real_graph->query_processing(v_q, k));
         }
         else {
@@ -130,7 +130,7 @@ int main() {
                 break;
             }
             cout << "----------------------K_TRUSS_INDEX-----------------" << endl;
-            //display(graph.real_graph->query_processing(v_q));
+            display(graph.real_graph->query_processing(v_q));
             // graph.display_detail(graph.real_graph->query_processing(v_q));
         }
     }
