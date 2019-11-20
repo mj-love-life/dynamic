@@ -274,6 +274,7 @@ struct Real_Graph {
         Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(x, z))->second]));
     }
 
+    // TODO 下面的函数有待删除
     // 完成每个点的Gx以及kmax的计算
     void cal_G_x() {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
@@ -291,9 +292,20 @@ struct Real_Graph {
 
     void tcp_index_construction() {
         this->truss_decomposition();
-        this->cal_G_x();
-        // 计算生成最小生成树
+        // this->cal_G_x();
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
+            // 完成每个点的Gx以及kmax的计算
+            for(set<int>::iterator z = i->second->getNB().begin(); z != i->second->getNB().end(); z++) {
+                for(set<int>::iterator y = i->second->getNB().begin(); y != z; y++) {
+                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_help(*y, *z))->second) == 1) {
+                        int y_z_index = Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(*y, *z))->second];
+                        int w_temp = get_triangle_w(i->first, *y, *z);
+                        i->second->insert_G_x(y_z_index, w_temp);
+                    }
+                }
+            }
+            // 计算生成最小生成树
+            // 此处相当于获得Sk
             vector<pair<int, int> > descending_G_x = i->second->get_descending_G_x();
             int temp_index = 0;
             for(int k = i->second->k_max; k >= 2; k--) {
