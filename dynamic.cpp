@@ -135,5 +135,16 @@ int main() {
             // graph.display_detail(graph.real_graph->query_processing(v_q));
         }
     }
+    int u, v;
+    while(cin >> u >> v) {
+        cout << "----------------------LINK " << u << " and " << v << " -----------------" << endl;
+        int edge_index = Appear_Edge_id.size() + 1;
+        Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+        graph.real_graph->update_with_edge_insertion(u, v);
+        if(u == 0 && v == 0) {
+                break;
+        }
+    }
+
     return 0;
 }

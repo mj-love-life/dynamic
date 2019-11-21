@@ -262,19 +262,26 @@ struct Real_Graph {
     map<int, int> Real_Edges_Trussness;
     map<int, TCP_index *> Real_Vertexs;
     set<int> Used_Edges;
+    // 用于控制边的数目，当数目超过一定的期限之后进行删除的操作
+    deque<int> Used_edges_queue;
     
     Real_Graph() {
         Real_Edges_Trussness = map<int,int> ();
         Real_Vertexs = map<int, TCP_index *> ();
         Used_Edges = set<int> ();
+        Used_edges_queue = deque<int> ();
     }
 
     void insert(vector<int> edge) {
         int edge_index = Appear_Edge_id.left.find(edge)->second;
         if (Used_Edges.count(edge_index) == 0) {
             Used_Edges.insert(edge_index);
+            Used_edges_queue.push_back(edge_index);
+            // TODO 此处可以引起动态更新的操作
             this->insert_vertex(edge[0], edge[1]);
             this->insert_vertex(edge[1], edge[0]);
+            // TODO 判断边的数目是否超过边的数目控制，如果超过，则在此处引起边的删除操作
+            
         }
     }
 
@@ -461,6 +468,184 @@ struct Real_Graph {
         cout << "The query processing time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
         return result;
     }
+
+    // 使用引理2来计算k1与k2的值，也就是统计三角形的个数
+    set<int> get_k1_k2(int u, int v, pair<int, int>& result) {
+        int k1 = 2;
+        int k2 = 2;
+        map<int, int> k_triangle_count = map<int, int> ();
+        vector<int> inter_section_result = vector<int> ();
+        set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
+        int max_k = 0;
+        for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
+            int min_k = min(Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(u, *i))->second], \
+            Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(v, *i))->second]);
+            inter_section_result.push_back(min_k);
+            max_k = max(max_k, min_k);
+        }
+        for(int i = 2; i <= max_k; i++) {
+            k_triangle_count.insert(make_pair(i, 0));
+        }
+        for(int i = 0; i < inter_section_result.size(); i++) {
+            for(int j = 2; j <= inter_section_result[i]; j++) {
+                k_triangle_count[j]++;
+            }
+        }
+        for(map<int, int>::iterator i = k_triangle_count.begin(); i != k_triangle_count.end(); i++) {
+            if( i->second >= i->first - 2) {
+                k1 = max(k1, i->first);
+            }
+            if(k_triangle_count.count(i->first - 1) != 0 && k_triangle_count[i->first - 1] >= i->first - 2) {
+                k2 = max(k2, i->first);
+            }
+        }
+        result = make_pair(k1, k2);
+        return inter_section;
+    }
+
+ 
+    void update_with_edge_insertion(int u, int v) {
+        clock_t startTime = clock();
+        // TODO G.insert(e0)
+        this->insert(get_edge_help(u, v));
+        int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
+        pair<int, int> k1_k2 = pair<int, int> ();
+        // 利用前一步计算出的交集
+        set<int> inter_section = get_k1_k2(u, v, k1_k2);
+        Real_Edges_Trussness[edge_index] = k1_k2.first;
+        int k_max = k1_k2.second - 1;
+        cout << "k1 is " << k1_k2.first << " " << "k2 is " << k1_k2.second << endl;
+        map<int, set<int> > Lk = map<int, set<int> > ();
+        int k;
+        for(k = 2; k <= k_max; k++) {
+            Lk[k] = set<int> ();
+        }
+        for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++) {
+            int t_wu_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, u))->second;
+            int t_wv_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, v))->second;
+            int t_wu = Real_Edges_Trussness[t_wu_edge_index];
+            int t_wv = Real_Edges_Trussness[t_wv_edge_index];
+            k = min(t_wu, t_wv);
+            if(k <= k_max) {
+                if (t_wu == k) Lk[k].insert(t_wu_edge_index);
+                if (t_wv == k) Lk[k].insert(t_wv_edge_index);
+            }
+        }
+
+        // 10 行
+        for(k = k_max; k >= 2; k--) {
+            stack<int> Q = stack<int> ();
+            // Q.push
+            for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
+                Q.push(*i);
+            }
+            map<int, int> k_level_nums = map<int, int> ();
+            cout << "--------------next is edge expansion--------------" << endl;
+            // edge expansion
+            while(Q.size() > 0) {
+                int x_y_index = Q.top();
+                Q.pop();
+                k_level_nums[x_y_index] = 0;
+                vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                int x = temp[0];
+                int y = temp[1];
+                // cout << "x is " << x << " y is " << y << endl;
+                set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
+                for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
+                    // cout << "z is " << *z << endl;
+                    int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                    int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
+                    int z_x_t = Real_Edges_Trussness[z_x_index];
+                    int z_y_t = Real_Edges_Trussness[z_y_index];
+                    if(z_x_t < k || z_y_t < k) continue;
+                    k_level_nums[x_y_index]++;
+                    if(z_x_t == k && Lk[k].count(z_x_index) == 0) {
+                        Q.push(z_x_index);
+                        Lk[k].insert(z_x_index);
+                    }
+                    if(z_y_t == k && Lk[k].count(z_y_index) == 0) {
+                        Q.push(z_y_index);
+                        Lk[k].insert(z_y_index);
+                    }
+                }
+            }
+            cout << "--------------next is edge eviction--------------" << endl;
+            // edge eviction
+            // while 存在...比较难以解决
+            // 使用vector<pair<int, int> > 进行解决，
+            // 将k_level_nums进行排序
+            deque<pair<int, int> > s_help(k_level_nums.begin(), k_level_nums.end());
+            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+            map<int, int> s_help2index = map<int, int> ();
+            for(int i = 0; i < s_help.size(); i++) {
+                s_help2index[s_help[i].first] = i;
+            }
+            int delete_num = 0;
+            while(1) {
+                if (s_help.size() > 0 && s_help[0].second <= k-2) {
+                    
+                    int x_y_index = s_help[0].first;
+                    Lk[k].erase(x_y_index);
+                    s_help.pop_front();
+                    delete_num++;
+                    vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                    int x = temp[0];
+                    int y = temp[1];
+                    set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
+                    for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
+                        int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                        int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
+                        int z_x_t = Real_Edges_Trussness[z_x_index];
+                        int z_y_t = Real_Edges_Trussness[z_y_index];
+                        if(z_x_t < k || z_y_t < k) continue;
+                        if(z_x_t == k && Lk[k].count(z_x_index) == 0) continue;
+                        if(z_y_t == k && Lk[k].count(z_y_index) == 0) continue;
+                        if(Lk[k].count(z_x_index) != 0) {
+                            int real_index = s_help2index[z_x_index] - delete_num;
+                            s_help[real_index].second--;
+                            int times = s_help[real_index].second;
+                            int swap_index = real_index - 1;
+                            for(; swap_index >= 0; swap_index--) {
+                                if(s_help[swap_index].second == times) {
+                                    swap(s_help[swap_index+1], s_help[real_index]);
+                                }
+                            }
+                        }
+                        if(Lk[k].count(z_y_index) != 0) {
+                            int real_index = s_help2index[z_y_index] - delete_num;
+                            s_help[real_index].second--;
+                            int times = s_help[real_index].second;
+                            int swap_index = real_index - 1;
+                            for(; swap_index >= 0; swap_index--) {
+                                if(s_help[swap_index].second == times) {
+                                    swap(s_help[swap_index+1], s_help[real_index]);
+                                }
+                            }
+                        }
+                    }
+                }
+                else{
+                    break;
+                }
+            }
+            cout << "--------------next is edge update--------------" << endl;
+            // edge update
+            for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
+                Real_Edges_Trussness[*i] = k + 1;
+                vector<int> display_temp = Appear_Edge_id.right.find(*i)->second;
+                cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
+            }
+        }
+        cout << "The update with edge insertion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+    }
+
+    void update_TCP_index_with_edge_insertion() {
+
+    }
+
+
+    
+
 
     void display() {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
