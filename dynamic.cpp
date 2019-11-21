@@ -103,6 +103,7 @@ int main() {
     graph.real_graph->tcp_index_construction();
     cout << "global_k_max is : " <<  global_k_max << endl;
     //graph.real_graph->display();
+    //graph.real_graph->Real_Vertexs[5]->display();
     int v_q, k;
     string choice;
     v_q = 1;

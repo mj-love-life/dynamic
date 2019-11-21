@@ -451,7 +451,7 @@ struct Real_Graph {
                             result.insert(*z);
                             x_z *= -1;
                             if (visited.count(x_z) == 0) {
-                                visited.insert(x_z);
+                                Q.push(x_z);
                             }
                         }
                     }
