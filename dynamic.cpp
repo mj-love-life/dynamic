@@ -123,6 +123,7 @@ int main() {
                 break;
             }
             cout << "----------------------K_TRUSS_INDEX-----------------" << endl;
+            graph.real_graph->Real_Vertexs[v_q]->display();
             display(graph.real_graph->query_processing(v_q, k));
             // graph.display_detail(graph.real_graph->query_processing(v_q, k));
         }
@@ -141,6 +142,7 @@ int main() {
         int edge_index = Appear_Edge_id.size() + 1;
         Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
         graph.real_graph->update_with_edge_insertion(u, v);
+        // graph.real_graph->update_with_edge_deletion(u, v);
         if(u == 0 && v == 0) {
                 break;
         }

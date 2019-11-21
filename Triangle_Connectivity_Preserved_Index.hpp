@@ -131,13 +131,33 @@ struct TCP_index {
         vertex2union = map<int, int> ();
     }
 
+    void restart_MST_dynamic() {
+        for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+            i->second.clear();
+        }
+        for(map<int, int>::iterator i = vertex2union.begin(); i != vertex2union.end(); i++) {
+            i->second = i->first;
+        }
+        MST.clear();
+    }
+
+    set<int> get_Gx_set() {
+        set<int> result;
+        for(map<int, int>::iterator i = G_x.begin(); i != G_x.end(); i++) {
+            result.insert(i->first);
+        }
+        return result;
+    }
+
     void get_k_value(int k) {
         k_max = max(k_max, k);
         global_k_max = max(global_k_max, k_max);
     }
 
     void insert_neighbor(int nb) {
-        NBs[nb] = set<pair<int, int>, greater<pair<int, int> > > ();
+        if(NBs.count(nb) == 0) {
+            NBs[nb] = set<pair<int, int>, greater<pair<int, int> > > ();
+        }
     }
 
     map<int, set<pair<int, int>, greater<pair<int, int> > > > getNB() {
@@ -507,6 +527,8 @@ struct Real_Graph {
     void update_with_edge_insertion(int u, int v) {
         clock_t startTime = clock();
         // TODO G.insert(e0)
+        Real_Vertexs[u]->display();
+        Real_Vertexs[v]->display();
         this->insert(get_edge_help(u, v));
         int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         pair<int, int> k1_k2 = pair<int, int> ();
@@ -517,6 +539,11 @@ struct Real_Graph {
         cout << "k1 is " << k1_k2.first << " " << "k2 is " << k1_k2.second << endl;
         map<int, set<int> > Lk = map<int, set<int> > ();
         int k;
+        
+        // 来自后续更新是需要的变量
+        map<int, int> old_edge_trussness = map<int, int> ();
+        set<int> change_edge_index = set<int> ();
+
         for(k = 2; k <= k_max; k++) {
             Lk[k] = set<int> ();
         }
@@ -631,15 +658,82 @@ struct Real_Graph {
             cout << "--------------next is edge update--------------" << endl;
             // edge update
             for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
+                old_edge_trussness[*i] = k;
+                change_edge_index.insert(*i);
                 Real_Edges_Trussness[*i] = k + 1;
                 vector<int> display_temp = Appear_Edge_id.right.find(*i)->second;
                 cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
             }
         }
         cout << "The update with edge insertion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+
+        //TODO 下面是更新TCP部分
+        update_TCP_index_with_edge_insertion(u, v, edge_index, old_edge_trussness, change_edge_index);
     }
 
-    void update_TCP_index_with_edge_insertion() {
+
+    // TCP 结构
+    // int unique_id;
+    // int k_max;
+
+    // // 子图的边
+    // map<int, int> G_x;
+    // set<int> MST;
+    // // 并查集
+    // map<int, int> vertex2union;
+    // map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs;
+    //第五个参数是交点
+    void update_insertion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
+        set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
+        set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
+        for(set<int>::iterator i = G_x_set.begin(); i != G_x_set.end(); i++) {
+            vector<int> edge = Appear_Edge_id.right.find(*i)->second;
+            int new_w = get_triangle_w(u, edge[0], edge[1]);
+            // 删除MST中的东西
+            Real_Vertexs[u]->G_x[*i] = new_w;
+            Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, new_w);
+        }
+        for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
+            Real_Vertexs[u]->G_x[edge_index] = get_triangle_w(u, v, *i);
+        }
+        Real_Vertexs[u]->restart_MST_dynamic();
+        map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs = Real_Vertexs[u]->getNB();
+        vector<pair<int, int> > descending_G_x = Real_Vertexs[u]->get_descending_G_x();
+        int G_x_size = descending_G_x.size();
+        int temp_index = 0;
+        for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
+            for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
+                int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
+                if (! Real_Vertexs[u]->query_in_one_union(y, z)){
+                    Real_Vertexs[u]->union_two_vertex(y, z);
+                    Real_Vertexs[u]->insert_MST_static(descending_G_x[temp_index].first);
+                }
+            }
+            // 如果边的数目等于点的数目-1，则可以终止程序
+            if(Real_Vertexs[u]->get_MST().size() == NBs.size() - 1) {
+                break;
+            }
+        }
+        Real_Vertexs[u]->display();
+    }
+
+
+    void update_TCP_index_with_edge_insertion(int u, int v, int edge_index, map<int, int> old_edge_trussness, set<int> change_edge_index) {
+        set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
+        update_insertion_vertex(u, v, old_edge_trussness, change_edge_index, inter_section);
+        update_insertion_vertex(v, u, old_edge_trussness, change_edge_index, inter_section);
+        
+        // 下面是对交点的更新操作
+        // 首先将边加入Gx中,更新Gx中的权重以及MST树中的权重信息
+        // G_x_temp配合使用
+        
+        for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++){
+            
+        }
+
+        // 先更新之后再说
 
     }
 
