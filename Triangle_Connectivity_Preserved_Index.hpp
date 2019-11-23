@@ -273,8 +273,12 @@ struct TCP_index {
     }
 
     // TODO
-    void update_Gx(int edge_index, int new_weight) {
-
+    void update_Gx_and_MST_value(int edge_index, int new_weight, int y, int z) {
+        NBs[y].erase(make_pair(G_x[edge_index], z));
+        NBs[z].erase(make_pair(G_x[edge_index], y));
+        NBs[y].insert(make_pair(new_weight, z));
+        NBs[z].insert(make_pair(new_weight, y));
+        G_x[edge_index] = new_weight;
     }
 
     // TODO
@@ -836,9 +840,68 @@ struct Real_Graph {
         // 先更新之后再说
     }
 
+    void index_update_between_triangle(int x, int y, int z, int y_z_weight, int y_z_index) {
+        TCP_index * x_TCP = Real_Vertexs[x];
+        if (x_TCP->get_MST().count(y_z_index) == 0) {
+            // find unique路径
+            int min_edge_index = 0;
+            int w_x = x_TCP->add_update_MST_find_unique_path(y, z, min_edge_index);
+            if (w_x >= y_z_weight) {
+                // remains unchanged
+            }
+            else {
+                x_TCP->update_MST(y, z, y_z_weight, min_edge_index, y_z_index);
+            }
+        }
+        else {
+            x_TCP->update_Gx_and_MST_value(y_z_index, y_z_weight, y, z);
+        }
+    }
+
     // Gx的更新可以在这个部分，因为每个变化的三角形的，都是三个点的G_x中，所以可以在这个步骤在进行更新
     void index_update_with_trussness_increase(map<int, int> old_edge_trussness, set<int> change_edge_index) {
-        
+        // 对于当前的三角形进行更新的时候，使用的trussness的值都是最新的值
+        for(map<int, int>::iterator i = old_edge_trussness.begin(); i != old_edge_trussness.end(); i++) {
+            int x_y_index = i->first;
+            int x_y_old_trussness = i->second;
+            vector<int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
+            int x = x_y_vec[0];
+            int y = x_y_vec[1];
+            int x_y_trussness = Real_Edges_Trussness[x_y_index];
+            set<int> inter_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
+            for(set<int>::iterator z = inter_section.begin(); z != inter_section.end(); z++) {
+                int x_z_index = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
+                int y_z_index = Appear_Edge_id.left.find(get_edge_help(y, *z))->second;
+                int x_z_old_trussness, y_z_old_trussness, x_z_trussness, y_z_trussness;
+                if (change_edge_index.count(x_z_index) == 0) {
+                    x_z_old_trussness = Real_Edges_Trussness[x_z_index];
+                    x_z_trussness = x_z_old_trussness;
+                }
+                else {
+                    x_z_old_trussness = old_edge_trussness[x_z_index];
+                    x_z_trussness = Real_Edges_Trussness[x_z_index];
+                }
+                if (change_edge_index.count(y_z_index) == 0) {
+                    y_z_old_trussness = Real_Edges_Trussness[y_z_index];
+                    y_z_trussness = y_z_old_trussness;
+                }
+                else {
+                    y_z_old_trussness = old_edge_trussness[y_z_index];
+                    y_z_trussness = Real_Edges_Trussness[y_z_index];
+                }
+                int w_xyz_old = min(x_y_old_trussness, min(y_z_old_trussness, x_z_old_trussness));
+                int w_xyz = min(x_y_trussness, min(y_z_trussness, x_z_trussness));
+                if (w_xyz == w_xyz_old) {
+                    // remain unchanged
+                }
+                else {
+                    // TODO
+                    index_update_between_triangle(x, y, *z, w_xyz, y_z_index);
+                    index_update_between_triangle(y, x, *z, w_xyz, x_z_index);
+                    index_update_between_triangle(*z, x, y, w_xyz, x_y_index);
+                }
+            }
+        }
     }
 
 
