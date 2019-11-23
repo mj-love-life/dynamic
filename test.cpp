@@ -8,10 +8,13 @@
 #include <boost/bimap/tags/tagged.hpp>
 #include <vector>
 #include <algorithm>
+#include <ext/rope>
+#include <map>
 
 using namespace boost::bimaps;
 using namespace boost;
 using namespace std;
+using namespace __gnu_cxx;
 // 此处使用双向容器
 
 
@@ -37,19 +40,20 @@ template< class MapType > void print_map(const MapType & m)
 }
 
 int main() {
-    int u, v;
-    bimap<vector<int>, int> block_id;
-    int count = 0;
-    while(1) {
-        cin >> u >> v;
-        if (u == 0 && v == 0) {
-            break;
-        }
-        cout << block_id.left.count(vector_help(u, v)) << endl;
-        block_id.left.insert(make_pair(vector_help(u, v), count));
-        count++;
-    }
-    display(block_id.right.find(1)->second);
-    cout << endl;
-    print_map(block_id.left);
+    // int u, v;
+    // bimap<vector<int>, int> block_id;
+    // int count = 0;
+    // while(1) {
+    //     cin >> u >> v;
+    //     if (u == 0 && v == 0) {
+    //         break;
+    //     }
+    //     cout << block_id.left.count(vector_help(u, v)) << endl;
+    //     block_id.left.insert(make_pair(vector_help(u, v), count));
+    //     count++;
+    // }
+    // display(block_id.right.find(1)->second);
+    // cout << endl;
+    // print_map(block_id.left);
+    map<int, int> test;
 }

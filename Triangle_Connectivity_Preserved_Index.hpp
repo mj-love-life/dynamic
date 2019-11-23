@@ -210,12 +210,84 @@ struct TCP_index {
         vertex2union[find_union_index(u)] = find_union_index(v);
     }
 
+    // NBs存的是最大生成树中的元素，所以更新MST的时候才会引起NBs的更新
     void insert_MST_static(int edge_index) {
         MST.insert(edge_index);
         int u = Appear_Edge_id.right.find(edge_index)->second[0];
         int v = Appear_Edge_id.right.find(edge_index)->second[1];
         NBs[u].insert(make_pair(G_x[edge_index], v));
         NBs[v].insert(make_pair(G_x[edge_index], u));
+    }
+
+    void insert_MST_dynamic(int u, int v, int edge_index) {
+        MST.insert(edge_index);
+        NBs[u].insert(make_pair(G_x[edge_index], v));
+        NBs[v].insert(make_pair(G_x[edge_index], u));
+    }
+    
+    // TODO 参考compute来实现, 未测试
+    int add_update_MST_find_unique_path(int u, int v, int& min_edge_index) {
+        vector<vector<int> > indexs;
+        vector<int> weight;
+        stack<int> index_temp = stack<int> ();
+        int tag = 0;
+        for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end(); i++) {
+            index_temp.push(i->second);
+            if (i->second == v) {
+                indexs.push_back(get_edge_help(u, v));
+                weight.push_back(i->first);
+                tag = 1;
+                break;
+            }
+        }
+        int pre_p = u;
+        while(!tag) {
+            int p = index_temp.top();
+            index_temp.pop();
+            //indexs.push_back(u);
+            weight.push_back(G_x[p]);
+            indexs.push_back(get_edge_help(pre_p, p));
+            for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[p].begin(); i != NBs[p].end(); i++) {
+                if (i->second == v) {
+                    indexs.push_back(get_edge_help(p, v));
+                    weight.push_back(i->first);
+                    tag = 1;
+                    break;
+                }
+            }
+            if (tag == 0) {
+                indexs.pop_back();
+                weight.pop_back();
+                pre_p = p;
+            }
+        }
+        int min_index = 0;
+        if(weight.size() > 0) min_index = 0;
+        for(int i = 1; i < weight.size(); i++) {
+            if (weight[i] > weight[min_index] ) {
+                min_index = i;
+            }
+        }
+        min_edge_index = Appear_Edge_id.left.find(indexs[min_index])->second;
+        return weight[min_index];
+    }
+
+    // TODO
+    void update_Gx(int edge_index, int new_weight) {
+
+    }
+
+    // TODO
+    void update_MST(int u, int v, int new_weight, int old_edge_index, int new_edge_index) {
+        vector<int> delete_uv = Appear_Edge_id.right.find(old_edge_index)->second;
+        int delete_u = delete_uv[0];
+        int delete_v = delete_uv[1];
+        NBs[delete_u].erase(make_pair(G_x[old_edge_index], delete_v));
+        NBs[delete_v].erase(make_pair(G_x[old_edge_index], delete_u));
+        NBs[u].insert(make_pair(new_weight, v));
+        NBs[v].insert(make_pair(new_weight, u));
+        MST.erase(old_edge_index);
+        MST.insert(old_edge_index);
     }
 
     set<int> get_MST() {
@@ -669,6 +741,11 @@ struct Real_Graph {
 
         //TODO 下面是更新TCP部分
         update_TCP_index_with_edge_insertion(u, v, edge_index, old_edge_trussness, change_edge_index);
+        //TODO 下面是因为Trussness increase带来的TCP索引的更新操作
+        // 首先删除uv边，只保留原来存在的边
+        old_edge_trussness.erase(edge_index);
+        change_edge_index.erase(edge_index);
+        index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
     }
 
 
@@ -685,6 +762,7 @@ struct Real_Graph {
     //第五个参数是交点
     void update_insertion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
         set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
+        // TODO 下面步骤的必要性
         set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
         for(set<int>::iterator i = G_x_set.begin(); i != G_x_set.end(); i++) {
             vector<int> edge = Appear_Edge_id.right.find(*i)->second;
@@ -730,11 +808,37 @@ struct Real_Graph {
         // G_x_temp配合使用
         
         for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++){
-            
+            // 调用这个函数获取最新的trussness值；
+            int weight_uv = get_triangle_w(u, v, *w);
+            TCP_index * w_TCP = Real_Vertexs[*w];
+            // 如果是在一个生成树中
+            w_TCP->insert_G_x(edge_index, weight_uv);
+            if(w_TCP->query_in_one_union(u, v)) {
+                //寻找一条唯一的路径
+                int min_edge_index = 0;
+                int w_x = w_TCP->add_update_MST_find_unique_path(u, v, min_edge_index);
+                // 判断大小关系
+                if (w_x >= weight_uv) {
+                    // remains unchanged
+                }
+                else {
+                    // replace
+                    // update MST
+                    w_TCP->update_MST(u, v, weight_uv, min_edge_index, edge_index);
+                }
+            }
+            // 如果不是在一个生成树中，只需要增加一条边就好了
+            else {
+                w_TCP->union_two_vertex(u, v);
+                w_TCP->insert_MST_dynamic(u, v, edge_index);
+            }
         }
-
         // 先更新之后再说
+    }
 
+    // Gx的更新可以在这个部分，因为每个变化的三角形的，都是三个点的G_x中，所以可以在这个步骤在进行更新
+    void index_update_with_trussness_increase(map<int, int> old_edge_trussness, set<int> change_edge_index) {
+        
     }
 
 
