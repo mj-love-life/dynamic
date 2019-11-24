@@ -102,7 +102,8 @@ int main() {
 
     graph.real_graph->tcp_index_construction();
     cout << "global_k_max is : " <<  global_k_max << endl;
-    //graph.real_graph->display();
+    graph.real_graph->display();
+    cout << graph.real_graph->Real_Edges_Trussness[12] << endl;
     //graph.real_graph->Real_Vertexs[5]->display();
     int v_q, k;
     string choice;
@@ -139,10 +140,10 @@ int main() {
     int u, v;
     while(cin >> u >> v) {
         cout << "----------------------LINK " << u << " and " << v << " -----------------" << endl;
-        int edge_index = Appear_Edge_id.size() + 1;
-        Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-        graph.real_graph->update_with_edge_insertion(u, v);
-        // graph.real_graph->update_with_edge_deletion(u, v);
+        // int edge_index = Appear_Edge_id.size() + 1;
+        // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+        // graph.real_graph->update_with_edge_insertion(u, v);
+        graph.real_graph->update_with_edge_deletion(u, v);
         if(u == 0 && v == 0) {
                 break;
         }
