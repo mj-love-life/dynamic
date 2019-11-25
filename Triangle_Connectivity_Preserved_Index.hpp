@@ -303,6 +303,9 @@ struct TCP_index {
     int delete_update_MST_find_max_edge(int u, int v, int edge_index, int compute_k_value=2) {
         if(MST.count(edge_index) == 0) {
             this->G_x.erase(edge_index);
+            if (NBs[u].size() == 0) vertex2union.erase(u);
+            if (NBs[v].size() == 0) vertex2union.erase(v);
+            if (G_x.size() == 0) vertex2union.clear();
         }
         else {
             // k_max的更新，vertex_union的更新、MST、NBs
@@ -328,6 +331,9 @@ struct TCP_index {
             }
             if (u_v_replace.size() == 0) {
                 // 更新vertex_union
+                if (NBs[u].size() == 0) vertex2union.erase(u);
+                if (NBs[v].size() == 0) vertex2union.erase(v);
+                if (G_x.size() == 0) vertex2union.clear();
                 re_compute_union_vertex();
             }
             else {
@@ -1278,8 +1284,15 @@ struct Real_Graph {
                     break;
                 }
             }
+            // 对NBs对应的vertex_union进行更新
+            for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+                if (i->second.size() == 0 && Real_Vertexs[u]->vertex2union.count(i->first) == 1) {
+                    Real_Vertexs[u]->vertex2union.erase(i->first);
+                }
+            }
         }
         else {
+            Real_Vertexs[u]->vertex2union.clear();
             Real_Vertexs[u]->k_max =0;
         }
         // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
@@ -1348,6 +1361,10 @@ struct Real_Graph {
     void display() {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
             i->second->display();
+        }
+        for(map<int, int>::iterator i = Real_Edges_Trussness.begin(); i != Real_Edges_Trussness.end(); i++) {
+            vector<int> temp = Appear_Edge_id.right.find(i->first)->second;
+            cout << "trussness: (" << temp[0] << ", " << temp[1] << ")" << i->second << endl;
         }
     }
 

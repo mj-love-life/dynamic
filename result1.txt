@@ -21,22 +21,22 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 8
-y_z_weight is 3 y_z_index is 14
+y_z_weight is 3 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 8
-y_z_weight is 3 y_z_index is 29
+y_z_weight is 3 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 5
-y_z_weight is 3 y_z_index is 8
+y_z_weight is 3 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 5 y is 8 z is 1
-y_z_weight is 3 y_z_index is 29
+y_z_weight is 3 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 1
-y_z_weight is 3 y_z_index is 8
+y_z_weight is 3 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 8
-y_z_weight is 3 y_z_index is 14
+y_z_weight is 3 y_z_index is 8
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -60,12 +60,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -106,12 +106,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -141,12 +141,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -212,12 +212,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -260,12 +260,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -297,12 +297,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -368,12 +368,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -418,12 +418,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -455,12 +455,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -500,8 +500,8 @@ k1 is 2 k2 is 3
 --------------next is edge eviction--------------
 --------------next is edge update--------------
 10 11 is 3
-4 11 is 3
 4 10 is 3
+4 11 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -517,22 +517,22 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 10 y is 11 z is 4
-y_z_weight is 3 y_z_index is 26
+y_z_weight is 3 y_z_index is 15
 ------------------Here is the triangle update----------------------
 x is 11 y is 10 z is 4
-y_z_weight is 3 y_z_index is 27
+y_z_weight is 3 y_z_index is 14
 ------------------Here is the triangle update----------------------
 x is 4 y is 10 z is 11
-y_z_weight is 3 y_z_index is 25
+y_z_weight is 3 y_z_index is 11
 ------------------Here is the triangle update----------------------
 x is 4 y is 10 z is 11
-y_z_weight is 3 y_z_index is 25
+y_z_weight is 3 y_z_index is 11
 ------------------Here is the triangle update----------------------
 x is 10 y is 4 z is 11
-y_z_weight is 3 y_z_index is 26
+y_z_weight is 3 y_z_index is 15
 ------------------Here is the triangle update----------------------
 x is 11 y is 4 z is 10
-y_z_weight is 3 y_z_index is 27
+y_z_weight is 3 y_z_index is 14
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -556,12 +556,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -593,13 +593,13 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 25 : (10, 11), the weight is 3
+index is 11 : (10, 11), the weight is 3
 vertex2union is as followed 
 7 7
 10 11
 11 11
 MST is as followed
-25 
+11 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -609,12 +609,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -646,12 +646,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -671,12 +671,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
 vertex2union is as followed 
 4 11
 11 11
 MST is as followed
-26 
+15 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -685,12 +685,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 4 and 6 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -727,12 +727,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -765,14 +765,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 25 : (10, 11), the weight is 3
+index is 11 : (10, 11), the weight is 3
 vertex2union is as followed 
 6 6
 7 7
 10 11
 11 11
 MST is as followed
-25 
+11 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -782,12 +782,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -821,12 +821,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -846,12 +846,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
 vertex2union is as followed 
 4 11
 11 11
 MST is as followed
-26 
+15 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -860,12 +860,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 4 and 9 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -902,12 +902,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -941,7 +941,7 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 25 : (10, 11), the weight is 3
+index is 11 : (10, 11), the weight is 3
 vertex2union is as followed 
 6 6
 7 7
@@ -949,7 +949,7 @@ vertex2union is as followed
 10 11
 11 11
 MST is as followed
-25 
+11 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -959,12 +959,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -998,12 +998,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -1025,12 +1025,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
 vertex2union is as followed 
 4 11
 11 11
 MST is as followed
-26 
+15 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -1039,20 +1039,20 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 6 and 9 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
-6 9 is 3
-4 9 is 3
 4 6 is 3
+4 9 is 3
+6 9 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -1067,23 +1067,23 @@ here here
 4 6 hhh
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 6
-y_z_weight is 3 y_z_index is 22
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 6
-y_z_weight is 3 y_z_index is 24
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 9
-y_z_weight is 3 y_z_index is 23
-------------------Here is the triangle update----------------------
 x is 4 y is 6 z is 9
-y_z_weight is 3 y_z_index is 22
+y_z_weight is 3 y_z_index is 18
 ------------------Here is the triangle update----------------------
 x is 6 y is 4 z is 9
-y_z_weight is 3 y_z_index is 23
+y_z_weight is 3 y_z_index is 17
 ------------------Here is the triangle update----------------------
 x is 9 y is 4 z is 6
-y_z_weight is 3 y_z_index is 24
+y_z_weight is 3 y_z_index is 16
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 6
+y_z_weight is 3 y_z_index is 18
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 6
+y_z_weight is 3 y_z_index is 16
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 9
+y_z_weight is 3 y_z_index is 17
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -1107,12 +1107,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -1146,8 +1146,8 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 22 : (6, 9), the weight is 3
-index is 25 : (10, 11), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 3
 vertex2union is as followed 
 6 9
 7 7
@@ -1155,7 +1155,7 @@ vertex2union is as followed
 10 11
 11 11
 MST is as followed
-22 25 
+11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -1165,12 +1165,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -1180,12 +1180,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 23 : (4, 9), the weight is 3
+index is 17 : (4, 9), the weight is 3
 vertex2union is as followed 
 4 9
 9 9
 MST is as followed
-23 
+17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -1207,12 +1207,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 8 : (1, 5), the weight is 3
+index is 5 : (1, 5), the weight is 3
 vertex2union is as followed 
 1 5
 5 5
 MST is as followed
-8 
+5 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -1222,12 +1222,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 24 : (4, 6), the weight is 3
+index is 16 : (4, 6), the weight is 3
 vertex2union is as followed 
 4 6
 6 6
 MST is as followed
-24 
+16 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
@@ -1237,12 +1237,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
 vertex2union is as followed 
 4 11
 11 11
 MST is as followed
-26 
+15 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -1251,19 +1251,19 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 4 and 8 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
-4 8 is 3
 8 10 is 3
+4 8 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -1272,9 +1272,9 @@ here here
 here here 
 8 10 hhh
 here here 
-6 9 hhh
-here here 
 10 11 hhh
+here here 
+6 9 hhh
 here here 
 2hhh
 3 Real_Vertexs[u]->k_max
@@ -1285,13 +1285,13 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 8 y is 10 z is 4
-y_z_weight is 3 y_z_index is 27
+y_z_weight is 3 y_z_index is 14
 ------------------Here is the triangle update----------------------
 x is 10 y is 8 z is 4
-y_z_weight is 3 y_z_index is 20
+y_z_weight is 3 y_z_index is 19
 ------------------Here is the triangle update----------------------
 x is 4 y is 8 z is 10
-y_z_weight is 3 y_z_index is 21
+y_z_weight is 3 y_z_index is 10
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -1315,12 +1315,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 14 : (5, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
 vertex2union is as followed 
 5 8
 8 8
 MST is as followed
-14 
+8 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -1355,9 +1355,9 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 3 G
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 3
-index is 25 : (10, 11), the weight is 3
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 3
 vertex2union is as followed 
 6 9
 7 7
@@ -1366,7 +1366,7 @@ vertex2union is as followed
 10 11
 11 11
 MST is as followed
-21 22 25 
+10 11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -1376,12 +1376,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -1391,12 +1391,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 23 : (4, 9), the weight is 3
+index is 17 : (4, 9), the weight is 3
 vertex2union is as followed 
 4 9
 9 9
 MST is as followed
-23 
+17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -1419,15 +1419,15 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 8 : (1, 5), the weight is 3
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 1 5
 4 10
 5 5
 10 10
 MST is as followed
-8 27 
+5 14 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -1437,12 +1437,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 24 : (4, 6), the weight is 3
+index is 16 : (4, 6), the weight is 3
 vertex2union is as followed 
 4 6
 6 6
 MST is as followed
-24 
+16 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
@@ -1452,14 +1452,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -1468,12 +1468,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 6 and 8 -----------------
 k1 is 3 k2 is 3
 --------------next is edge expansion--------------
@@ -1486,11 +1486,11 @@ here here
 3hhh
 3 Real_Vertexs[u]->k_max
 here here 
-4 8 hhh
+1 8 hhh
 here here 
 4 9 hhh
 here here 
-1 8 hhh
+4 8 hhh
 here here 
 4hhh
 3 Real_Vertexs[u]->k_max
@@ -1499,19 +1499,19 @@ here here
 here here 
 1 6 hhh
 here here 
-4 6 hhh
-here here 
 4 10 hhh
+here here 
+4 6 hhh
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 1 y is 6 z is 8
-y_z_weight is 3 y_z_index is 19
+y_z_weight is 3 y_z_index is 20
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 8
-y_z_weight is 3 y_z_index is 29
+y_z_weight is 3 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 6
-y_z_weight is 3 y_z_index is 9
+y_z_weight is 3 y_z_index is 6
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -1535,14 +1535,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 14 : (5, 8), the weight is 3
-index is 19 : (6, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
+index is 20 : (6, 8), the weight is 3
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 19 
+8 20 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -1577,10 +1577,10 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 4 G
-index is 19 : (6, 8), the weight is 3
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 3
-index is 25 : (10, 11), the weight is 3
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 3
+index is 20 : (6, 8), the weight is 3
 vertex2union is as followed 
 6 9
 7 7
@@ -1589,7 +1589,7 @@ vertex2union is as followed
 10 11
 11 11
 MST is as followed
-19 21 22 25 
+10 11 18 20 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -1599,12 +1599,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
 vertex2union is as followed 
 1 8
 8 8
 MST is as followed
-29 
+12 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -1615,16 +1615,16 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 3 G
-index is 20 : (4, 8), the weight is 3
-index is 23 : (4, 9), the weight is 3
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
+index is 17 : (4, 9), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
-1 9
-4 8
-8 9
-9 9
+1 8
+4 9
+8 8
+9 8
 MST is as followed
-20 23 29 
+12 17 19 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -1648,18 +1648,18 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 4 G
-index is 8 : (1, 5), the weight is 3
-index is 9 : (1, 6), the weight is 3
-index is 24 : (4, 6), the weight is 3
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 3
+index is 6 : (1, 6), the weight is 3
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 3
 vertex2union is as followed 
 1 5
-4 6
+4 10
 5 6
-6 10
-10 10
+6 6
+10 6
 MST is as followed
-8 9 24 27 
+5 6 14 16 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
@@ -1669,12 +1669,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 24 : (4, 6), the weight is 3
+index is 16 : (4, 6), the weight is 3
 vertex2union is as followed 
 4 6
 6 6
 MST is as followed
-24 
+16 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
@@ -1684,14 +1684,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 3
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
@@ -1700,26 +1700,22 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 3
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 8 and 9 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
-8 9 is 4
-6 8 is 4
-4 8 is 4
-6 9 is 4
-4 9 is 4
+1 8 is 4
 4 6 is 4
-10 11 is 4
-4 11 is 4
-4 10 is 4
+6 9 is 4
+4 8 is 4
+8 9 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
@@ -1728,170 +1724,38 @@ The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
 7hhh
-4 Real_Vertexs[u]->k_max
-here here 
-6 9 hhh
-here here 
-4 9 hhh
+3 Real_Vertexs[u]->k_max
 here here 
 1 5 hhh
 here here 
 1 6 hhh
 here here 
+5 9 hhh
+here here 
 4 10 hhh
 here here 
+4 6 hhh
+here here 
 4hhh
-4 Real_Vertexs[u]->k_max
-here here 
-6 8 hhh
-here here 
-4 8 hhh
+3 Real_Vertexs[u]->k_max
 here here 
 5 8 hhh
+here here 
+4 6 hhh
+here here 
+4 8 hhh
 (6, 8) 3, (6, 9) 3, 
 (4, 8) 3, (4, 9) 3, 
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 5 y is 9 z is 8
-y_z_weight is 3 y_z_index is 18
+y_z_weight is 3 y_z_index is 21
 ------------------Here is the triangle update----------------------
 x is 9 y is 5 z is 8
-y_z_weight is 3 y_z_index is 14
+y_z_weight is 3 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 9
-y_z_weight is 3 y_z_index is 15
-(1, 5) 3, (1, 6) 3, (6, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 4
-y_z_weight is 4 y_z_index is 20
-(8, 9) 4, (4, 9) 3, 
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 4
-y_z_weight is 4 y_z_index is 24
-(6, 9) 4, (4, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 8
-y_z_weight is 4 y_z_index is 19
-(6, 9) 3, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 9
-y_z_weight is 4 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 9
-y_z_weight is 4 y_z_index is 22
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 8
-y_z_weight is 4 y_z_index is 19
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 6
-y_z_weight is 4 y_z_index is 19
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 6
-y_z_weight is 4 y_z_index is 24
-(4, 9) 4, (6, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 8
-y_z_weight is 4 y_z_index is 20
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 9
-y_z_weight is 4 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 9
-y_z_weight is 4 y_z_index is 23
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 8
-y_z_weight is 4 y_z_index is 20
-------------------Here is the triangle update----------------------
-x is 6 y is 9 z is 4
-y_z_weight is 4 y_z_index is 23
-(8, 9) 4, (4, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 4
-y_z_weight is 4 y_z_index is 24
-(6, 8) 4, (4, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 9
-y_z_weight is 4 y_z_index is 22
-(6, 8) 4, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 9 z is 8
-y_z_weight is 4 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 8
-y_z_weight is 4 y_z_index is 19
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 9
-y_z_weight is 4 y_z_index is 22
-------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 6
-y_z_weight is 4 y_z_index is 22
-(8, 9) 4, (6, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 6
-y_z_weight is 4 y_z_index is 24
-(4, 8) 4, (6, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 9
-y_z_weight is 4 y_z_index is 23
-(4, 8) 4, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 8
-y_z_weight is 4 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 8
-y_z_weight is 4 y_z_index is 20
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 9
-y_z_weight is 4 y_z_index is 23
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 8
-y_z_weight is 4 y_z_index is 19
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 8
-y_z_weight is 4 y_z_index is 20
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 6
-y_z_weight is 4 y_z_index is 24
-(4, 9) 4, (6, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 9
-y_z_weight is 4 y_z_index is 22
-(6, 8) 4, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 9
-y_z_weight is 4 y_z_index is 23
-(4, 8) 4, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 6
-y_z_weight is 4 y_z_index is 24
-(4, 8) 4, (6, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 10 y is 11 z is 4
-y_z_weight is 4 y_z_index is 26
-------------------Here is the triangle update----------------------
-x is 11 y is 10 z is 4
-y_z_weight is 4 y_z_index is 27
-------------------Here is the triangle update----------------------
-x is 4 y is 10 z is 11
-y_z_weight is 4 y_z_index is 25
-------------------Here is the triangle update----------------------
-x is 4 y is 11 z is 10
-y_z_weight is 4 y_z_index is 25
-------------------Here is the triangle update----------------------
-x is 11 y is 4 z is 10
-y_z_weight is 4 y_z_index is 27
-------------------Here is the triangle update----------------------
-x is 10 y is 4 z is 11
-y_z_weight is 4 y_z_index is 26
-------------------Here is the triangle update----------------------
-x is 4 y is 10 z is 11
-y_z_weight is 4 y_z_index is 25
-------------------Here is the triangle update----------------------
-x is 10 y is 4 z is 11
-y_z_weight is 4 y_z_index is 26
-------------------Here is the triangle update----------------------
-x is 11 y is 4 z is 10
-y_z_weight is 4 y_z_index is 27
+y_z_weight is 3 y_z_index is 9
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -1915,14 +1779,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 14 : (5, 8), the weight is 3
-index is 19 : (6, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
+index is 20 : (6, 8), the weight is 3
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 19 
+8 20 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -1948,20 +1812,20 @@ MST is as followed
 Block_id is 4
 Neighbors have : 
 0 
-6 [4, 8], 
+6 [3, 9], [3, 8], 
 7 
-8 [4, 9], [4, 6], [3, 10], 
-9 [4, 8], 
-10 [4, 11], [3, 11], [3, 8], 
-11 [4, 10], [3, 10], 
-k_max is : 4
+8 [3, 10], [3, 6], 
+9 [3, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 3
 Gx is as followed
 5 G
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 3
+index is 20 : (6, 8), the weight is 3
+index is 21 : (8, 9), the weight is 3
 vertex2union is as followed 
 6 9
 7 7
@@ -1970,7 +1834,7 @@ vertex2union is as followed
 10 11
 11 11
 MST is as followed
-18 19 21 25 
+10 11 18 20 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
@@ -1980,35 +1844,35 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 18 : (8, 9), the weight is 3
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
+index is 21 : (8, 9), the weight is 3
 vertex2union is as followed 
 1 8
 8 9
 9 9
 MST is as followed
-18 29 
+12 21 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [3, 8], 
-4 [4, 8], 
-8 [4, 9], [4, 4], [3, 1], 
-9 [4, 8], 
-k_max is : 4
+4 [3, 9], [3, 8], 
+8 [3, 4], [3, 1], 
+9 [3, 4], 
+k_max is : 3
 Gx is as followed
 4 G
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
+index is 17 : (4, 9), the weight is 3
+index is 19 : (4, 8), the weight is 3
+index is 21 : (8, 9), the weight is 3
 vertex2union is as followed 
-1 9
-4 8
-8 9
-9 9
+1 8
+4 9
+8 8
+9 8
 MST is as followed
-18 20 29 
+12 17 19 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -2025,88 +1889,90 @@ MST is as followed
 Block_id is 8
 Neighbors have : 
 1 [3, 6], [3, 5], 
-4 [4, 9], [3, 10], 
-5 [3, 1], 
-6 [4, 9], [3, 1], 
-9 [4, 6], [4, 4], 
+4 [3, 10], [3, 6], 
+5 [3, 9], [3, 1], 
+6 [3, 4], [3, 1], 
+9 [3, 5], 
 10 [3, 4], 
-k_max is : 4
+k_max is : 3
 Gx is as followed
 7 G
-index is 8 : (1, 5), the weight is 3
-index is 9 : (1, 6), the weight is 3
-index is 15 : (5, 9), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 3
+index is 6 : (1, 6), the weight is 3
+index is 9 : (5, 9), the weight is 3
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 3
+index is 17 : (4, 9), the weight is 3
+index is 18 : (6, 9), the weight is 3
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 9 22 23 27 
+5 6 9 14 16 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], 
+4 [3, 8], [3, 6], 
 5 [3, 8], 
-6 [4, 8], 
-8 [4, 6], [4, 4], [3, 5], 
-k_max is : 4
+6 [3, 4], 
+8 [3, 5], [3, 4], 
+k_max is : 3
 Gx is as followed
 4 G
-index is 14 : (5, 8), the weight is 3
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 3
+index is 16 : (4, 6), the weight is 3
+index is 19 : (4, 8), the weight is 3
+index is 20 : (6, 8), the weight is 3
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-14 19 20 
+8 16 19 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 4 and 5 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
+5 8 is 4
 5 9 is 4
+4 9 is 4
 4 5 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
@@ -2117,36 +1983,95 @@ here here
 7hhh
 4 Real_Vertexs[u]->k_max
 here here 
+5 8 hhh
+here here 
 5 9 hhh
 here here 
-8 9 hhh
-here here 
-6 8 hhh
-here here 
-10 11 hhh
+6 9 hhh
 here here 
 8 10 hhh
+here here 
+10 11 hhh
 here here 
 4hhh
 4 Real_Vertexs[u]->k_max
 here here 
 4 9 hhh
 here here 
-8 9 hhh
+4 8 hhh
 here here 
 1 8 hhh
-(4, 9) 4, (6, 9) 4, (1, 6) 3, (1, 5) 3, 
-(4, 8) 4, (5, 8) 3, 
+(4, 6) 3, (1, 6) 3, (1, 5) 3, 
+(4, 8) 3, (5, 8) 3, 
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
-x is 5 y is 9 z is 4
-y_z_weight is 4 y_z_index is 23
+x is 5 y is 8 z is 4
+y_z_weight is 4 y_z_index is 19
 ------------------Here is the triangle update----------------------
-x is 9 y is 5 z is 4
+x is 8 y is 5 z is 4
+y_z_weight is 4 y_z_index is 22
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 8
+y_z_weight is 4 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 5 y is 8 z is 9
+y_z_weight is 4 y_z_index is 21
+(4, 8) 4, (4, 9) 4, 
+------------------Here is the triangle update----------------------
+x is 8 y is 5 z is 9
+y_z_weight is 4 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 5 z is 8
+y_z_weight is 4 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 5 y is 9 z is 4
 y_z_weight is 4 y_z_index is 17
 ------------------Here is the triangle update----------------------
+x is 9 y is 5 z is 4
+y_z_weight is 4 y_z_index is 22
+------------------Here is the triangle update----------------------
 x is 4 y is 5 z is 9
-y_z_weight is 4 y_z_index is 15
+y_z_weight is 4 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 5 y is 9 z is 8
+y_z_weight is 4 y_z_index is 21
+(4, 9) 4, (4, 8) 4, 
+------------------Here is the triangle update----------------------
+x is 9 y is 5 z is 8
+y_z_weight is 4 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 8 y is 5 z is 9
+y_z_weight is 4 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 5
+y_z_weight is 4 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 5
+y_z_weight is 4 y_z_index is 22
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 9
+y_z_weight is 4 y_z_index is 17
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 6
+y_z_weight is 4 y_z_index is 18
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 6
+y_z_weight is 4 y_z_index is 16
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 9
+y_z_weight is 4 y_z_index is 17
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 8
+y_z_weight is 4 y_z_index is 21
+(5, 9) 4, (5, 8) 4, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 8
+y_z_weight is 4 y_z_index is 19
+(4, 5) 4, (5, 8) 4, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 9
+y_z_weight is 4 y_z_index is 17
+(4, 5) 4, (5, 9) 4, 
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -2170,14 +2095,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 14 : (5, 8), the weight is 3
-index is 19 : (6, 8), the weight is 3
+index is 8 : (5, 8), the weight is 3
+index is 20 : (6, 8), the weight is 3
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 19 
+8 20 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -2203,75 +2128,75 @@ MST is as followed
 Block_id is 4
 Neighbors have : 
 0 
-5 [4, 9], 
-6 [4, 8], 
+5 [4, 9], [4, 8], 
+6 [4, 9], 
 7 
-8 [4, 9], [4, 6], [3, 10], 
-9 [4, 8], [4, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+8 [4, 5], [3, 10], 
+9 [4, 6], [4, 5], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 4
 Gx is as followed
 7 G
-index is 14 : (5, 8), the weight is 3
-index is 15 : (5, 9), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 4
+index is 20 : (6, 8), the weight is 3
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
-5 9
+5 8
 6 9
 7 7
 8 9
-9 11
+9 10
 10 11
 11 11
 MST is as followed
-15 18 19 21 25 
+8 9 10 11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
 1 [3, 8], 
-4 [4, 9], 
-8 [3, 9], [3, 1], 
-9 [4, 4], [3, 8], 
+4 [4, 9], [4, 8], 
+8 [4, 4], [3, 1], 
+9 [4, 4], 
 k_max is : 4
 Gx is as followed
 4 G
-index is 18 : (8, 9), the weight is 3
-index is 20 : (4, 8), the weight is 3
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
-1 9
+1 8
 4 9
-8 9
-9 9
+8 8
+9 8
 MST is as followed
-18 23 29 
+12 17 19 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [3, 8], 
-4 [4, 8], 
-8 [4, 9], [4, 4], [3, 1], 
-9 [4, 8], 
-k_max is : 4
+4 [4, 9], [3, 9], [3, 8], 
+8 [3, 4], [3, 1], 
+9 [4, 4], [3, 4], 
+k_max is : 3
 Gx is as followed
 4 G
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 3
+index is 12 : (1, 8), the weight is 3
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 3
+index is 21 : (8, 9), the weight is 3
 vertex2union is as followed 
-1 9
-4 8
-8 9
-9 9
+1 8
+4 9
+8 8
+9 8
 MST is as followed
-18 20 29 
+12 17 19 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -2288,84 +2213,84 @@ MST is as followed
 Block_id is 8
 Neighbors have : 
 1 [3, 6], [3, 5], 
-4 [4, 9], [3, 10], 
-5 [3, 1], 
-6 [4, 9], [3, 1], 
-9 [4, 6], [4, 4], 
+4 [4, 5], [3, 10], 
+5 [4, 9], [4, 4], [3, 9], [3, 1], 
+6 [3, 1], 
+9 [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 8 : (1, 5), the weight is 3
-index is 9 : (1, 6), the weight is 3
-index is 15 : (5, 9), the weight is 3
-index is 17 : (4, 5), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 3
+index is 6 : (1, 6), the weight is 3
+index is 9 : (5, 9), the weight is 4
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 3
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 3
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 9 22 23 27 
+5 6 9 14 22 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], [4, 5], 
-5 [4, 4], 
-6 [4, 8], 
-8 [4, 6], [4, 4], 
+4 [4, 6], [4, 5], [3, 6], 
+5 [4, 8], [4, 4], [3, 8], 
+6 [4, 4], [3, 4], 
+8 [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 5 G
-index is 14 : (5, 8), the weight is 3
-index is 17 : (4, 5), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 3
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-17 19 20 
+8 16 22 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 5 and 6 -----------------
 k1 is 4 k2 is 4
 --------------next is edge expansion--------------
@@ -2373,8 +2298,7 @@ k1 is 4 k2 is 4
 --------------next is edge update--------------
 1 5 is 4
 1 6 is 4
-5 8 is 4
-1 8 is 4
+6 8 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
@@ -2386,11 +2310,11 @@ here here
 here here 
 1 6 hhh
 here here 
-8 9 hhh
+1 8 hhh
 here here 
-6 8 hhh
+4 6 hhh
 here here 
-4 8 hhh
+4 9 hhh
 here here 
 8hhh
 4 Real_Vertexs[u]->k_max
@@ -2401,117 +2325,99 @@ here here
 here here 
 5 9 hhh
 here here 
-4 5 hhh
+4 9 hhh
 (5, 8) 3, (6, 8) 3, 
-(5, 9) 4, (8, 9) 4, (6, 8) 4, 
+(5, 9) 4, (6, 9) 4, 
 (1, 5) 3, (1, 6) 3, 
-(4, 5) 4, (4, 8) 4, (6, 8) 4, 
+(4, 5) 4, (4, 6) 4, 
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 6
-y_z_weight is 4 y_z_index is 16
+y_z_weight is 4 y_z_index is 23
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 6
-y_z_weight is 4 y_z_index is 9
+y_z_weight is 4 y_z_index is 6
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 5
-y_z_weight is 4 y_z_index is 8
+y_z_weight is 4 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 8
-y_z_weight is 4 y_z_index is 14
+y_z_weight is 4 y_z_index is 8
 (5, 6) 4, (6, 8) 3, 
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 8
-y_z_weight is 4 y_z_index is 29
-(1, 6) 4, (6, 8) 4, 
+y_z_weight is 4 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 5
-y_z_weight is 4 y_z_index is 8
+y_z_weight is 4 y_z_index is 5
 (1, 6) 3, (5, 6) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 6 z is 5
-y_z_weight is 4 y_z_index is 16
+y_z_weight is 4 y_z_index is 23
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 5
-y_z_weight is 4 y_z_index is 8
+y_z_weight is 4 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 6
-y_z_weight is 4 y_z_index is 9
+y_z_weight is 4 y_z_index is 6
 ------------------Here is the triangle update----------------------
 x is 1 y is 6 z is 8
-y_z_weight is 4 y_z_index is 19
+y_z_weight is 4 y_z_index is 20
 (5, 6) 4, (5, 8) 4, 
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 8
-y_z_weight is 4 y_z_index is 29
+y_z_weight is 4 y_z_index is 12
 (1, 5) 4, (5, 8) 4, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 6
-y_z_weight is 4 y_z_index is 9
+y_z_weight is 4 y_z_index is 6
 (1, 5) 4, (5, 6) 4, 
 ------------------Here is the triangle update----------------------
-x is 5 y is 8 z is 1
-y_z_weight is 4 y_z_index is 29
-(6, 8) 4, (1, 6) 4, 
+x is 6 y is 8 z is 1
+y_z_weight is 4 y_z_index is 12
+(5, 8) 4, (1, 5) 4, 
 ------------------Here is the triangle update----------------------
-x is 8 y is 5 z is 1
-y_z_weight is 4 y_z_index is 8
+x is 8 y is 6 z is 1
+y_z_weight is 4 y_z_index is 6
+(5, 6) 4, (1, 5) 4, 
 ------------------Here is the triangle update----------------------
-x is 1 y is 5 z is 8
-y_z_weight is 4 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 5 y is 8 z is 4
+x is 1 y is 6 z is 8
 y_z_weight is 4 y_z_index is 20
+(5, 6) 4, (5, 8) 4, 
 ------------------Here is the triangle update----------------------
-x is 8 y is 5 z is 4
-y_z_weight is 4 y_z_index is 17
-(5, 6) 4, (6, 9) 4, (4, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 8
-y_z_weight is 4 y_z_index is 14
-(5, 9) 4, (8, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 5 y is 8 z is 6
+x is 6 y is 8 z is 4
 y_z_weight is 4 y_z_index is 19
+(5, 8) 4, (5, 9) 4, (4, 9) 4, 
 ------------------Here is the triangle update----------------------
-x is 8 y is 5 z is 6
+x is 8 y is 6 z is 4
 y_z_weight is 4 y_z_index is 16
+(5, 6) 4, (4, 5) 4, 
 ------------------Here is the triangle update----------------------
-x is 6 y is 5 z is 8
-y_z_weight is 4 y_z_index is 14
+x is 4 y is 6 z is 8
+y_z_weight is 4 y_z_index is 20
+(6, 9) 4, (5, 9) 4, (5, 8) 4, 
 ------------------Here is the triangle update----------------------
-x is 5 y is 8 z is 9
-y_z_weight is 4 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 8 y is 5 z is 9
-y_z_weight is 4 y_z_index is 15
-(5, 6) 4, (6, 9) 4, 
-------------------Here is the triangle update----------------------
-x is 9 y is 5 z is 8
-y_z_weight is 4 y_z_index is 14
-(4, 5) 4, (4, 8) 4, 
-------------------Here is the triangle update----------------------
-x is 1 y is 8 z is 5
-y_z_weight is 4 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 8 y is 1 z is 5
+x is 6 y is 8 z is 5
 y_z_weight is 4 y_z_index is 8
 ------------------Here is the triangle update----------------------
-x is 5 y is 1 z is 8
-y_z_weight is 4 y_z_index is 29
-(1, 6) 4, (6, 8) 4, 
+x is 8 y is 6 z is 5
+y_z_weight is 4 y_z_index is 23
 ------------------Here is the triangle update----------------------
-x is 1 y is 8 z is 6
-y_z_weight is 4 y_z_index is 19
-(5, 8) 4, (5, 6) 4, 
+x is 5 y is 6 z is 8
+y_z_weight is 4 y_z_index is 20
+(1, 6) 4, (1, 8) 4, 
 ------------------Here is the triangle update----------------------
-x is 8 y is 1 z is 6
-y_z_weight is 4 y_z_index is 9
-(1, 5) 4, (5, 6) 4, 
+x is 6 y is 8 z is 9
+y_z_weight is 4 y_z_index is 21
+(5, 8) 4, (5, 9) 4, 
 ------------------Here is the triangle update----------------------
-x is 6 y is 1 z is 8
-y_z_weight is 4 y_z_index is 29
-(1, 5) 4, (5, 8) 4, 
+x is 8 y is 6 z is 9
+y_z_weight is 4 y_z_index is 18
+(5, 6) 4, (5, 9) 4, 
+------------------Here is the triangle update----------------------
+x is 9 y is 6 z is 8
+y_z_weight is 4 y_z_index is 20
+(4, 6) 4, (4, 5) 4, (5, 8) 4, 
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -2535,15 +2441,15 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 3 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 19 : (6, 8), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 16 
+8 23 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -2569,80 +2475,80 @@ MST is as followed
 Block_id is 4
 Neighbors have : 
 0 
-5 [4, 9], 
-6 [4, 8], 
+5 [4, 9], [4, 8], 
+6 [4, 9], 
 7 
-8 [4, 9], [4, 6], [3, 10], 
-9 [4, 8], [4, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+8 [4, 5], [3, 10], 
+9 [4, 6], [4, 5], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
-5 9
+5 8
 6 9
 7 7
 8 9
-9 11
+9 10
 10 11
 11 11
 MST is as followed
-15 18 19 21 25 
+8 9 10 11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [4, 6], 
-4 [4, 8], 
-6 [4, 8], [4, 1], 
-8 [4, 9], [4, 6], [4, 4], 
-9 [4, 8], 
+1 [4, 8], [4, 6], 
+4 [4, 9], [4, 6], 
+6 [4, 4], [4, 1], 
+8 [4, 1], 
+9 [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 9 : (1, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-9 18 19 20 
+6 12 16 17 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [4, 5], 
-4 [4, 5], 
-5 [4, 9], [4, 8], [4, 4], [4, 1], 
+4 [4, 9], 
+5 [4, 9], [4, 8], [4, 1], 
 8 [4, 5], 
-9 [4, 5], 
+9 [4, 5], [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 8 : (1, 5), the weight is 4
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 5 : (1, 5), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
 1 5
 4 9
@@ -2650,7 +2556,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-8 14 15 17 
+5 8 9 17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -2667,91 +2573,94 @@ MST is as followed
 Block_id is 8
 Neighbors have : 
 1 [4, 5], 
-4 [4, 9], [3, 10], 
-5 [4, 6], [4, 1], 
-6 [4, 9], [4, 5], 
-9 [4, 6], [4, 4], 
+4 [4, 5], [3, 10], 
+5 [4, 9], [4, 6], [4, 4], [4, 1], [3, 9], 
+6 [4, 5], 
+9 [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 4
 Gx is as followed
 9 G
-index is 8 : (1, 5), the weight is 4
-index is 9 : (1, 6), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 16 22 23 27 
+5 9 14 22 23 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], [4, 5], 
-5 [4, 4], 
-6 [4, 8], 
-8 [4, 6], [4, 4], 
+4 [4, 6], [4, 5], [3, 6], 
+5 [4, 8], [4, 4], [3, 8], 
+6 [4, 4], [3, 4], 
+8 [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-17 19 20 
+8 16 22 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 3 and 4 -----------------
-k1 is 3 k2 is 3
+k1 is 2 k2 is 3
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
+0 3 is 3
+0 4 is 3
+3 4 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -2767,14 +2676,32 @@ here here
 here here 
 5 9 hhh
 here here 
-5 6 hhh
-here here 
-10 11 hhh
+6 9 hhh
 here here 
 0 3 hhh
 here here 
 8 10 hhh
+here here 
+10 11 hhh
 --------------next is TCP update trussness  increase--------------
+------------------Here is the triangle update----------------------
+x is 0 y is 3 z is 4
+y_z_weight is 3 y_z_index is 24
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 3 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 3 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 3
+y_z_weight is 3 y_z_index is 24
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 3 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 3 y_z_index is 4
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -2785,12 +2712,12 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 13 : (3, 4), the weight is 3
+index is 24 : (3, 4), the weight is 3
 vertex2union is as followed 
 3 4
 4 4
 MST is as followed
-13 
+24 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
@@ -2801,15 +2728,15 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 3 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 19 : (6, 8), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 16 
+8 23 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -2840,83 +2767,83 @@ Block_id is 4
 Neighbors have : 
 0 [3, 3], 
 3 [3, 0], 
-5 [4, 9], [4, 8], [4, 6], 
-6 [4, 5], 
+5 [4, 9], [4, 8], 
+6 [4, 9], 
 7 
 8 [4, 5], [3, 10], 
-9 [4, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+9 [4, 6], [4, 5], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 4
 Gx is as followed
 9 G
 index is 3 : (0, 3), the weight is 3
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 0 3
 3 3
 5 8
-6 11
+6 9
 7 7
 8 9
-9 6
+9 10
 10 11
 11 11
 MST is as followed
-3 14 15 16 21 25 
+3 8 9 10 11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [4, 6], 
-4 [4, 8], 
-6 [4, 8], [4, 1], 
-8 [4, 9], [4, 6], [4, 4], 
-9 [4, 8], 
+1 [4, 8], [4, 6], 
+4 [4, 9], [4, 6], 
+6 [4, 4], [4, 1], 
+8 [4, 1], 
+9 [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 9 : (1, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-9 18 19 20 
+6 12 16 17 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [4, 5], 
-4 [4, 5], 
-5 [4, 9], [4, 8], [4, 4], [4, 1], 
+4 [4, 9], 
+5 [4, 9], [4, 8], [4, 1], 
 8 [4, 5], 
-9 [4, 5], 
+9 [4, 5], [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 8 : (1, 5), the weight is 4
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 5 : (1, 5), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
 1 5
 4 9
@@ -2924,7 +2851,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-8 14 15 17 
+5 8 9 17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -2941,95 +2868,95 @@ MST is as followed
 Block_id is 8
 Neighbors have : 
 1 [4, 5], 
-4 [4, 9], [3, 10], 
-5 [4, 6], [4, 1], 
-6 [4, 9], [4, 5], 
-9 [4, 6], [4, 4], 
+4 [4, 5], [3, 10], 
+5 [4, 9], [4, 6], [4, 4], [4, 1], [3, 9], 
+6 [4, 5], 
+9 [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 4
 Gx is as followed
 9 G
-index is 8 : (1, 5), the weight is 4
-index is 9 : (1, 6), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 16 22 23 27 
+5 9 14 22 23 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], [4, 5], 
-5 [4, 4], 
-6 [4, 8], 
-8 [4, 6], [4, 4], 
+4 [4, 6], [4, 5], [3, 6], 
+5 [4, 8], [4, 4], [3, 8], 
+6 [4, 4], [3, 4], 
+8 [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-17 19 20 
+8 16 22 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 2 and 4 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
 0 2 is 3
-2 4 is 3
 2 7 is 3
 4 7 is 3
+2 4 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -3047,9 +2974,7 @@ here here
 here here 
 5 9 hhh
 here here 
-5 6 hhh
-here here 
-10 11 hhh
+6 9 hhh
 here here 
 0 2 hhh
 here here 
@@ -3058,10 +2983,12 @@ here here
 2 7 hhh
 here here 
 8 10 hhh
+here here 
+10 11 hhh
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 4
-y_z_weight is 3 y_z_index is 11
+y_z_weight is 3 y_z_index is 25
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 4
 y_z_weight is 3 y_z_index is 4
@@ -3070,22 +2997,22 @@ x is 4 y is 0 z is 2
 y_z_weight is 3 y_z_index is 2
 ------------------Here is the triangle update----------------------
 x is 2 y is 7 z is 4
-y_z_weight is 3 y_z_index is 28
+y_z_weight is 3 y_z_index is 13
 ------------------Here is the triangle update----------------------
 x is 7 y is 2 z is 4
-y_z_weight is 3 y_z_index is 11
+y_z_weight is 3 y_z_index is 25
 ------------------Here is the triangle update----------------------
 x is 4 y is 2 z is 7
-y_z_weight is 3 y_z_index is 12
+y_z_weight is 3 y_z_index is 7
 ------------------Here is the triangle update----------------------
 x is 4 y is 7 z is 2
-y_z_weight is 3 y_z_index is 12
+y_z_weight is 3 y_z_index is 7
 ------------------Here is the triangle update----------------------
 x is 7 y is 4 z is 2
-y_z_weight is 3 y_z_index is 11
+y_z_weight is 3 y_z_index is 25
 ------------------Here is the triangle update----------------------
 x is 2 y is 4 z is 7
-y_z_weight is 3 y_z_index is 28
+y_z_weight is 3 y_z_index is 13
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -3096,14 +3023,14 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 2 G
-index is 11 : (2, 4), the weight is 3
-index is 13 : (3, 4), the weight is 3
+index is 24 : (3, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 3 4
 4 4
 MST is as followed
-11 13 
+24 25 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
@@ -3114,15 +3041,15 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 3 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 19 : (6, 8), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 16 
+8 23 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -3133,13 +3060,13 @@ k_max is : 3
 Gx is as followed
 2 G
 index is 4 : (0, 4), the weight is 3
-index is 28 : (4, 7), the weight is 3
+index is 13 : (4, 7), the weight is 3
 vertex2union is as followed 
 0 4
 4 7
 7 7
 MST is as followed
-4 28 
+4 13 
 ----------------------------------------
 Block_id is 3
 Neighbors have : 
@@ -3160,86 +3087,86 @@ Neighbors have :
 0 [3, 3], [3, 2], 
 2 [3, 7], [3, 0], 
 3 [3, 0], 
-5 [4, 9], [4, 8], [4, 6], 
-6 [4, 5], 
+5 [4, 9], [4, 8], 
+6 [4, 9], 
 7 [3, 2], 
 8 [4, 5], [3, 10], 
-9 [4, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+9 [4, 6], [4, 5], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 4
 Gx is as followed
 11 G
 index is 2 : (0, 2), the weight is 3
 index is 3 : (0, 3), the weight is 3
-index is 12 : (2, 7), the weight is 3
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 7 : (2, 7), the weight is 3
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 0 2
 2 3
 3 7
 5 8
-6 11
+6 9
 7 7
 8 9
-9 6
+9 10
 10 11
 11 11
 MST is as followed
-2 3 12 14 15 16 21 25 
+2 3 7 8 9 10 11 18 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [4, 6], 
-4 [4, 8], 
-6 [4, 8], [4, 1], 
-8 [4, 9], [4, 6], [4, 4], 
-9 [4, 8], 
+1 [4, 8], [4, 6], 
+4 [4, 9], [4, 6], 
+6 [4, 4], [4, 1], 
+8 [4, 1], 
+9 [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 9 : (1, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-9 18 19 20 
+6 12 16 17 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [4, 5], 
-4 [4, 5], 
-5 [4, 9], [4, 8], [4, 4], [4, 1], 
+4 [4, 9], 
+5 [4, 9], [4, 8], [4, 1], 
 8 [4, 5], 
-9 [4, 5], 
+9 [4, 5], [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 8 : (1, 5), the weight is 4
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 5 : (1, 5), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
 1 5
 4 9
@@ -3247,7 +3174,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-8 14 15 17 
+5 8 9 17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -3256,105 +3183,107 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 11 : (2, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 4 4
 MST is as followed
-11 
+25 
 ----------------------------------------
 Block_id is 8
 Neighbors have : 
 1 [4, 5], 
-4 [4, 9], [3, 10], 
-5 [4, 6], [4, 1], 
-6 [4, 9], [4, 5], 
-9 [4, 6], [4, 4], 
+4 [4, 5], [3, 10], 
+5 [4, 9], [4, 6], [4, 4], [4, 1], [3, 9], 
+6 [4, 5], 
+9 [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 4
 Gx is as followed
 9 G
-index is 8 : (1, 5), the weight is 4
-index is 9 : (1, 6), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 16 22 23 27 
+5 9 14 22 23 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], [4, 5], 
-5 [4, 4], 
-6 [4, 8], 
-8 [4, 6], [4, 4], 
+4 [4, 6], [4, 5], [3, 6], 
+5 [4, 8], [4, 4], [3, 8], 
+6 [4, 4], [3, 4], 
+8 [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-17 19 20 
+8 16 22 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 2 and 3 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
 0 2 is 4
-2 3 is 4
-2 4 is 4
+0 3 is 4
+0 4 is 4
 3 4 is 4
+2 4 is 4
+2 3 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
@@ -3381,7 +3310,7 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 3
-y_z_weight is 4 y_z_index is 10
+y_z_weight is 4 y_z_index is 26
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 3
 y_z_weight is 4 y_z_index is 3
@@ -3390,7 +3319,7 @@ x is 3 y is 0 z is 2
 y_z_weight is 4 y_z_index is 2
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 4
-y_z_weight is 4 y_z_index is 11
+y_z_weight is 4 y_z_index is 25
 (2, 3) 4, (3, 4) 3, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 4
@@ -3400,25 +3329,45 @@ x is 4 y is 0 z is 2
 y_z_weight is 4 y_z_index is 2
 (0, 3) 3, (2, 3) 4, 
 ------------------Here is the triangle update----------------------
-x is 2 y is 4 z is 0
-y_z_weight is 4 y_z_index is 4
+x is 0 y is 3 z is 2
+y_z_weight is 4 y_z_index is 26
 ------------------Here is the triangle update----------------------
-x is 4 y is 2 z is 0
+x is 3 y is 0 z is 2
 y_z_weight is 4 y_z_index is 2
 ------------------Here is the triangle update----------------------
-x is 0 y is 2 z is 4
-y_z_weight is 4 y_z_index is 11
+x is 2 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
 ------------------Here is the triangle update----------------------
-x is 2 y is 4 z is 3
-y_z_weight is 4 y_z_index is 13
-(0, 4) 4, (0, 3) 4, 
+x is 0 y is 3 z is 4
+y_z_weight is 4 y_z_index is 24
+(2, 3) 4, (2, 4) 4, 
 ------------------Here is the triangle update----------------------
-x is 4 y is 2 z is 3
-y_z_weight is 4 y_z_index is 10
+x is 3 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
 ------------------Here is the triangle update----------------------
-x is 3 y is 2 z is 4
-y_z_weight is 4 y_z_index is 11
-(0, 2) 4, (0, 4) 4, 
+x is 4 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
+(0, 2) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 2
+y_z_weight is 4 y_z_index is 25
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 2
+y_z_weight is 4 y_z_index is 2
+------------------Here is the triangle update----------------------
+x is 2 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 3
+y_z_weight is 4 y_z_index is 24
+(2, 4) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
+(0, 2) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
 ------------------Here is the triangle update----------------------
 x is 3 y is 4 z is 0
 y_z_weight is 4 y_z_index is 4
@@ -3428,19 +3377,39 @@ y_z_weight is 4 y_z_index is 3
 (2, 3) 4, (0, 2) 4, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 3 z is 4
-y_z_weight is 4 y_z_index is 13
+y_z_weight is 4 y_z_index is 24
 (2, 3) 4, (2, 4) 4, 
 ------------------Here is the triangle update----------------------
 x is 3 y is 4 z is 2
-y_z_weight is 4 y_z_index is 11
+y_z_weight is 4 y_z_index is 25
 (0, 4) 4, (0, 2) 4, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 3 z is 2
-y_z_weight is 4 y_z_index is 10
+y_z_weight is 4 y_z_index is 26
 ------------------Here is the triangle update----------------------
 x is 2 y is 3 z is 4
-y_z_weight is 4 y_z_index is 13
+y_z_weight is 4 y_z_index is 24
 (0, 3) 4, (0, 4) 4, 
+------------------Here is the triangle update----------------------
+x is 2 y is 4 z is 0
+y_z_weight is 4 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 4 y is 2 z is 0
+y_z_weight is 4 y_z_index is 2
+------------------Here is the triangle update----------------------
+x is 0 y is 2 z is 4
+y_z_weight is 4 y_z_index is 25
+------------------Here is the triangle update----------------------
+x is 2 y is 4 z is 3
+y_z_weight is 4 y_z_index is 24
+(0, 4) 4, (0, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 4 y is 2 z is 3
+y_z_weight is 4 y_z_index is 26
+------------------Here is the triangle update----------------------
+x is 3 y is 2 z is 4
+y_z_weight is 4 y_z_index is 25
+(0, 2) 4, (0, 4) 4, 
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -3451,15 +3420,15 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 3 G
-index is 10 : (2, 3), the weight is 4
-index is 11 : (2, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
+index is 24 : (3, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
+index is 26 : (2, 3), the weight is 4
 vertex2union is as followed 
 2 4
 3 4
 4 4
 MST is as followed
-10 11 
+25 26 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
@@ -3470,15 +3439,15 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 3 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 19 : (6, 8), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 5 8
 6 8
 8 8
 MST is as followed
-14 16 
+8 23 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -3491,15 +3460,15 @@ Gx is as followed
 4 G
 index is 3 : (0, 3), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
-index is 28 : (4, 7), the weight is 3
+index is 13 : (4, 7), the weight is 3
+index is 24 : (3, 4), the weight is 4
 vertex2union is as followed 
 0 3
 3 4
 4 7
 7 7
 MST is as followed
-3 4 28 
+3 4 13 
 ----------------------------------------
 Block_id is 3
 Neighbors have : 
@@ -3511,7 +3480,7 @@ Gx is as followed
 3 G
 index is 2 : (0, 2), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 11 : (2, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
 vertex2union is as followed 
 0 2
 2 4
@@ -3524,87 +3493,87 @@ Neighbors have :
 0 [4, 2], 
 2 [4, 3], [4, 0], [3, 7], 
 3 [4, 2], 
-5 [4, 9], [4, 8], [4, 6], 
-6 [4, 5], 
+5 [4, 9], [4, 8], 
+6 [4, 9], 
 7 [3, 2], 
 8 [4, 5], [3, 10], 
-9 [4, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+9 [4, 6], [4, 5], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 4
 Gx is as followed
 12 G
 index is 2 : (0, 2), the weight is 4
 index is 3 : (0, 3), the weight is 4
-index is 10 : (2, 3), the weight is 4
-index is 12 : (2, 7), the weight is 3
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 4
-index is 25 : (10, 11), the weight is 4
+index is 7 : (2, 7), the weight is 3
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 18 : (6, 9), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 23 : (5, 6), the weight is 4
+index is 26 : (2, 3), the weight is 4
 vertex2union is as followed 
 0 2
 2 3
 3 7
 5 8
-6 11
+6 9
 7 7
 8 9
-9 6
+9 10
 10 11
 11 11
 MST is as followed
-2 10 12 14 15 16 21 25 
+2 7 8 9 10 11 18 26 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [4, 6], 
-4 [4, 8], 
-6 [4, 8], [4, 1], 
-8 [4, 9], [4, 6], [4, 4], 
-9 [4, 8], 
+1 [4, 8], [4, 6], 
+4 [4, 9], [4, 6], 
+6 [4, 4], [4, 1], 
+8 [4, 1], 
+9 [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 9 : (1, 6), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-9 18 19 20 
+6 12 16 17 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
 1 [4, 5], 
-4 [4, 5], 
-5 [4, 9], [4, 8], [4, 4], [4, 1], 
+4 [4, 9], 
+5 [4, 9], [4, 8], [4, 1], 
 8 [4, 5], 
-9 [4, 5], 
+9 [4, 5], [4, 4], 
 k_max is : 4
 Gx is as followed
 8 G
-index is 8 : (1, 5), the weight is 4
-index is 14 : (5, 8), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 18 : (8, 9), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 29 : (1, 8), the weight is 4
+index is 5 : (1, 5), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 12 : (1, 8), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 21 : (8, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
 vertex2union is as followed 
 1 5
 4 9
@@ -3612,7 +3581,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-8 14 15 17 
+5 8 9 17 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -3621,115 +3590,115 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 11 : (2, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 4 4
 MST is as followed
-11 
+25 
 ----------------------------------------
 Block_id is 8
 Neighbors have : 
 1 [4, 5], 
-4 [4, 9], [3, 10], 
-5 [4, 6], [4, 1], 
-6 [4, 9], [4, 5], 
-9 [4, 6], [4, 4], 
+4 [4, 5], [3, 10], 
+5 [4, 9], [4, 6], [4, 4], [4, 1], [3, 9], 
+6 [4, 5], 
+9 [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 4
 Gx is as followed
 9 G
-index is 8 : (1, 5), the weight is 4
-index is 9 : (1, 6), the weight is 4
-index is 15 : (5, 9), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 22 : (6, 9), the weight is 4
-index is 23 : (4, 9), the weight is 4
-index is 24 : (4, 6), the weight is 4
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 4
+index is 6 : (1, 6), the weight is 4
+index is 9 : (5, 9), the weight is 4
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 4
+index is 17 : (4, 9), the weight is 4
+index is 18 : (6, 9), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-8 16 22 23 27 
+5 9 14 22 23 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [4, 8], [4, 5], 
-5 [4, 4], 
-6 [4, 8], 
-8 [4, 6], [4, 4], 
+4 [4, 6], [4, 5], [3, 6], 
+5 [4, 8], [4, 4], [3, 8], 
+6 [4, 4], [3, 4], 
+8 [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 4
-index is 16 : (5, 6), the weight is 4
-index is 17 : (4, 5), the weight is 4
-index is 19 : (6, 8), the weight is 4
-index is 20 : (4, 8), the weight is 4
-index is 24 : (4, 6), the weight is 4
+index is 8 : (5, 8), the weight is 4
+index is 16 : (4, 6), the weight is 4
+index is 19 : (4, 8), the weight is 4
+index is 20 : (6, 8), the weight is 4
+index is 22 : (4, 5), the weight is 4
+index is 23 : (5, 6), the weight is 4
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-17 19 20 
+8 16 22 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 1 and 4 -----------------
 k1 is 4 k2 is 5
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
-1 4 is 5
 1 5 is 5
 1 6 is 5
 5 8 is 5
 5 9 is 5
-5 6 is 5
-4 5 is 5
-8 9 is 5
-6 8 is 5
-4 8 is 5
-6 9 is 5
-4 9 is 5
-4 6 is 5
 1 8 is 5
+4 6 is 5
+4 9 is 5
+6 9 is 5
+4 8 is 5
+6 8 is 5
+8 9 is 5
+4 5 is 5
+5 6 is 5
+1 4 is 5
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
@@ -3745,9 +3714,9 @@ here here
 here here 
 5 8 hhh
 here here 
-5 6 hhh
+4 6 hhh
 here here 
-4 5 hhh
+4 8 hhh
 here here 
 0 4 hhh
 here here 
@@ -3766,20 +3735,20 @@ here here
 here here 
 0 3 hhh
 here here 
-10 11 hhh
-here here 
 0 1 hhh
 here here 
 2 7 hhh
 here here 
 8 10 hhh
-(1, 6) 4, (6, 8) 4, (4, 8) 4, 
+here here 
+10 11 hhh
+(1, 6) 4, (4, 6) 4, 
+(1, 5) 4, (5, 9) 4, (4, 9) 4, 
 (1, 5) 4, (4, 5) 4, 
-(1, 5) 4, (5, 6) 4, (6, 9) 4, (4, 9) 4, 
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 4
-y_z_weight is 3 y_z_index is 7
+y_z_weight is 3 y_z_index is 27
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 4
 y_z_weight is 3 y_z_index is 4
@@ -3788,494 +3757,492 @@ x is 4 y is 0 z is 1
 y_z_weight is 3 y_z_index is 1
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 4
-y_z_weight is 5 y_z_index is 17
+y_z_weight is 5 y_z_index is 22
+(5, 8) 5, (4, 8) 5, 
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 4
-y_z_weight is 5 y_z_index is 7
+y_z_weight is 5 y_z_index is 27
 ------------------Here is the triangle update----------------------
 x is 4 y is 1 z is 5
-y_z_weight is 5 y_z_index is 8
+y_z_weight is 5 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
+y_z_weight is 5 y_z_index is 23
+(5, 8) 5, (4, 8) 5, (4, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 6
-y_z_weight is 5 y_z_index is 9
-(1, 4) 5, (4, 8) 4, (6, 8) 4, 
+y_z_weight is 5 y_z_index is 6
+(1, 4) 5, (4, 6) 4, 
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 5
-y_z_weight is 5 y_z_index is 8
-(1, 4) 5, (4, 5) 4, 
+y_z_weight is 5 y_z_index is 5
+(1, 4) 5, (4, 9) 4, (5, 9) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
+y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 8
-y_z_weight is 5 y_z_index is 29
-(1, 6) 5, (6, 8) 4, 
+y_z_weight is 5 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 5
-y_z_weight is 5 y_z_index is 8
-(1, 4) 5, (4, 9) 4, (6, 9) 4, (5, 6) 4, 
+y_z_weight is 5 y_z_index is 5
+(1, 4) 5, (4, 5) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 6 z is 4
-y_z_weight is 5 y_z_index is 24
-(5, 6) 5, (4, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 1 z is 4
-y_z_weight is 5 y_z_index is 7
-------------------Here is the triangle update----------------------
-x is 4 y is 1 z is 6
-y_z_weight is 5 y_z_index is 9
-------------------Here is the triangle update----------------------
-x is 1 y is 6 z is 5
 y_z_weight is 5 y_z_index is 16
 ------------------Here is the triangle update----------------------
+x is 6 y is 1 z is 4
+y_z_weight is 5 y_z_index is 27
+------------------Here is the triangle update----------------------
+x is 4 y is 1 z is 6
+y_z_weight is 5 y_z_index is 6
+------------------Here is the triangle update----------------------
+x is 1 y is 6 z is 5
+y_z_weight is 5 y_z_index is 23
+(4, 6) 5, (4, 8) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 5
-y_z_weight is 5 y_z_index is 8
+y_z_weight is 5 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 6
-y_z_weight is 5 y_z_index is 9
+y_z_weight is 5 y_z_index is 6
 ------------------Here is the triangle update----------------------
 x is 1 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(5, 6) 5, (5, 8) 5, 
+y_z_weight is 5 y_z_index is 20
+(4, 6) 5, (4, 8) 5, 
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 8
-y_z_weight is 5 y_z_index is 29
+y_z_weight is 5 y_z_index is 12
 (1, 5) 5, (5, 8) 4, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 6
-y_z_weight is 5 y_z_index is 9
+y_z_weight is 5 y_z_index is 6
 (1, 5) 5, (5, 6) 4, 
 ------------------Here is the triangle update----------------------
 x is 5 y is 8 z is 1
-y_z_weight is 5 y_z_index is 29
+y_z_weight is 5 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 1
-y_z_weight is 5 y_z_index is 8
+y_z_weight is 5 y_z_index is 5
 ------------------Here is the triangle update----------------------
 x is 1 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
+y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 5 y is 8 z is 4
-y_z_weight is 5 y_z_index is 20
+y_z_weight is 5 y_z_index is 19
 (1, 8) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 4
-y_z_weight is 5 y_z_index is 17
+y_z_weight is 5 y_z_index is 22
 (1, 5) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
+y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 5 y is 8 z is 6
-y_z_weight is 5 y_z_index is 19
+y_z_weight is 5 y_z_index is 20
 (1, 8) 5, (1, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
+y_z_weight is 5 y_z_index is 23
 (1, 5) 5, (1, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 6 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
+y_z_weight is 5 y_z_index is 8
 (1, 5) 5, (1, 8) 5, 
 ------------------Here is the triangle update----------------------
 x is 5 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
+y_z_weight is 5 y_z_index is 21
+(1, 8) 5, (1, 4) 5, (4, 9) 4, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
-(1, 5) 5, (1, 6) 5, (6, 9) 4, 
+y_z_weight is 5 y_z_index is 9
 ------------------Here is the triangle update----------------------
 x is 9 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
-(4, 5) 4, (4, 8) 4, 
+y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 5 y is 9 z is 4
-y_z_weight is 5 y_z_index is 23
+y_z_weight is 5 y_z_index is 17
 (8, 9) 5, (1, 8) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 9 y is 5 z is 4
-y_z_weight is 5 y_z_index is 17
-(5, 8) 5, (4, 8) 4, 
+y_z_weight is 5 y_z_index is 22
 ------------------Here is the triangle update----------------------
 x is 4 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
+y_z_weight is 5 y_z_index is 9
 ------------------Here is the triangle update----------------------
 x is 5 y is 9 z is 6
-y_z_weight is 5 y_z_index is 22
+y_z_weight is 5 y_z_index is 18
 (8, 9) 5, (1, 8) 5, (1, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 9 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-(5, 8) 5, (6, 8) 4, 
+y_z_weight is 5 y_z_index is 23
+(4, 5) 5, (4, 6) 4, 
 ------------------Here is the triangle update----------------------
 x is 6 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
+y_z_weight is 5 y_z_index is 9
 ------------------Here is the triangle update----------------------
 x is 5 y is 9 z is 8
-y_z_weight is 5 y_z_index is 18
+y_z_weight is 5 y_z_index is 21
 ------------------Here is the triangle update----------------------
 x is 9 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
+y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
 x is 8 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 1
 y_z_weight is 5 y_z_index is 9
-------------------Here is the triangle update----------------------
-x is 6 y is 5 z is 1
-y_z_weight is 5 y_z_index is 8
-------------------Here is the triangle update----------------------
-x is 1 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 4
-y_z_weight is 5 y_z_index is 24
-(1, 6) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 5 z is 4
-y_z_weight is 5 y_z_index is 17
-(1, 5) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-(1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(1, 6) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
-(1, 5) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-(1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 8) 5, (8, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 9 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 1
-y_z_weight is 5 y_z_index is 8
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
-------------------Here is the triangle update----------------------
-x is 1 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 6
-y_z_weight is 5 y_z_index is 16
-(1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(1, 4) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-(1, 4) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 8
-y_z_weight is 5 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(1, 4) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-(1, 4) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 5 z is 9
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 8) 5, (8, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-------------------Here is the triangle update----------------------
-x is 8 y is 9 z is 4
-y_z_weight is 5 y_z_index is 23
-(5, 9) 5, (1, 5) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 8 z is 4
-y_z_weight is 5 y_z_index is 20
-(5, 8) 5, (4, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
-(5, 8) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 9 z is 5
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 9 y is 8 z is 5
-y_z_weight is 5 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 5 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
-------------------Here is the triangle update----------------------
-x is 8 y is 9 z is 6
-y_z_weight is 5 y_z_index is 22
-(5, 9) 5, (1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 8 z is 6
-y_z_weight is 5 y_z_index is 19
-(5, 8) 5, (5, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
-(1, 8) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 1
-y_z_weight is 5 y_z_index is 29
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 1
-y_z_weight is 5 y_z_index is 9
-------------------Here is the triangle update----------------------
-x is 1 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(5, 6) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 4
-y_z_weight is 5 y_z_index is 20
-(1, 8) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 4
-y_z_weight is 5 y_z_index is 24
-(1, 6) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(1, 6) 5, (1, 5) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 5
-y_z_weight is 5 y_z_index is 14
-(1, 8) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 5
-y_z_weight is 5 y_z_index is 16
-(1, 6) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(1, 6) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
-(1, 8) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(5, 6) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 1
-y_z_weight is 5 y_z_index is 29
-(5, 8) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
-------------------Here is the triangle update----------------------
-x is 1 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(4, 5) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 5
-y_z_weight is 5 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-(1, 4) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(1, 4) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 6
-y_z_weight is 5 y_z_index is 19
-(5, 8) 5, (1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(1, 4) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(1, 4) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 8 z is 9
-y_z_weight is 5 y_z_index is 18
-(5, 8) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(4, 5) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 9 z is 4
-y_z_weight is 5 y_z_index is 23
-(5, 9) 5, (1, 5) 5, (1, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 4
-y_z_weight is 5 y_z_index is 24
-(5, 6) 5, (4, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 9 z is 5
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 5
-y_z_weight is 5 y_z_index is 16
-------------------Here is the triangle update----------------------
-x is 5 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 8) 5, (8, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 9 z is 8
-y_z_weight is 5 y_z_index is 18
-(5, 9) 5, (1, 5) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(5, 6) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 5
-y_z_weight is 5 y_z_index is 15
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 8) 5, (8, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 6
-y_z_weight is 5 y_z_index is 22
-(5, 9) 5, (1, 5) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(4, 5) 5, (5, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 9 z is 8
-y_z_weight is 5 y_z_index is 18
-(5, 9) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(4, 5) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 1
-y_z_weight is 5 y_z_index is 9
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
-------------------Here is the triangle update----------------------
-x is 1 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(4, 5) 5, (5, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 5
-y_z_weight is 5 y_z_index is 16
-(1, 6) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 5
-y_z_weight is 5 y_z_index is 17
-(1, 4) 5, (1, 5) 5, 
-------------------Here is the triangle update----------------------
-x is 5 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(1, 4) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 8
-y_z_weight is 5 y_z_index is 19
-(1, 6) 5, (1, 5) 5, (5, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 8
-y_z_weight is 5 y_z_index is 20
-(1, 4) 5, (1, 8) 5, 
-------------------Here is the triangle update----------------------
-x is 8 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(1, 4) 5, (1, 6) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 6 z is 9
-y_z_weight is 5 y_z_index is 22
-(1, 6) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 6 y is 4 z is 9
-y_z_weight is 5 y_z_index is 23
-(1, 4) 5, (1, 5) 5, (5, 9) 5, 
-------------------Here is the triangle update----------------------
-x is 9 y is 4 z is 6
-y_z_weight is 5 y_z_index is 24
-(4, 5) 5, (5, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 8 z is 4
-y_z_weight is 5 y_z_index is 20
-(5, 8) 5, (4, 5) 5, 
+y_z_weight is 5 y_z_index is 19
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 4
-y_z_weight is 5 y_z_index is 7
+y_z_weight is 5 y_z_index is 27
 ------------------Here is the triangle update----------------------
 x is 4 y is 1 z is 8
-y_z_weight is 5 y_z_index is 29
+y_z_weight is 5 y_z_index is 12
 (1, 5) 5, (5, 8) 5, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 8 z is 5
-y_z_weight is 5 y_z_index is 14
-------------------Here is the triangle update----------------------
-x is 8 y is 1 z is 5
 y_z_weight is 5 y_z_index is 8
 ------------------Here is the triangle update----------------------
+x is 8 y is 1 z is 5
+y_z_weight is 5 y_z_index is 5
+------------------Here is the triangle update----------------------
 x is 5 y is 1 z is 8
-y_z_weight is 5 y_z_index is 29
+y_z_weight is 5 y_z_index is 12
 ------------------Here is the triangle update----------------------
 x is 1 y is 8 z is 6
-y_z_weight is 5 y_z_index is 19
-(5, 8) 5, (5, 6) 5, 
+y_z_weight is 5 y_z_index is 20
+(4, 8) 5, (4, 6) 5, 
 ------------------Here is the triangle update----------------------
 x is 8 y is 1 z is 6
-y_z_weight is 5 y_z_index is 9
+y_z_weight is 5 y_z_index is 6
 ------------------Here is the triangle update----------------------
 x is 6 y is 1 z is 8
-y_z_weight is 5 y_z_index is 29
+y_z_weight is 5 y_z_index is 12
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 1
+y_z_weight is 5 y_z_index is 6
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 1
+y_z_weight is 5 y_z_index is 27
+------------------Here is the triangle update----------------------
+x is 1 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 5
+y_z_weight is 5 y_z_index is 23
+(1, 6) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+(1, 4) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(1, 4) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(1, 6) 5, (1, 5) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(1, 4) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(1, 4) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(4, 5) 5, (5, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 5
+y_z_weight is 5 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 8) 5, (8, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 6
+y_z_weight is 5 y_z_index is 18
+(5, 9) 5, (1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(4, 5) 5, (5, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 9 z is 8
+y_z_weight is 5 y_z_index is 21
+(5, 9) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(4, 5) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 9 z is 4
+y_z_weight is 5 y_z_index is 17
+(5, 9) 5, (1, 5) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 6 z is 4
+y_z_weight is 5 y_z_index is 16
+(5, 6) 5, (4, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 9 z is 5
+y_z_weight is 5 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 6 z is 5
+y_z_weight is 5 y_z_index is 23
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 8) 5, (8, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 9 z is 8
+y_z_weight is 5 y_z_index is 21
+(5, 9) 5, (1, 5) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(5, 6) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 8 z is 1
+y_z_weight is 5 y_z_index is 12
+(5, 8) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 1
+y_z_weight is 5 y_z_index is 27
+------------------Here is the triangle update----------------------
+x is 1 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+------------------Here is the triangle update----------------------
+x is 4 y is 8 z is 5
+y_z_weight is 5 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+(1, 4) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(1, 4) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 8 z is 6
+y_z_weight is 5 y_z_index is 20
+(5, 8) 5, (1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(1, 4) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(1, 4) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 8 z is 9
+y_z_weight is 5 y_z_index is 21
+(5, 8) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(4, 5) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 8 z is 1
+y_z_weight is 5 y_z_index is 12
+------------------Here is the triangle update----------------------
+x is 8 y is 6 z is 1
+y_z_weight is 5 y_z_index is 6
+------------------Here is the triangle update----------------------
+x is 1 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(4, 6) 5, (4, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 8 z is 4
+y_z_weight is 5 y_z_index is 19
+(1, 8) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 6 z is 4
+y_z_weight is 5 y_z_index is 16
+(1, 6) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(1, 6) 5, (1, 5) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 8 z is 5
+y_z_weight is 5 y_z_index is 8
+(1, 8) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 6 z is 5
+y_z_weight is 5 y_z_index is 23
+(1, 6) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(1, 6) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 8 z is 9
+y_z_weight is 5 y_z_index is 21
+(1, 8) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(5, 6) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 9 z is 4
+y_z_weight is 5 y_z_index is 17
+(5, 9) 5, (1, 5) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 8 z is 4
+y_z_weight is 5 y_z_index is 19
+(5, 8) 5, (5, 6) 5, (4, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 8 z is 9
+y_z_weight is 5 y_z_index is 21
+(5, 8) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 9 z is 5
+y_z_weight is 5 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 8 z is 5
+y_z_weight is 5 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 5 y is 8 z is 9
+y_z_weight is 5 y_z_index is 21
+------------------Here is the triangle update----------------------
+x is 8 y is 9 z is 6
+y_z_weight is 5 y_z_index is 18
+(5, 9) 5, (1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 8 z is 6
+y_z_weight is 5 y_z_index is 20
+(5, 8) 5, (5, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 8 z is 9
+y_z_weight is 5 y_z_index is 21
+(1, 8) 5, (1, 5) 5, (5, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 1
+y_z_weight is 5 y_z_index is 5
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 1
+y_z_weight is 5 y_z_index is 27
+------------------Here is the triangle update----------------------
+x is 1 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+(4, 8) 5, (5, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 6
+y_z_weight is 5 y_z_index is 23
+(1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 6
+y_z_weight is 5 y_z_index is 16
+(1, 4) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+(1, 4) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 8
+y_z_weight is 5 y_z_index is 8
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 8
+y_z_weight is 5 y_z_index is 19
+(1, 4) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+(1, 4) 5, (1, 5) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 9
+y_z_weight is 5 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 5 y is 4 z is 9
+y_z_weight is 5 y_z_index is 17
+(1, 4) 5, (1, 8) 5, (8, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 9 y is 4 z is 5
+y_z_weight is 5 y_z_index is 22
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 1
+y_z_weight is 5 y_z_index is 6
+------------------Here is the triangle update----------------------
+x is 6 y is 5 z is 1
+y_z_weight is 5 y_z_index is 5
+------------------Here is the triangle update----------------------
+x is 1 y is 5 z is 6
+y_z_weight is 5 y_z_index is 23
+(5, 8) 5, (4, 8) 5, (4, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 4
+y_z_weight is 5 y_z_index is 16
+(1, 6) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 5 z is 4
+y_z_weight is 5 y_z_index is 22
+(1, 5) 5, (1, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 5 z is 6
+y_z_weight is 5 y_z_index is 23
+(1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 8
+y_z_weight is 5 y_z_index is 20
+(1, 6) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 5 z is 8
+y_z_weight is 5 y_z_index is 8
+(1, 5) 5, (1, 8) 5, 
+------------------Here is the triangle update----------------------
+x is 8 y is 5 z is 6
+y_z_weight is 5 y_z_index is 23
+(1, 5) 5, (1, 6) 5, 
+------------------Here is the triangle update----------------------
+x is 5 y is 6 z is 9
+y_z_weight is 5 y_z_index is 18
+(1, 6) 5, (1, 8) 5, (8, 9) 5, 
+------------------Here is the triangle update----------------------
+x is 6 y is 5 z is 9
+y_z_weight is 5 y_z_index is 9
+------------------Here is the triangle update----------------------
+x is 9 y is 5 z is 6
+y_z_weight is 5 y_z_index is 23
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -4286,43 +4253,43 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 4 G
-index is 7 : (1, 4), the weight is 3
-index is 10 : (2, 3), the weight is 4
-index is 11 : (2, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
+index is 24 : (3, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
+index is 26 : (2, 3), the weight is 4
+index is 27 : (1, 4), the weight is 3
 vertex2union is as followed 
 1 4
 2 4
 3 4
 4 4
 MST is as followed
-7 10 11 
+25 26 27 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
 0 [3, 4], 
-4 [5, 5], [3, 0], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 8], [5, 6], [3, 0], 
+5 [5, 8], 
+6 [5, 4], 
+8 [5, 5], [5, 4], 
 k_max is : 5
 Gx is as followed
 7 G
 index is 4 : (0, 4), the weight is 3
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
 vertex2union is as followed 
-0 6
+0 8
 4 6
 5 8
-6 6
-8 6
+6 8
+8 8
 MST is as followed
-4 14 16 17 
+4 8 16 19 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -4335,15 +4302,15 @@ Gx is as followed
 4 G
 index is 3 : (0, 3), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
-index is 28 : (4, 7), the weight is 3
+index is 13 : (4, 7), the weight is 3
+index is 24 : (3, 4), the weight is 4
 vertex2union is as followed 
 0 3
 3 4
 4 7
 7 7
 MST is as followed
-3 4 28 
+3 4 13 
 ----------------------------------------
 Block_id is 3
 Neighbors have : 
@@ -4355,7 +4322,7 @@ Gx is as followed
 3 G
 index is 2 : (0, 2), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 11 : (2, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
 vertex2union is as followed 
 0 2
 2 4
@@ -4374,27 +4341,27 @@ Neighbors have :
 7 [3, 2], 
 8 [5, 5], [3, 10], 
 9 [5, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 5
 Gx is as followed
 16 G
 index is 1 : (0, 1), the weight is 3
 index is 2 : (0, 2), the weight is 4
 index is 3 : (0, 3), the weight is 4
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 10 : (2, 3), the weight is 4
-index is 12 : (2, 7), the weight is 3
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 5
-index is 25 : (10, 11), the weight is 4
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 7 : (2, 7), the weight is 3
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 12 : (1, 8), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 26 : (2, 3), the weight is 4
 vertex2union is as followed 
 0 2
 1 5
@@ -4402,41 +4369,41 @@ vertex2union is as followed
 3 9
 5 6
 6 8
-7 11
+7 10
 8 9
 9 7
 10 11
 11 11
 MST is as followed
-1 2 3 8 9 12 14 15 21 25 
+1 2 3 5 6 7 8 9 10 11 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [5, 8], [5, 6], [5, 4], 
+1 [5, 8], [5, 6], [5, 4], [4, 8], 
 4 [5, 1], 
 6 [5, 1], 
-8 [5, 9], [5, 1], [4, 9], 
-9 [5, 8], [4, 8], 
+8 [5, 9], [5, 1], [4, 1], 
+9 [5, 8], 
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-7 9 18 29 
+6 12 21 27 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -4448,15 +4415,15 @@ Neighbors have :
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
 4 9
@@ -4464,7 +4431,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-7 8 15 29 
+5 9 12 27 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -4473,97 +4440,97 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 11 : (2, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 4 4
 MST is as followed
-11 
+25 
 ----------------------------------------
 Block_id is 8
 Neighbors have : 
 1 [5, 6], [5, 5], [5, 4], 
 4 [5, 1], [3, 10], 
-5 [5, 9], [5, 1], 
+5 [5, 9], [5, 1], [4, 9], [3, 9], 
 6 [5, 1], 
-9 [5, 5], 
+9 [5, 5], [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 5
 Gx is as followed
 10 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-7 8 9 15 27 
+5 6 9 14 27 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [5, 5], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 5], [4, 5], [3, 6], 
+5 [5, 8], [5, 6], [5, 4], [4, 8], [4, 4], [3, 8], 
+6 [5, 5], [3, 4], 
+8 [5, 5], [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-14 16 17 
+8 22 23 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 1 and 3 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
@@ -4582,9 +4549,9 @@ here here
 here here 
 5 8 hhh
 here here 
-5 6 hhh
+4 6 hhh
 here here 
-4 5 hhh
+4 8 hhh
 here here 
 0 3 hhh
 here here 
@@ -4603,7 +4570,7 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 3
-y_z_weight is 4 y_z_index is 6
+y_z_weight is 4 y_z_index is 28
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 3
 y_z_weight is 4 y_z_index is 3
@@ -4612,7 +4579,7 @@ x is 3 y is 0 z is 1
 y_z_weight is 4 y_z_index is 1
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 4
-y_z_weight is 4 y_z_index is 7
+y_z_weight is 4 y_z_index is 27
 (1, 3) 4, (2, 3) 4, (2, 4) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 4
@@ -4631,48 +4598,48 @@ Neighbors have :
 k_max is : 4
 Gx is as followed
 5 G
-index is 6 : (1, 3), the weight is 4
-index is 7 : (1, 4), the weight is 4
-index is 10 : (2, 3), the weight is 4
-index is 11 : (2, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
+index is 24 : (3, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
+index is 26 : (2, 3), the weight is 4
+index is 27 : (1, 4), the weight is 4
+index is 28 : (1, 3), the weight is 4
 vertex2union is as followed 
 1 4
 2 4
 3 4
 4 4
 MST is as followed
-6 10 11 
+25 26 28 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
 0 [4, 4], [4, 3], 
 3 [4, 0], 
-4 [5, 5], [4, 0], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 8], [5, 6], [4, 0], 
+5 [5, 8], 
+6 [5, 4], 
+8 [5, 5], [5, 4], 
 k_max is : 5
 Gx is as followed
 9 G
 index is 3 : (0, 3), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 24 : (3, 4), the weight is 4
 vertex2union is as followed 
 0 3
-3 6
+3 8
 4 6
 5 8
-6 6
-8 6
+6 8
+8 8
 MST is as followed
-3 4 14 16 17 
+3 4 8 16 19 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -4685,15 +4652,15 @@ Gx is as followed
 4 G
 index is 3 : (0, 3), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 13 : (3, 4), the weight is 4
-index is 28 : (4, 7), the weight is 3
+index is 13 : (4, 7), the weight is 3
+index is 24 : (3, 4), the weight is 4
 vertex2union is as followed 
 0 3
 3 4
 4 7
 7 7
 MST is as followed
-3 4 28 
+3 4 13 
 ----------------------------------------
 Block_id is 3
 Neighbors have : 
@@ -4707,8 +4674,8 @@ Gx is as followed
 index is 1 : (0, 1), the weight is 4
 index is 2 : (0, 2), the weight is 4
 index is 4 : (0, 4), the weight is 4
-index is 7 : (1, 4), the weight is 4
-index is 11 : (2, 4), the weight is 4
+index is 25 : (2, 4), the weight is 4
+index is 27 : (1, 4), the weight is 4
 vertex2union is as followed 
 0 1
 1 2
@@ -4728,28 +4695,28 @@ Neighbors have :
 7 [3, 2], 
 8 [5, 5], [3, 10], 
 9 [5, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 5
 Gx is as followed
 17 G
 index is 1 : (0, 1), the weight is 4
 index is 2 : (0, 2), the weight is 4
 index is 3 : (0, 3), the weight is 4
-index is 6 : (1, 3), the weight is 4
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 10 : (2, 3), the weight is 4
-index is 12 : (2, 7), the weight is 3
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 5
-index is 25 : (10, 11), the weight is 4
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 7 : (2, 7), the weight is 3
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 12 : (1, 8), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 26 : (2, 3), the weight is 4
+index is 28 : (1, 3), the weight is 4
 vertex2union is as followed 
 0 2
 1 5
@@ -4757,41 +4724,41 @@ vertex2union is as followed
 3 9
 5 6
 6 8
-7 11
+7 10
 8 9
 9 7
 10 11
 11 11
 MST is as followed
-2 3 6 8 9 12 14 15 21 25 
+2 3 5 6 7 8 9 10 11 28 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [5, 8], [5, 6], [5, 4], 
+1 [5, 8], [5, 6], [5, 4], [4, 8], 
 4 [5, 1], 
 6 [5, 1], 
-8 [5, 9], [5, 1], [4, 9], 
-9 [5, 8], [4, 8], 
+8 [5, 9], [5, 1], [4, 1], 
+9 [5, 8], 
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-7 9 18 29 
+6 12 21 27 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -4803,15 +4770,15 @@ Neighbors have :
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
 4 9
@@ -4819,7 +4786,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-7 8 15 29 
+5 9 12 27 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -4828,97 +4795,97 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 11 : (2, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 4 4
 MST is as followed
-11 
+25 
 ----------------------------------------
 Block_id is 8
 Neighbors have : 
 1 [5, 6], [5, 5], [5, 4], 
 4 [5, 1], [3, 10], 
-5 [5, 9], [5, 1], 
+5 [5, 9], [5, 1], [4, 9], [3, 9], 
 6 [5, 1], 
-9 [5, 5], 
+9 [5, 5], [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 5
 Gx is as followed
 10 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-7 8 9 15 27 
+5 6 9 14 27 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [5, 5], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 5], [4, 5], [3, 6], 
+5 [5, 8], [5, 6], [5, 4], [4, 8], [4, 4], [3, 8], 
+6 [5, 5], [3, 4], 
+8 [5, 5], [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-14 16 17 
+8 22 23 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 ----------------------ADD LINK 1 and 2 -----------------
 k1 is 4 k2 is 5
 --------------next is edge expansion--------------
@@ -4928,11 +4895,11 @@ k1 is 4 k2 is 5
 0 2 is 5
 0 3 is 5
 0 4 is 5
-1 2 is 5
-1 3 is 5
-2 3 is 5
-2 4 is 5
 3 4 is 5
+2 4 is 5
+2 3 is 5
+1 3 is 5
+1 2 is 5
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
@@ -4953,9 +4920,9 @@ here here
 here here 
 5 8 hhh
 here here 
-5 6 hhh
+4 6 hhh
 here here 
-4 5 hhh
+4 8 hhh
 here here 
 7hhh
 5 Real_Vertexs[u]->k_max
@@ -4973,7 +4940,7 @@ here here
 --------------next is TCP update trussness  increase--------------
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 2
-y_z_weight is 5 y_z_index is 5
+y_z_weight is 5 y_z_index is 29
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 2
 y_z_weight is 5 y_z_index is 2
@@ -4982,7 +4949,7 @@ x is 2 y is 0 z is 1
 y_z_weight is 5 y_z_index is 1
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 3
-y_z_weight is 5 y_z_index is 6
+y_z_weight is 5 y_z_index is 28
 (1, 2) 5, (2, 3) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 3
@@ -4993,7 +4960,7 @@ y_z_weight is 5 y_z_index is 1
 (0, 2) 4, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 1 z is 4
-y_z_weight is 5 y_z_index is 7
+y_z_weight is 5 y_z_index is 27
 (1, 2) 5, (2, 4) 4, 
 ------------------Here is the triangle update----------------------
 x is 1 y is 0 z is 4
@@ -5004,7 +4971,7 @@ y_z_weight is 5 y_z_index is 1
 (0, 2) 4, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 1
-y_z_weight is 5 y_z_index is 5
+y_z_weight is 5 y_z_index is 29
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 1
 y_z_weight is 5 y_z_index is 1
@@ -5013,7 +4980,7 @@ x is 1 y is 0 z is 2
 y_z_weight is 5 y_z_index is 2
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 3
-y_z_weight is 5 y_z_index is 10
+y_z_weight is 5 y_z_index is 26
 (1, 2) 5, (1, 3) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 3
@@ -5024,7 +4991,7 @@ y_z_weight is 5 y_z_index is 2
 (0, 1) 5, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 4
-y_z_weight is 5 y_z_index is 11
+y_z_weight is 5 y_z_index is 25
 (1, 2) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 0 z is 4
@@ -5035,7 +5002,7 @@ y_z_weight is 5 y_z_index is 2
 (0, 1) 5, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 3 z is 1
-y_z_weight is 5 y_z_index is 6
+y_z_weight is 5 y_z_index is 28
 ------------------Here is the triangle update----------------------
 x is 3 y is 0 z is 1
 y_z_weight is 5 y_z_index is 1
@@ -5044,7 +5011,7 @@ x is 1 y is 0 z is 3
 y_z_weight is 5 y_z_index is 3
 ------------------Here is the triangle update----------------------
 x is 0 y is 3 z is 2
-y_z_weight is 5 y_z_index is 10
+y_z_weight is 5 y_z_index is 26
 (1, 3) 5, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 3 y is 0 z is 2
@@ -5055,7 +5022,7 @@ x is 2 y is 0 z is 3
 y_z_weight is 5 y_z_index is 3
 ------------------Here is the triangle update----------------------
 x is 0 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
+y_z_weight is 5 y_z_index is 24
 (1, 3) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 3 y is 0 z is 4
@@ -5065,7 +5032,7 @@ x is 4 y is 0 z is 3
 y_z_weight is 5 y_z_index is 3
 ------------------Here is the triangle update----------------------
 x is 0 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
+y_z_weight is 5 y_z_index is 27
 ------------------Here is the triangle update----------------------
 x is 4 y is 0 z is 1
 y_z_weight is 5 y_z_index is 1
@@ -5074,7 +5041,7 @@ x is 1 y is 0 z is 4
 y_z_weight is 5 y_z_index is 4
 ------------------Here is the triangle update----------------------
 x is 0 y is 4 z is 2
-y_z_weight is 5 y_z_index is 11
+y_z_weight is 5 y_z_index is 25
 (1, 4) 5, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 0 z is 2
@@ -5085,7 +5052,7 @@ x is 2 y is 0 z is 4
 y_z_weight is 5 y_z_index is 4
 ------------------Here is the triangle update----------------------
 x is 0 y is 4 z is 3
-y_z_weight is 5 y_z_index is 13
+y_z_weight is 5 y_z_index is 24
 (1, 4) 5, (1, 3) 5, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 0 z is 3
@@ -5094,71 +5061,39 @@ y_z_weight is 5 y_z_index is 3
 x is 3 y is 0 z is 4
 y_z_weight is 5 y_z_index is 4
 ------------------Here is the triangle update----------------------
-x is 1 y is 3 z is 0
+x is 3 y is 4 z is 0
+y_z_weight is 5 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 4 y is 3 z is 0
 y_z_weight is 5 y_z_index is 3
 ------------------Here is the triangle update----------------------
-x is 3 y is 1 z is 0
-y_z_weight is 5 y_z_index is 1
+x is 0 y is 3 z is 4
+y_z_weight is 5 y_z_index is 24
+(1, 3) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
-x is 0 y is 1 z is 3
-y_z_weight is 5 y_z_index is 6
+x is 3 y is 4 z is 1
+y_z_weight is 5 y_z_index is 27
+(0, 4) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
-x is 1 y is 3 z is 2
-y_z_weight is 5 y_z_index is 10
-(0, 3) 5, (0, 2) 5, 
-------------------Here is the triangle update----------------------
-x is 3 y is 1 z is 2
-y_z_weight is 5 y_z_index is 5
-------------------Here is the triangle update----------------------
-x is 2 y is 1 z is 3
-y_z_weight is 5 y_z_index is 6
-(0, 1) 5, (0, 3) 5, 
-------------------Here is the triangle update----------------------
-x is 1 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
-(0, 3) 5, (0, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 3 y is 1 z is 4
-y_z_weight is 5 y_z_index is 7
-(0, 1) 5, (0, 4) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 1 z is 3
-y_z_weight is 5 y_z_index is 6
-(0, 1) 5, (0, 3) 5, 
-------------------Here is the triangle update----------------------
-x is 2 y is 3 z is 0
-y_z_weight is 5 y_z_index is 3
-------------------Here is the triangle update----------------------
-x is 3 y is 2 z is 0
-y_z_weight is 5 y_z_index is 2
-(1, 2) 5, (0, 1) 5, 
-------------------Here is the triangle update----------------------
-x is 0 y is 2 z is 3
-y_z_weight is 5 y_z_index is 10
-(1, 2) 5, (1, 3) 5, 
-------------------Here is the triangle update----------------------
-x is 2 y is 3 z is 1
-y_z_weight is 5 y_z_index is 6
+x is 4 y is 3 z is 1
+y_z_weight is 5 y_z_index is 28
 (0, 3) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
-x is 3 y is 2 z is 1
-y_z_weight is 5 y_z_index is 5
-------------------Here is the triangle update----------------------
-x is 1 y is 2 z is 3
-y_z_weight is 5 y_z_index is 10
-(0, 2) 5, (0, 3) 5, 
-------------------Here is the triangle update----------------------
-x is 2 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
+x is 1 y is 3 z is 4
+y_z_weight is 5 y_z_index is 24
 (0, 3) 5, (0, 4) 5, 
 ------------------Here is the triangle update----------------------
-x is 3 y is 2 z is 4
-y_z_weight is 5 y_z_index is 11
-(1, 2) 5, (0, 1) 5, (0, 4) 5, 
+x is 3 y is 4 z is 2
+y_z_weight is 5 y_z_index is 25
+(0, 4) 5, (0, 1) 5, (1, 2) 5, 
 ------------------Here is the triangle update----------------------
-x is 4 y is 2 z is 3
-y_z_weight is 5 y_z_index is 10
-(1, 2) 5, (0, 1) 5, (0, 3) 5, 
+x is 4 y is 3 z is 2
+y_z_weight is 5 y_z_index is 26
+(0, 3) 5, (0, 1) 5, (1, 2) 5, 
+------------------Here is the triangle update----------------------
+x is 2 y is 3 z is 4
+y_z_weight is 5 y_z_index is 24
+(0, 3) 5, (0, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 4 z is 0
 y_z_weight is 5 y_z_index is 4
@@ -5168,65 +5103,97 @@ y_z_weight is 5 y_z_index is 2
 (1, 2) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
 x is 0 y is 2 z is 4
-y_z_weight is 5 y_z_index is 11
+y_z_weight is 5 y_z_index is 25
 (1, 2) 5, (1, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
+y_z_weight is 5 y_z_index is 27
 (0, 4) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 2 z is 1
-y_z_weight is 5 y_z_index is 5
+y_z_weight is 5 y_z_index is 29
 ------------------Here is the triangle update----------------------
 x is 1 y is 2 z is 4
-y_z_weight is 5 y_z_index is 11
+y_z_weight is 5 y_z_index is 25
 (0, 2) 5, (0, 4) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 4 z is 3
-y_z_weight is 5 y_z_index is 13
+y_z_weight is 5 y_z_index is 24
 (0, 4) 5, (0, 3) 5, 
 ------------------Here is the triangle update----------------------
 x is 4 y is 2 z is 3
-y_z_weight is 5 y_z_index is 10
+y_z_weight is 5 y_z_index is 26
 (1, 2) 5, (0, 1) 5, (0, 3) 5, 
 ------------------Here is the triangle update----------------------
 x is 3 y is 2 z is 4
-y_z_weight is 5 y_z_index is 11
+y_z_weight is 5 y_z_index is 25
 (1, 2) 5, (0, 1) 5, (0, 4) 5, 
 ------------------Here is the triangle update----------------------
-x is 3 y is 4 z is 0
-y_z_weight is 5 y_z_index is 4
-------------------Here is the triangle update----------------------
-x is 4 y is 3 z is 0
+x is 2 y is 3 z is 0
 y_z_weight is 5 y_z_index is 3
 ------------------Here is the triangle update----------------------
-x is 0 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
-(1, 3) 5, (1, 4) 5, 
+x is 3 y is 2 z is 0
+y_z_weight is 5 y_z_index is 2
+(1, 2) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
-x is 3 y is 4 z is 1
-y_z_weight is 5 y_z_index is 7
-(0, 4) 5, (0, 1) 5, 
+x is 0 y is 2 z is 3
+y_z_weight is 5 y_z_index is 26
+(1, 2) 5, (1, 3) 5, 
 ------------------Here is the triangle update----------------------
-x is 4 y is 3 z is 1
-y_z_weight is 5 y_z_index is 6
+x is 2 y is 3 z is 1
+y_z_weight is 5 y_z_index is 28
 (0, 3) 5, (0, 1) 5, 
 ------------------Here is the triangle update----------------------
-x is 1 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
-(0, 3) 5, (0, 4) 5, 
+x is 3 y is 2 z is 1
+y_z_weight is 5 y_z_index is 29
 ------------------Here is the triangle update----------------------
-x is 3 y is 4 z is 2
-y_z_weight is 5 y_z_index is 11
-(0, 4) 5, (0, 1) 5, (1, 2) 5, 
-------------------Here is the triangle update----------------------
-x is 4 y is 3 z is 2
-y_z_weight is 5 y_z_index is 10
-(0, 3) 5, (0, 1) 5, (1, 2) 5, 
+x is 1 y is 2 z is 3
+y_z_weight is 5 y_z_index is 26
+(0, 2) 5, (0, 3) 5, 
 ------------------Here is the triangle update----------------------
 x is 2 y is 3 z is 4
-y_z_weight is 5 y_z_index is 13
+y_z_weight is 5 y_z_index is 24
 (0, 3) 5, (0, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 3 y is 2 z is 4
+y_z_weight is 5 y_z_index is 25
+(1, 2) 5, (0, 1) 5, (0, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 2 z is 3
+y_z_weight is 5 y_z_index is 26
+(1, 2) 5, (0, 1) 5, (0, 3) 5, 
+------------------Here is the triangle update----------------------
+x is 1 y is 3 z is 0
+y_z_weight is 5 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 3 y is 1 z is 0
+y_z_weight is 5 y_z_index is 1
+------------------Here is the triangle update----------------------
+x is 0 y is 1 z is 3
+y_z_weight is 5 y_z_index is 28
+------------------Here is the triangle update----------------------
+x is 1 y is 3 z is 2
+y_z_weight is 5 y_z_index is 26
+(0, 3) 5, (0, 2) 5, 
+------------------Here is the triangle update----------------------
+x is 3 y is 1 z is 2
+y_z_weight is 5 y_z_index is 29
+------------------Here is the triangle update----------------------
+x is 2 y is 1 z is 3
+y_z_weight is 5 y_z_index is 28
+(0, 1) 5, (0, 3) 5, 
+------------------Here is the triangle update----------------------
+x is 1 y is 3 z is 4
+y_z_weight is 5 y_z_index is 24
+(0, 3) 5, (0, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 3 y is 1 z is 4
+y_z_weight is 5 y_z_index is 27
+(0, 1) 5, (0, 4) 5, 
+------------------Here is the triangle update----------------------
+x is 4 y is 1 z is 3
+y_z_weight is 5 y_z_index is 28
+(0, 1) 5, (0, 3) 5, 
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -5237,54 +5204,54 @@ Neighbors have :
 k_max is : 5
 Gx is as followed
 6 G
-index is 5 : (1, 2), the weight is 5
-index is 6 : (1, 3), the weight is 5
-index is 7 : (1, 4), the weight is 5
-index is 10 : (2, 3), the weight is 5
-index is 11 : (2, 4), the weight is 5
-index is 13 : (3, 4), the weight is 5
+index is 24 : (3, 4), the weight is 5
+index is 25 : (2, 4), the weight is 5
+index is 26 : (2, 3), the weight is 5
+index is 27 : (1, 4), the weight is 5
+index is 28 : (1, 3), the weight is 5
+index is 29 : (1, 2), the weight is 5
 vertex2union is as followed 
 1 4
 2 4
 3 4
 4 4
 MST is as followed
-5 6 7 
+27 28 29 
 ----------------------------------------
 Block_id is 1
 Neighbors have : 
 0 [5, 4], [5, 3], [5, 2], 
 2 [5, 0], 
 3 [5, 0], 
-4 [5, 5], [5, 0], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 8], [5, 6], [5, 0], 
+5 [5, 8], 
+6 [5, 4], 
+8 [5, 5], [5, 4], 
 k_max is : 5
 Gx is as followed
 12 G
 index is 2 : (0, 2), the weight is 5
 index is 3 : (0, 3), the weight is 5
 index is 4 : (0, 4), the weight is 5
-index is 10 : (2, 3), the weight is 5
-index is 11 : (2, 4), the weight is 5
-index is 13 : (3, 4), the weight is 5
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 24 : (3, 4), the weight is 5
+index is 25 : (2, 4), the weight is 5
+index is 26 : (2, 3), the weight is 5
 vertex2union is as followed 
 0 2
 2 3
 3 4
 4 6
 5 8
-6 6
-8 6
+6 8
+8 8
 MST is as followed
-2 3 4 14 16 17 
+2 3 4 8 16 19 
 ----------------------------------------
 Block_id is 2
 Neighbors have : 
@@ -5299,10 +5266,10 @@ Gx is as followed
 index is 1 : (0, 1), the weight is 5
 index is 3 : (0, 3), the weight is 5
 index is 4 : (0, 4), the weight is 5
-index is 6 : (1, 3), the weight is 5
-index is 7 : (1, 4), the weight is 5
-index is 13 : (3, 4), the weight is 5
-index is 28 : (4, 7), the weight is 3
+index is 13 : (4, 7), the weight is 3
+index is 24 : (3, 4), the weight is 5
+index is 27 : (1, 4), the weight is 5
+index is 28 : (1, 3), the weight is 5
 vertex2union is as followed 
 0 1
 1 3
@@ -5310,7 +5277,7 @@ vertex2union is as followed
 4 7
 7 7
 MST is as followed
-1 3 4 28 
+1 3 4 13 
 ----------------------------------------
 Block_id is 3
 Neighbors have : 
@@ -5324,16 +5291,16 @@ Gx is as followed
 index is 1 : (0, 1), the weight is 5
 index is 2 : (0, 2), the weight is 5
 index is 4 : (0, 4), the weight is 5
-index is 5 : (1, 2), the weight is 5
-index is 7 : (1, 4), the weight is 5
-index is 11 : (2, 4), the weight is 5
+index is 25 : (2, 4), the weight is 5
+index is 27 : (1, 4), the weight is 5
+index is 29 : (1, 2), the weight is 5
 vertex2union is as followed 
 0 1
 1 2
 2 4
 4 4
 MST is as followed
-1 4 5 
+1 4 29 
 ----------------------------------------
 Block_id is 4
 Neighbors have : 
@@ -5346,29 +5313,29 @@ Neighbors have :
 7 [3, 2], 
 8 [5, 5], [3, 10], 
 9 [5, 5], 
-10 [4, 11], [3, 8], 
-11 [4, 10], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
 k_max is : 5
 Gx is as followed
 18 G
 index is 1 : (0, 1), the weight is 5
 index is 2 : (0, 2), the weight is 5
 index is 3 : (0, 3), the weight is 5
-index is 5 : (1, 2), the weight is 5
-index is 6 : (1, 3), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 10 : (2, 3), the weight is 5
-index is 12 : (2, 7), the weight is 3
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 21 : (8, 10), the weight is 3
-index is 22 : (6, 9), the weight is 5
-index is 25 : (10, 11), the weight is 4
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 7 : (2, 7), the weight is 3
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 10 : (8, 10), the weight is 3
+index is 11 : (10, 11), the weight is 3
+index is 12 : (1, 8), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 26 : (2, 3), the weight is 5
+index is 28 : (1, 3), the weight is 5
+index is 29 : (1, 2), the weight is 5
 vertex2union is as followed 
 0 2
 1 5
@@ -5376,41 +5343,41 @@ vertex2union is as followed
 3 9
 5 6
 6 8
-7 11
+7 10
 8 9
 9 7
 10 11
 11 11
 MST is as followed
-1 3 5 8 9 12 14 15 21 25 
+1 3 5 6 7 8 9 10 11 29 
 ----------------------------------------
 Block_id is 5
 Neighbors have : 
-1 [5, 8], [5, 6], [5, 4], 
+1 [5, 8], [5, 6], [5, 4], [4, 8], 
 4 [5, 1], 
 6 [5, 1], 
-8 [5, 9], [5, 1], [4, 9], 
-9 [5, 8], [4, 8], 
+8 [5, 9], [5, 1], [4, 1], 
+9 [5, 8], 
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 6
-4 9
-6 9
+4 8
+6 8
 8 9
 9 9
 MST is as followed
-7 9 18 29 
+6 12 21 27 
 ----------------------------------------
 Block_id is 6
 Neighbors have : 
@@ -5422,15 +5389,15 @@ Neighbors have :
 k_max is : 5
 Gx is as followed
 9 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 14 : (5, 8), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 18 : (8, 9), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 29 : (1, 8), the weight is 5
+index is 5 : (1, 5), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 12 : (1, 8), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 21 : (8, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
 4 9
@@ -5438,7 +5405,7 @@ vertex2union is as followed
 8 9
 9 9
 MST is as followed
-7 8 15 29 
+5 9 12 27 
 ----------------------------------------
 Block_id is 7
 Neighbors have : 
@@ -5447,96 +5414,96 @@ Neighbors have :
 k_max is : 3
 Gx is as followed
 1 G
-index is 11 : (2, 4), the weight is 3
+index is 25 : (2, 4), the weight is 3
 vertex2union is as followed 
 2 4
 4 4
 MST is as followed
-11 
+25 
 ----------------------------------------
 Block_id is 8
 Neighbors have : 
 1 [5, 6], [5, 5], [5, 4], 
 4 [5, 1], [3, 10], 
-5 [5, 9], [5, 1], 
+5 [5, 9], [5, 1], [4, 9], [3, 9], 
 6 [5, 1], 
-9 [5, 5], 
+9 [5, 5], [4, 5], [3, 5], 
 10 [3, 4], 
 k_max is : 5
 Gx is as followed
 10 G
-index is 7 : (1, 4), the weight is 5
-index is 8 : (1, 5), the weight is 5
-index is 9 : (1, 6), the weight is 5
-index is 15 : (5, 9), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 22 : (6, 9), the weight is 5
-index is 23 : (4, 9), the weight is 5
-index is 24 : (4, 6), the weight is 5
-index is 27 : (4, 10), the weight is 3
+index is 5 : (1, 5), the weight is 5
+index is 6 : (1, 6), the weight is 5
+index is 9 : (5, 9), the weight is 5
+index is 14 : (4, 10), the weight is 3
+index is 16 : (4, 6), the weight is 5
+index is 17 : (4, 9), the weight is 5
+index is 18 : (6, 9), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
+index is 27 : (1, 4), the weight is 5
 vertex2union is as followed 
 1 5
-4 9
-5 9
+4 10
+5 6
 6 9
-9 10
-10 10
+9 9
+10 9
 MST is as followed
-7 8 9 15 27 
+5 6 9 14 27 
 ----------------------------------------
 Block_id is 9
 Neighbors have : 
-4 [5, 5], 
-5 [5, 8], [5, 6], [5, 4], 
-6 [5, 5], 
-8 [5, 5], 
+4 [5, 5], [4, 5], [3, 6], 
+5 [5, 8], [5, 6], [5, 4], [4, 8], [4, 4], [3, 8], 
+6 [5, 5], [3, 4], 
+8 [5, 5], [4, 5], [3, 5], 
 k_max is : 4
 Gx is as followed
 6 G
-index is 14 : (5, 8), the weight is 5
-index is 16 : (5, 6), the weight is 5
-index is 17 : (4, 5), the weight is 5
-index is 19 : (6, 8), the weight is 5
-index is 20 : (4, 8), the weight is 5
-index is 24 : (4, 6), the weight is 5
+index is 8 : (5, 8), the weight is 5
+index is 16 : (4, 6), the weight is 5
+index is 19 : (4, 8), the weight is 5
+index is 20 : (6, 8), the weight is 5
+index is 22 : (4, 5), the weight is 5
+index is 23 : (5, 6), the weight is 5
 vertex2union is as followed 
-4 8
+4 6
 5 8
 6 8
 8 8
 MST is as followed
-14 16 17 
+8 22 23 
 ----------------------------------------
 Block_id is 10
 Neighbors have : 
-4 [4, 11], [3, 11], [3, 8], 
+4 [3, 11], [3, 8], 
 8 [3, 4], 
-11 [4, 4], [3, 4], 
+11 [3, 4], 
 k_max is : 3
 Gx is as followed
 2 G
-index is 20 : (4, 8), the weight is 3
-index is 26 : (4, 11), the weight is 4
+index is 15 : (4, 11), the weight is 3
+index is 19 : (4, 8), the weight is 3
 vertex2union is as followed 
 4 11
 8 8
 11 8
 MST is as followed
-20 26 
+15 19 
 ----------------------------------------
 Block_id is 11
 Neighbors have : 
-4 [4, 10], [3, 10], 
-10 [4, 4], [3, 4], 
+4 [3, 10], 
+10 [3, 4], 
 k_max is : 3
 Gx is as followed
 1 G
-index is 27 : (4, 10), the weight is 4
+index is 14 : (4, 10), the weight is 3
 vertex2union is as followed 
 4 10
 10 10
 MST is as followed
-27 
+14 
 which vertex do you want to query: 
 Do you want to choose the k value ? 0 is yes, else is no 
