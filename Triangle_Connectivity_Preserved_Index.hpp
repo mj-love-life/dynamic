@@ -219,12 +219,134 @@ struct TCP_index {
         NBs[v].insert(make_pair(G_x[edge_index], u));
     }
 
+    void erase_NBs_dynamic(int v) {
+        cout << "unique id is " << unique_id << " erase is " << v << endl;
+        vertex2union.erase(v);
+        NBs.erase(v);
+        // k_max重置
+        k_max = 0;
+    }
+
     void insert_MST_dynamic(int u, int v, int edge_index) {
         MST.insert(edge_index);
         NBs[u].insert(make_pair(G_x[edge_index], v));
         NBs[v].insert(make_pair(G_x[edge_index], u));
     }
     
+    // 重新构建并查集
+    void re_compute_union_vertex() {
+        for(map<int, int>::iterator i = vertex2union.begin(); i != vertex2union.end(); i++) {
+            i->second = i->first;
+        }
+        for(set<int>::iterator i = MST.begin(); i != MST.end(); i++) {
+            vector<int> temp = Appear_Edge_id.right.find(*i)->second;
+            if(!query_in_one_union(temp[0], temp[1])) {
+                union_two_vertex(temp[0], temp[1]);
+            }
+        }
+    }
+
+    void re_compute_k_max() {
+        for(set<int>::iterator i = MST.begin(); i != MST.end(); i++) {
+            k_max = max(k_max, G_x[*i]);
+        }
+    }
+
+    int delete_update_MST_find_max_edge_fit_wxyz(int u, int v, int edge_index, int w_xyz, int w_xyz_old) {
+        if(MST.count(edge_index) == 0) {
+            // 更新 G_x中的权重数值
+            this->G_x[edge_index] = w_xyz;
+        }
+        else {
+            // k_max的更新，vertex_union的更新、MST、NBs
+            MST.erase(edge_index);
+            int temp_weight = G_x[edge_index];
+            NBs[u].erase(make_pair(temp_weight, v));
+            NBs[v].erase(make_pair(temp_weight, u));
+            this->G_x[edge_index] = w_xyz;
+            k_max = 0;
+            set<int> V2_wu = this->compute_Vk(u, w_xyz_old);
+            set<int> V2_wv = this->compute_Vk(v, w_xyz_old);
+            map<int, int> u_v_replace = map<int, int> ();
+            int max_index = 0;
+            for(set<int>::iterator u_re = V2_wu.begin(); u_re != V2_wu.end(); u_re++) {
+                for(set<int>::iterator v_re = V2_wv.begin(); v_re != V2_wv.end(); v_re++) {
+                    if (*u_re == *v_re) continue;
+                    int u_v_index = Appear_Edge_id.left.find(get_edge_help(*u_re, *v_re))->second;
+                    if (G_x.count(u_v_index) == 1 && G_x[u_v_index] == w_xyz_old) {
+                        u_v_replace[u_v_index] = G_x[u_v_index];
+                    }
+                }
+            }
+            if (u_v_replace.size() == 0) {
+                // 更新vertex_union
+                MST.insert(edge_index);
+                int temp_weight = G_x[edge_index];
+                NBs[u].insert(make_pair(temp_weight, v));
+                NBs[v].insert(make_pair(temp_weight, u));
+            }
+            else {
+                // 找到最大的值
+                max_index = u_v_replace.begin()->first;
+                MST.insert(max_index);
+                vector<int> temp = Appear_Edge_id.right.find(max_index)->second;
+                NBs[temp[0]].insert(make_pair(u_v_replace[max_index], temp[1]));
+                NBs[temp[1]].insert(make_pair(u_v_replace[max_index], temp[0]));
+            }
+            // 重新计算k_max值
+            re_compute_k_max();
+        }
+        // 如果是简单的删除边u_v，则需要更新vertex_union，使用MST对vertex_union进行更新就好了
+    }
+
+    // TODO
+    int delete_update_MST_find_max_edge(int u, int v, int edge_index, int compute_k_value=2) {
+        if(MST.count(edge_index) == 0) {
+            this->G_x.erase(edge_index);
+        }
+        else {
+            // k_max的更新，vertex_union的更新、MST、NBs
+            MST.erase(edge_index);
+            int temp_weight = G_x[edge_index];
+            NBs[u].erase(make_pair(temp_weight, v));
+            NBs[v].erase(make_pair(temp_weight, u));
+            G_x.erase(edge_index);
+            // ??
+            k_max = 0;
+            set<int> V2_wu = this->compute_Vk(u, compute_k_value);
+            set<int> V2_wv = this->compute_Vk(v, compute_k_value);
+            map<int, int> u_v_replace = map<int, int> ();
+            int max_index = 0;
+            for(set<int>::iterator u_re = V2_wu.begin(); u_re != V2_wu.end(); u_re++) {
+                for(set<int>::iterator v_re = V2_wv.begin(); v_re != V2_wv.end(); v_re++) {
+                    if (*u_re == *v_re) continue;
+                    int u_v_index = Appear_Edge_id.left.find(get_edge_help(*u_re, *v_re))->second;
+                    if (G_x.count(u_v_index) == 1) {
+                        u_v_replace[u_v_index] = G_x[u_v_index];
+                    }
+                }
+            }
+            if (u_v_replace.size() == 0) {
+                // 更新vertex_union
+                re_compute_union_vertex();
+            }
+            else {
+                // 找到最大的值
+                max_index = u_v_replace.begin()->first;
+                for(map<int, int>::iterator i = u_v_replace.begin(); i != u_v_replace.end(); i++) {
+                    if (i->second > u_v_replace[max_index]) max_index = i->first;
+                }
+                MST.insert(max_index);
+                vector<int> temp = Appear_Edge_id.right.find(max_index)->second;
+                NBs[temp[0]].insert(make_pair(u_v_replace[max_index], temp[1]));
+                NBs[temp[1]].insert(make_pair(u_v_replace[max_index], temp[0]));
+            }
+            // 重新计算k_max值
+            re_compute_k_max();
+        }
+        // 如果是简单的删除边u_v，则需要更新vertex_union，使用MST对vertex_union进行更新就好了
+    }
+
     // 协助下面的函数来对MST进行更新操作
     bool add_update_MST_find_unique_path_help(int u, int v, vector<int> & results, set<int> & finded) {
         if (u == v) return true;
@@ -249,7 +371,7 @@ struct TCP_index {
         return false;
     }
 
-    // TODO 参考compute来实现, 未测试
+    
     int add_update_MST_find_unique_path(int u, int v, int& min_edge_index) {
         vector<int> results = vector<int> ();
         set<int> finded = set<int> ();
@@ -295,7 +417,7 @@ struct TCP_index {
         G_x[edge_index] = new_weight;
     }
 
-    // TODO
+    
     void update_MST(int u, int v, int new_weight, int old_edge_index, int new_edge_index) {
         vector<int> delete_uv = Appear_Edge_id.right.find(old_edge_index)->second;
         int delete_u = delete_uv[0];
@@ -352,6 +474,7 @@ struct TCP_index {
         }
         cout << "k_max is : " << k_max << endl;
         cout << "Gx is as followed" << endl;
+        cout << G_x.size() << " G\n";
         for(map<int, int>::iterator i = G_x.begin(); i != G_x.end(); i++) {
             cout << "index is " << i->first << " : (" << Appear_Edge_id.right.find(i->first)->second[0] << ", " << Appear_Edge_id.right.find(i->first)->second[1] << "), the weight is " << i->second << endl;
         }
@@ -770,6 +893,7 @@ struct Real_Graph {
         change_edge_index.erase(edge_index);
         cout << "--------------next is TCP update trussness  increase--------------" << endl;
         index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
+        this->display();
     }
 
 
@@ -785,6 +909,9 @@ struct Real_Graph {
     // map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs;
     //第五个参数是交点
     void update_insertion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
+        // 防止G_x中不存在边
+        Real_Vertexs[u]->vertex2union[v] = v;
+
         set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
         // TODO 下面步骤的必要性
         set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
@@ -940,11 +1067,16 @@ struct Real_Graph {
         Real_Edges_Trussness.erase(edge_index);
         Used_Edges.erase(edge_index);
         // TODO 此处暂时直接从邻居节点中删除
-        Real_Vertexs[u]->NBs.erase(v);
-        Real_Vertexs[v]->NBs.erase(u);
+        
+        // 删除邻居节点以及更新vertex_union以及重置k_max
+        Real_Vertexs[u]->erase_NBs_dynamic(v);
+        Real_Vertexs[v]->erase_NBs_dynamic(u);
+        // G_x在后续进行更新比较适合
+        // Real_Vertexs[u]->NBs.erase(v);
+        // Real_Vertexs[v]->NBs.erase(u);
     }
 
-    // 目前的测试是没有问题的
+    // 目前的测试是没有问题的,TODO 有一点问题哦
     void update_with_edge_deletion(int u, int v) {
         clock_t startTime = clock();
         Real_Vertexs[u]->display();
@@ -1093,22 +1225,124 @@ struct Real_Graph {
                 cout << display_temp[0] << " " << display_temp[1] << " is " <<  k - 1 <<  endl;
             }
         }
-        Real_Vertexs[u]->display();
-        Real_Vertexs[v]->display();
         cout << "The update with edge deletion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
         // TODO 添加对边删除时的更新操作
+        update_TCP_index_with_edge_deletion(u, v, edge_index, old_edge_trussness, change_edge_index);
+        old_edge_trussness.erase(edge_index);
+        change_edge_index.erase(edge_index);
+        cout << "--------------next is TCP update trussness  decrease--------------" << endl;
+        index_update_with_trussness_decrease(old_edge_trussness, change_edge_index);
+        this->display();
     }
     
-        void update_erasetion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
-        set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
+    // 对删除的边的顶点进行操作
+    void update_erasetion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
+        // 注意对k_max的操作
+        set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
+        // TODO 下面步骤的必要性
+        set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
+        for(set<int>::iterator i = G_x_set.begin(); i != G_x_set.end(); i++) {
+            vector<int> edge = Appear_Edge_id.right.find(*i)->second;
+            int new_w = get_triangle_w(u, edge[0], edge[1]);
+            Real_Vertexs[u]->G_x[*i] = new_w;
+            Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, new_w);
+        }
+        // 删除G_x中与v相连的边
+        for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
+            Real_Vertexs[u]->G_x.erase(edge_index);
+        }
+        // 清空MST以及NBs
+        Real_Vertexs[u]->restart_MST_dynamic();
+        map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs = Real_Vertexs[u]->getNB();
+        vector<pair<int, int> > descending_G_x = Real_Vertexs[u]->get_descending_G_x();
+        int G_x_size = descending_G_x.size();
+        // cout << "here here \n";
+        // cout << G_x_size << "hhh" << endl;
+        int temp_index = 0;
+        if (descending_G_x.size() > 0) {
+            Real_Vertexs[u]->k_max = descending_G_x[0].second;
+            for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
+                for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
+                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
+                    if (! Real_Vertexs[u]->query_in_one_union(y, z)){
+                        // cout << "here here \n";
+                        // cout << y <<" " <<z << " hhh" << endl;
+                        Real_Vertexs[u]->union_two_vertex(y, z);
+                        Real_Vertexs[u]->insert_MST_static(descending_G_x[temp_index].first);
+                    }
+                }
+                // 如果边的数目等于点的数目-1，则可以终止程序
+                if(Real_Vertexs[u]->get_MST().size() == NBs.size() - 1) {
+                    break;
+                }
+            }
+        }
+        else {
+            Real_Vertexs[u]->k_max =0;
+        }
+        // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
+        Real_Vertexs[u]->display();
     }
 
-    void update_TCP_index_with_edge_insertion(int u, int v, int edge_index, map<int, int> old_edge_trussness, set<int> change_edge_index) {
-
+    void update_TCP_index_with_edge_deletion(int u, int v, int edge_index, map<int, int> old_edge_trussness, set<int> change_edge_index) {
+        set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
+        update_erasetion_vertex(u, v, old_edge_trussness, change_edge_index, inter_section);
+        update_erasetion_vertex(v, u, old_edge_trussness, change_edge_index, inter_section);
+        // 下面是更新交点的部分
+        cout << "---------------------next_is_neighbor_delete_update---------------------" << endl;
+        for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++) {
+            TCP_index * w_TCP = Real_Vertexs[*w];
+            // 因为边被删除了，所以不论是否MST是否包含都需要从Gx中删除该边
+            w_TCP->delete_update_MST_find_max_edge(u, v, edge_index, 2);
+            w_TCP->display();
+        }
     }
 
     void index_update_with_trussness_decrease(map<int, int> old_edge_trussness, set<int> change_edge_index) {
-
+        // 不是很确定是否包含删除的边构成的三角形
+        // 对于当前的三角形进行更新的时候，使用的trussness的值都是最新的值
+        for(map<int, int>::iterator i = old_edge_trussness.begin(); i != old_edge_trussness.end(); i++) {
+            int x_y_index = i->first;
+            int x_y_old_trussness = i->second;
+            vector<int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
+            int x = x_y_vec[0];
+            int y = x_y_vec[1];
+            int x_y_trussness = Real_Edges_Trussness[x_y_index];
+            set<int> inter_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
+            for(set<int>::iterator z = inter_section.begin(); z != inter_section.end(); z++) {
+                int x_z_index = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
+                int y_z_index = Appear_Edge_id.left.find(get_edge_help(y, *z))->second;
+                int x_z_old_trussness, y_z_old_trussness, x_z_trussness, y_z_trussness;
+                if (change_edge_index.count(x_z_index) == 0) {
+                    x_z_old_trussness = Real_Edges_Trussness[x_z_index];
+                    x_z_trussness = x_z_old_trussness;
+                }
+                else {
+                    x_z_old_trussness = old_edge_trussness[x_z_index];
+                    x_z_trussness = Real_Edges_Trussness[x_z_index];
+                }
+                if (change_edge_index.count(y_z_index) == 0) {
+                    y_z_old_trussness = Real_Edges_Trussness[y_z_index];
+                    y_z_trussness = y_z_old_trussness;
+                }
+                else {
+                    y_z_old_trussness = old_edge_trussness[y_z_index];
+                    y_z_trussness = Real_Edges_Trussness[y_z_index];
+                }
+                int w_xyz_old = min(x_y_old_trussness, min(y_z_old_trussness, x_z_old_trussness));
+                int w_xyz = min(x_y_trussness, min(y_z_trussness, x_z_trussness));
+                if (w_xyz == w_xyz_old) {
+                    // remain unchanged
+                }
+                else {
+                    Real_Vertexs[x]->delete_update_MST_find_max_edge_fit_wxyz(y, *z, y_z_index, w_xyz, w_xyz_old);
+                    Real_Vertexs[y]->delete_update_MST_find_max_edge_fit_wxyz(x, *z, x_z_index, w_xyz, w_xyz_old);
+                    Real_Vertexs[*z]->delete_update_MST_find_max_edge_fit_wxyz(y, x, x_y_index, w_xyz, w_xyz_old);
+                }
+            }
+        }
     }
 
     void display() {

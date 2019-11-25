@@ -111,18 +111,30 @@ int main() {
     k = 1;
     int u, v;
     while(cin >> u >> v) {
-        cout << "----------------------LINK " << u << " and " << v << " -----------------" << endl;
         if(u == 0 && v == 0) {
             break;
         }
+        cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
+        // int edge_index = Appear_Edge_id.size() + 1;
+        // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+        // graph.real_graph->update_with_edge_insertion(u, v);
+        graph.real_graph->update_with_edge_deletion(u, v);
+        // cout << "----------------------display the real_graph-----------------" << endl;
+        // graph.real_graph->display();
+    }
+    
+    while(cin >> u >> v) {
+        if(u == 0 && v == 0) {
+            break;
+        }
+        cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
         int edge_index = Appear_Edge_id.size() + 1;
         Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
         graph.real_graph->update_with_edge_insertion(u, v);
         // graph.real_graph->update_with_edge_deletion(u, v);
-        cout << "----------------------display the real_graph-----------------" << endl;
-        graph.real_graph->display();
+        // cout << "----------------------display the real_graph-----------------" << endl;
+        // graph.real_graph->display();
     }
-
     while(1){
         cout << "which vertex do you want to query: " << endl;
         // getchar();
