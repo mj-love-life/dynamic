@@ -109,6 +109,20 @@ int main() {
     string choice;
     v_q = 1;
     k = 1;
+    int u, v;
+    while(cin >> u >> v) {
+        cout << "----------------------LINK " << u << " and " << v << " -----------------" << endl;
+        if(u == 0 && v == 0) {
+            break;
+        }
+        int edge_index = Appear_Edge_id.size() + 1;
+        Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+        graph.real_graph->update_with_edge_insertion(u, v);
+        // graph.real_graph->update_with_edge_deletion(u, v);
+        cout << "----------------------display the real_graph-----------------" << endl;
+        graph.real_graph->display();
+    }
+
     while(1){
         cout << "which vertex do you want to query: " << endl;
         // getchar();
@@ -137,17 +151,14 @@ int main() {
             // graph.display_detail(graph.real_graph->query_processing(v_q));
         }
     }
-    int u, v;
-    while(cin >> u >> v) {
-        cout << "----------------------LINK " << u << " and " << v << " -----------------" << endl;
-        // int edge_index = Appear_Edge_id.size() + 1;
-        // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-        // graph.real_graph->update_with_edge_insertion(u, v);
-        graph.real_graph->update_with_edge_deletion(u, v);
-        if(u == 0 && v == 0) {
-                break;
-        }
-    }
+    // int min_edge_index = 0;
+    // int l1, l2, l3;
+    // while(cin >> l1 >> l2 >> l3) {
+    //     if (l1 == 0 && l2 == 0 && l3 == 0) break;
+    //     cout << "----------------------add_update_MST_find_unique_path-----------------" << endl;
+    //     cout << graph.real_graph->Real_Vertexs[l1]->add_update_MST_find_unique_path(l2, l3, min_edge_index) << endl;
+    //     cout << "min_edge_index is" << min_edge_index << endl;
+    // }
 
     return 0;
 }

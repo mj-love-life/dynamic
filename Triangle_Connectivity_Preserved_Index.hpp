@@ -226,55 +226,64 @@ struct TCP_index {
     }
     
     // 协助下面的函数来对MST进行更新操作
-    bool add_update_MST_find_unique_path_help(int u, int v, int& min_edge_index, int & min_index, vector<int> & results) {
-
+    bool add_update_MST_find_unique_path_help(int u, int v, vector<int> & results, set<int> & finded) {
+        if (u == v) return true;
+        finded.insert(u);
+        int tag = 0;
+        for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end(); i++) {
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->second, u))->second;
+            int x_temp = i->second;
+            if (finded.count(x_temp) == 0) {
+                results.push_back(edge_index);
+                bool temp = add_update_MST_find_unique_path_help(x_temp, v, results, finded);
+                if(temp == true) {
+                    tag = 1;
+                    break;
+                }
+                else {
+                    results.pop_back();
+                }
+            }
+        }
+        if (tag == 1) return true;
+        return false;
     }
 
     // TODO 参考compute来实现, 未测试
     int add_update_MST_find_unique_path(int u, int v, int& min_edge_index) {
-        vector<vector<int> > indexs;
-        vector<int> weight;
-        stack<int> index_temp = stack<int> ();
-        int tag = 0;
+        vector<int> results = vector<int> ();
+        set<int> finded = set<int> ();
+        finded.insert(u);
         for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end(); i++) {
-            index_temp.push(i->second);
-            if (i->second == v) {
-                indexs.push_back(get_edge_help(u, v));
-                weight.push_back(i->first);
-                tag = 1;
-                break;
-            }
-        }
-        int pre_p = u;
-        while(!tag) {
-            int p = index_temp.top();
-            index_temp.pop();
-            //indexs.push_back(u);
-            weight.push_back(G_x[p]);
-            indexs.push_back(get_edge_help(pre_p, p));
-            for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[p].begin(); i != NBs[p].end(); i++) {
-                if (i->second == v) {
-                    indexs.push_back(get_edge_help(p, v));
-                    weight.push_back(i->first);
-                    tag = 1;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->second, u))->second;
+            int x_temp = i->second;
+            if (finded.count(x_temp) == 0) {
+                results.push_back(edge_index);
+                bool temp = add_update_MST_find_unique_path_help(x_temp, v, results, finded);
+                if(temp == true) {
                     break;
                 }
-            }
-            if (tag == 0) {
-                indexs.pop_back();
-                weight.pop_back();
-                pre_p = p;
+                else {
+                    results.pop_back();
+                }
             }
         }
-        int min_index = 0;
-        if(weight.size() > 0) min_index = 0;
-        for(int i = 1; i < weight.size(); i++) {
-            if (weight[i] > weight[min_index] ) {
-                min_index = i;
-            }
+        for(int i = 0; i < results.size(); i++) {
+            vector<int> temp_vec = Appear_Edge_id.right.find(results[i])->second;
+            cout << "(" << temp_vec[0] << ", " << temp_vec[1] << ") " << G_x[results[i]] << ", ";
         }
-        min_edge_index = Appear_Edge_id.left.find(indexs[min_index])->second;
-        return weight[min_index];
+        cout << endl;
+        if (results.size() == 1) {
+            min_edge_index = results[0];
+            return G_x[min_edge_index];
+        }
+        else {
+            min_edge_index = results[0];
+            for(int i = 1; i < results.size(); i++) {
+                if ( G_x[min_edge_index] > G_x[results[i]]) min_edge_index = results[i];
+            }
+            return G_x[min_edge_index];
+        }
     }
 
     // TODO
@@ -296,7 +305,7 @@ struct TCP_index {
         NBs[u].insert(make_pair(new_weight, v));
         NBs[v].insert(make_pair(new_weight, u));
         MST.erase(old_edge_index);
-        MST.insert(old_edge_index);
+        MST.insert(new_edge_index);
     }
 
     set<int> get_MST() {
@@ -600,6 +609,9 @@ struct Real_Graph {
                 k2 = max(k2, i->first);
             }
         }
+        if(k_triangle_count.count(max_k) != 0 && k_triangle_count[max_k] >= max_k - 1) {
+                k2 = max(k2, max_k + 1);
+        }
         result = make_pair(k1, k2);
         return inter_section;
     }
@@ -608,8 +620,8 @@ struct Real_Graph {
     void update_with_edge_insertion(int u, int v) {
         clock_t startTime = clock();
         // TODO G.insert(e0)
-        Real_Vertexs[u]->display();
-        Real_Vertexs[v]->display();
+        // Real_Vertexs[u]->display();
+        // Real_Vertexs[v]->display();
         this->insert(get_edge_help(u, v));
         int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         pair<int, int> k1_k2 = pair<int, int> ();
@@ -749,11 +761,14 @@ struct Real_Graph {
         cout << "The update with edge insertion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
 
         //TODO 下面是更新TCP部分
+
+        cout << "--------------next is TCP update while insert--------------" << endl;
         update_TCP_index_with_edge_insertion(u, v, edge_index, old_edge_trussness, change_edge_index);
         //TODO 下面是因为Trussness increase带来的TCP索引的更新操作
         // 首先删除uv边，只保留原来存在的边
         old_edge_trussness.erase(edge_index);
         change_edge_index.erase(edge_index);
+        cout << "--------------next is TCP update trussness  increase--------------" << endl;
         index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
     }
 
@@ -783,17 +798,23 @@ struct Real_Graph {
         for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
             int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
             Real_Vertexs[u]->G_x[edge_index] = get_triangle_w(u, v, *i);
+            Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, Real_Vertexs[u]->G_x[edge_index]);
         }
         Real_Vertexs[u]->restart_MST_dynamic();
         map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs = Real_Vertexs[u]->getNB();
         vector<pair<int, int> > descending_G_x = Real_Vertexs[u]->get_descending_G_x();
         int G_x_size = descending_G_x.size();
+        cout << "here here \n";
+        cout << G_x_size << "hhh" << endl;
         int temp_index = 0;
+        cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
         for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
             for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
                 int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
                 int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
                 if (! Real_Vertexs[u]->query_in_one_union(y, z)){
+                    cout << "here here \n";
+                    cout << y <<" " <<z << " hhh" << endl;
                     Real_Vertexs[u]->union_two_vertex(y, z);
                     Real_Vertexs[u]->insert_MST_static(descending_G_x[temp_index].first);
                 }
@@ -803,7 +824,6 @@ struct Real_Graph {
                 break;
             }
         }
-        Real_Vertexs[u]->display();
     }
 
 
@@ -843,10 +863,17 @@ struct Real_Graph {
             }
         }
         // 先更新之后再说
+        // this->display();
     }
 
     void index_update_between_triangle(int x, int y, int z, int y_z_weight, int y_z_index) {
+        cout << "------------------Here is the triangle update----------------------" << endl;
+        cout << "x is " << x << " y is " << y << " z is " << z << endl;
+        cout << "y_z_weight is " << y_z_weight << " y_z_index is " << y_z_index << endl;
         TCP_index * x_TCP = Real_Vertexs[x];
+        // 更新G_x先，说明G_x中的值发生了变化
+        x_TCP->G_x[y_z_index] = y_z_weight;
+
         if (x_TCP->get_MST().count(y_z_index) == 0) {
             // find unique路径
             int min_edge_index = 0;
@@ -1072,7 +1099,17 @@ struct Real_Graph {
         // TODO 添加对边删除时的更新操作
     }
     
+        void update_erasetion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
+        set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
+    }
 
+    void update_TCP_index_with_edge_insertion(int u, int v, int edge_index, map<int, int> old_edge_trussness, set<int> change_edge_index) {
+
+    }
+
+    void index_update_with_trussness_decrease(map<int, int> old_edge_trussness, set<int> change_edge_index) {
+
+    }
 
     void display() {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
