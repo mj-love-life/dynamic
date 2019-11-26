@@ -1243,6 +1243,11 @@ struct Real_Graph {
     
     // 对删除的边的顶点进行操作
     void update_erasetion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
+        // 删除G_x中与v相连的边
+        for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
+            Real_Vertexs[u]->G_x.erase(edge_index);
+        }
         // 注意对k_max的操作
         set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
         // TODO 下面步骤的必要性
@@ -1252,11 +1257,6 @@ struct Real_Graph {
             int new_w = get_triangle_w(u, edge[0], edge[1]);
             Real_Vertexs[u]->G_x[*i] = new_w;
             Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, new_w);
-        }
-        // 删除G_x中与v相连的边
-        for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
-            Real_Vertexs[u]->G_x.erase(edge_index);
         }
         // 清空MST以及NBs
         Real_Vertexs[u]->restart_MST_dynamic();
