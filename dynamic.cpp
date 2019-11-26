@@ -100,7 +100,7 @@ int main() {
     cin >> file_name;
     deal_file(file_name);
 
-    graph.real_graph->tcp_index_construction();
+    // graph.real_graph->tcp_index_construction();
     cout << "global_k_max is : " <<  global_k_max << endl;
     graph.real_graph->display();
     //graph.real_graph->Real_Vertexs[5]->display();
@@ -108,33 +108,34 @@ int main() {
     string choice;
     v_q = 1;
     k = 1;
-    int u, v;
-    while(cin >> u >> v) {
-        if(u == 0 && v == 0) {
-            break;
-        }
-        cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
-        // int edge_index = Appear_Edge_id.size() + 1;
-        // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-        // graph.real_graph->update_with_edge_insertion(u, v);
-        graph.real_graph->update_with_edge_deletion(u, v);
-        // cout << "----------------------display the real_graph-----------------" << endl;
-        // graph.real_graph->display();
-    }
     
-    while(cin >> u >> v) {
-        if(u == 0 && v == 0) {
-            break;
-        }
-        cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
-        // 避免重复插入
-        int edge_index = Appear_Edge_id.size() + 1;
-        Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-        graph.real_graph->update_with_edge_insertion(u, v);
-        // graph.real_graph->update_with_edge_deletion(u, v);
-        // cout << "----------------------display the real_graph-----------------" << endl;
-        // graph.real_graph->display();
-    }
+    // int u, v;
+    // while(cin >> u >> v) {
+    //     if(u == 0 && v == 0) {
+    //         break;
+    //     }
+    //     cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
+    //     // int edge_index = Appear_Edge_id.size() + 1;
+    //     // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+    //     // graph.real_graph->update_with_edge_insertion(u, v);
+    //     graph.real_graph->update_with_edge_deletion(u, v);
+    //     // cout << "----------------------display the real_graph-----------------" << endl;
+    //     // graph.real_graph->display();
+    // }
+    
+    // while(cin >> u >> v) {
+    //     if(u == 0 && v == 0) {
+    //         break;
+    //     }
+    //     cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
+    //     // 避免重复插入
+    //     int edge_index = Appear_Edge_id.size() + 1;
+    //     Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+    //     graph.real_graph->update_with_edge_insertion(u, v);
+    //     // graph.real_graph->update_with_edge_deletion(u, v);
+    //     // cout << "----------------------display the real_graph-----------------" << endl;
+    //     // graph.real_graph->display();
+    // }
     while(1){
         cout << "which vertex do you want to query: " << endl;
         // getchar();

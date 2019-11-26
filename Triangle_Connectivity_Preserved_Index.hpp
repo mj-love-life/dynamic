@@ -220,7 +220,7 @@ struct TCP_index {
     }
 
     void erase_NBs_dynamic(int v) {
-        cout << "unique id is " << unique_id << " erase is " << v << endl;
+        // cout << "unique id is " << unique_id << " erase is " << v << endl;
         vertex2union.erase(v);
         NBs.erase(v);
         // k_max重置
@@ -396,11 +396,11 @@ struct TCP_index {
                 }
             }
         }
-        for(int i = 0; i < results.size(); i++) {
-            vector<int> temp_vec = Appear_Edge_id.right.find(results[i])->second;
-            cout << "(" << temp_vec[0] << ", " << temp_vec[1] << ") " << G_x[results[i]] << ", ";
-        }
-        cout << endl;
+        // for(int i = 0; i < results.size(); i++) {
+        //     vector<int> temp_vec = Appear_Edge_id.right.find(results[i])->second;
+        //     cout << "(" << temp_vec[0] << ", " << temp_vec[1] << ") " << G_x[results[i]] << ", ";
+        // }
+        // cout << endl;
         if (results.size() == 1) {
             min_edge_index = results[0];
             return G_x[min_edge_index];
@@ -519,24 +519,21 @@ struct Real_Graph {
             Used_edges_queue.push_back(edge_index);
             // TODO 此处可以引起动态更新的操作
             this->insert_vertex(edge[0], edge[1]);
-            this->insert_vertex(edge[1], edge[0]);
-            // TODO 判断边的数目是否超过边的数目控制，如果超过，则在此处引起边的删除操作
-            
+            this->insert_vertex(edge[1], edge[0]);            
         }
     }
 
     bool insert_dynamic(vector<int> edge) {
         int edge_index = Appear_Edge_id.left.find(edge)->second;
-        if (Used_edges_queue.size() > 10) {
-            int edge_index = Used_edges_queue[0];
-            Used_edges_queue.pop_front();
-            vector<int> edge_vertex = Appear_Edge_id.right.find(edge_index)->second;
-            update_with_edge_deletion(edge_vertex[0], edge_vertex[1]);
-        }
         if (Used_Edges.count(edge_index) == 0) {
+            // if (Used_edges_queue.size() > 10000) {
+            //     int edge_index = Used_edges_queue[0];
+            //     Used_edges_queue.pop_front();
+            //     vector<int> edge_vertex = Appear_Edge_id.right.find(edge_index)->second;
+            //     update_with_edge_deletion(edge_vertex[0], edge_vertex[1]);
+            // }
             Used_Edges.insert(edge_index);
             Used_edges_queue.push_back(edge_index);
-            // TODO 此处可以引起动态更新的操作
             int tag = 0;
             if (Real_Vertexs.count(edge[0]) == 0 || Real_Vertexs.count(edge[1]) == 0) {
                 tag = 1;
@@ -778,7 +775,7 @@ struct Real_Graph {
         // Real_Vertexs[v]->display();
         bool re = insert_dynamic(get_edge_help(u, v));
         if (re == false) {
-            this->display();
+            // this->display();
             return;
         }
         clock_t startTime = clock();
@@ -788,7 +785,7 @@ struct Real_Graph {
         set<int> inter_section = get_k1_k2(u, v, k1_k2);
         Real_Edges_Trussness[edge_index] = k1_k2.first;
         int k_max = k1_k2.second - 1;
-        cout << "k1 is " << k1_k2.first << " " << "k2 is " << k1_k2.second << endl;
+        // cout << "k1 is " << k1_k2.first << " " << "k2 is " << k1_k2.second << endl;
         map<int, set<int> > Lk = map<int, set<int> > ();
         int k;
         
@@ -819,7 +816,7 @@ struct Real_Graph {
                 Q.push(*i);
             }
             map<int, int> k_level_nums = map<int, int> ();
-            cout << "--------------next is edge expansion--------------" << endl;
+            // cout << "--------------next is edge expansion--------------" << endl;
             // edge expansion
             while(Q.size() > 0) {
                 int x_y_index = Q.top();
@@ -848,7 +845,7 @@ struct Real_Graph {
                     }
                 }
             }
-            cout << "--------------next is edge eviction--------------" << endl;
+            // cout << "--------------next is edge eviction--------------" << endl;
             // edge eviction
             // while 存在...比较难以解决
             // 使用vector<pair<int, int> > 进行解决，
@@ -907,29 +904,29 @@ struct Real_Graph {
                     break;
                 }
             }
-            cout << "--------------next is edge update--------------" << endl;
+            // cout << "--------------next is edge update--------------" << endl;
             // edge update
             for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
                 old_edge_trussness[*i] = k;
                 change_edge_index.insert(*i);
                 Real_Edges_Trussness[*i] = k + 1;
-                vector<int> display_temp = Appear_Edge_id.right.find(*i)->second;
-                cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
+                // vector<int> display_temp = Appear_Edge_id.right.find(*i)->second;
+                // cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
             }
         }
         cout << "The update with edge insertion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
 
         //TODO 下面是更新TCP部分
 
-        cout << "--------------next is TCP update while insert--------------" << endl;
+        // cout << "--------------next is TCP update while insert--------------" << endl;
         update_TCP_index_with_edge_insertion(u, v, edge_index, old_edge_trussness, change_edge_index);
         //TODO 下面是因为Trussness increase带来的TCP索引的更新操作
         // 首先删除uv边，只保留原来存在的边
         old_edge_trussness.erase(edge_index);
         change_edge_index.erase(edge_index);
-        cout << "--------------next is TCP update trussness  increase--------------" << endl;
+        // cout << "--------------next is TCP update trussness  increase--------------" << endl;
         index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
-        this->display();
+        // this->display();
     }
 
 
@@ -946,7 +943,7 @@ struct Real_Graph {
     //第五个参数是交点
     void update_insertion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
         // 防止G_x中不存在边
-        Real_Vertexs[u]->vertex2union[v] = v;
+        // Real_Vertexs[u]->vertex2union[v] = v;
 
         set<int> G_x_set = Real_Vertexs[u]->get_Gx_set();
         // TODO 下面步骤的必要性
@@ -967,17 +964,13 @@ struct Real_Graph {
         map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs = Real_Vertexs[u]->getNB();
         vector<pair<int, int> > descending_G_x = Real_Vertexs[u]->get_descending_G_x();
         int G_x_size = descending_G_x.size();
-        cout << "here here \n";
-        cout << G_x_size << "hhh" << endl;
         int temp_index = 0;
-        cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
+        // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
         for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
             for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
                 int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
                 int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
                 if (! Real_Vertexs[u]->query_in_one_union(y, z)){
-                    cout << "here here \n";
-                    cout << y <<" " <<z << " hhh" << endl;
                     Real_Vertexs[u]->union_two_vertex(y, z);
                     Real_Vertexs[u]->insert_MST_static(descending_G_x[temp_index].first);
                 }
@@ -1030,9 +1023,9 @@ struct Real_Graph {
     }
 
     void index_update_between_triangle(int x, int y, int z, int y_z_weight, int y_z_index) {
-        cout << "------------------Here is the triangle update----------------------" << endl;
-        cout << "x is " << x << " y is " << y << " z is " << z << endl;
-        cout << "y_z_weight is " << y_z_weight << " y_z_index is " << y_z_index << endl;
+        // cout << "------------------Here is the triangle update----------------------" << endl;
+        // cout << "x is " << x << " y is " << y << " z is " << z << endl;
+        // cout << "y_z_weight is " << y_z_weight << " y_z_index is " << y_z_index << endl;
         TCP_index * x_TCP = Real_Vertexs[x];
         // 更新G_x先，说明G_x中的值发生了变化
         if (x_TCP->get_MST().count(y_z_index) == 0) {
@@ -1115,8 +1108,8 @@ struct Real_Graph {
     // 目前的测试是没有问题的,TODO 有一点问题哦
     void update_with_edge_deletion(int u, int v) {
         clock_t startTime = clock();
-        Real_Vertexs[u]->display();
-        Real_Vertexs[v]->display();
+        // Real_Vertexs[u]->display();
+        // Real_Vertexs[v]->display();
         int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         int k_max = Real_Edges_Trussness[edge_index];
         this->delete_edge(u, v, edge_index);
@@ -1145,14 +1138,14 @@ struct Real_Graph {
 
         // 10 行
         for(k = k_max; k >= 2; k--) {
-            cout << "k value is " << k << endl;
+            // cout << "k value is " << k << endl;
             stack<int> Q = stack<int> ();
             // Q.push
             for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
                 Q.push(*i);
             }
             map<int, int> k_level_nums = map<int, int> ();
-            cout << "--------------next is edge expansion--------------" << endl;
+            // cout << "--------------next is edge expansion--------------" << endl;
             // edge expansion
             while(Q.size() > 0) {
                 int x_y_index = Q.top();
@@ -1181,11 +1174,11 @@ struct Real_Graph {
                     }
                 }
             }
-            for(map<int, int>::iterator kk = k_level_nums.begin(); kk != k_level_nums.end(); kk++) {
-                vector<int> x_y_temp = Appear_Edge_id.right.find(kk->first)->second;
-                cout << "(" << x_y_temp[0] << ", " << x_y_temp[1] << ")  "<< kk->second << " \n";
-            }
-            cout << "--------------next is edge eviction--------------" << endl;
+            // for(map<int, int>::iterator kk = k_level_nums.begin(); kk != k_level_nums.end(); kk++) {
+            //     vector<int> x_y_temp = Appear_Edge_id.right.find(kk->first)->second;
+            //     cout << "(" << x_y_temp[0] << ", " << x_y_temp[1] << ")  "<< kk->second << " \n";
+            // }
+            // cout << "--------------next is edge eviction--------------" << endl;
             // edge eviction
             // while 存在...比较难以解决
             // 使用vector<pair<int, int> > 进行解决，
@@ -1201,15 +1194,15 @@ struct Real_Graph {
             while(1) {
                 if (s_help.size() > 0 && s_help[0].second < k-2) {
                     int x_y_index = s_help[0].first;
-                    vector<int> x_y_temp = Appear_Edge_id.right.find(x_y_index)->second;
-                    cout << "(" << x_y_temp[0] << ", " << x_y_temp[1] << ") is deleted now! \n";
+                    // vector<int> x_y_temp = Appear_Edge_id.right.find(x_y_index)->second;
+                    // cout << "(" << x_y_temp[0] << ", " << x_y_temp[1] << ") is deleted now! \n";
                     Lk[k].erase(x_y_index);
 
                     old_edge_trussness[x_y_index] = k;
                     change_edge_index.insert(x_y_index);
                     Real_Edges_Trussness[x_y_index] = k - 1;
-                    vector<int> display_temp = Appear_Edge_id.right.find(x_y_index)->second;
-                    cout << display_temp[0] << " " << display_temp[1] << " is " <<  k - 1 <<  endl;
+                    // vector<int> display_temp = Appear_Edge_id.right.find(x_y_index)->second;
+                    // cout << display_temp[0] << " " << display_temp[1] << " is " <<  k - 1 <<  endl;
 
                     s_help.pop_front();
                     delete_num++;
@@ -1235,8 +1228,8 @@ struct Real_Graph {
                                     swap(s_help[swap_index+1], s_help[real_index]);
                                 }
                             }
-                            vector<int> x_z_temp = Appear_Edge_id.right.find(z_x_index)->second;
-                            cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
+                            // vector<int> x_z_temp = Appear_Edge_id.right.find(z_x_index)->second;
+                            // cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
                         }
                         if(Lk[k].count(z_y_index) != 0) {
                             int real_index = s_help2index[z_y_index] - delete_num;
@@ -1248,8 +1241,8 @@ struct Real_Graph {
                                     swap(s_help[swap_index+1], s_help[real_index]);
                                 }
                             }
-                            vector<int> x_z_temp = Appear_Edge_id.right.find(z_y_index)->second;
-                            cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
+                            // vector<int> x_z_temp = Appear_Edge_id.right.find(z_y_index)->second;
+                            // cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
                         }
 
                     }
@@ -1258,7 +1251,7 @@ struct Real_Graph {
                     break;
                 }
             }
-            cout << "--------------next is edge update--------------" << endl;
+            // cout << "--------------next is edge update--------------" << endl;
             // edge update
             // for(set<int>::iterator i = Lk[k].begin(); i != Lk[k].end(); i++) {
             //     old_edge_trussness[*i] = k;
@@ -1273,9 +1266,9 @@ struct Real_Graph {
         update_TCP_index_with_edge_deletion(u, v, edge_index, old_edge_trussness, change_edge_index);
         old_edge_trussness.erase(edge_index);
         change_edge_index.erase(edge_index);
-        cout << "--------------next is TCP update trussness  decrease--------------" << endl;
+        // cout << "--------------next is TCP update trussness  decrease--------------" << endl;
         index_update_with_trussness_decrease(old_edge_trussness, change_edge_index);
-        this->display();
+        // this->display();
     }
     
     // 对删除的边的顶点进行操作
@@ -1333,7 +1326,7 @@ struct Real_Graph {
             Real_Vertexs[u]->k_max =0;
         }
         // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
-        Real_Vertexs[u]->display();
+        // Real_Vertexs[u]->display();
     }
 
     void update_TCP_index_with_edge_deletion(int u, int v, int edge_index, map<int, int> old_edge_trussness, set<int> change_edge_index) {
@@ -1341,12 +1334,12 @@ struct Real_Graph {
         update_erasetion_vertex(u, v, old_edge_trussness, change_edge_index, inter_section);
         update_erasetion_vertex(v, u, old_edge_trussness, change_edge_index, inter_section);
         // 下面是更新交点的部分
-        cout << "---------------------next_is_neighbor_delete_update---------------------" << endl;
+        // cout << "---------------------next_is_neighbor_delete_update---------------------" << endl;
         for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++) {
             TCP_index * w_TCP = Real_Vertexs[*w];
             // 因为边被删除了，所以不论是否MST是否包含都需要从Gx中删除该边
             w_TCP->delete_update_MST_find_max_edge(u, v, edge_index, 2);
-            w_TCP->display();
+            // w_TCP->display();
         }
     }
 
@@ -1440,6 +1433,7 @@ struct Appear_Graph {
         }
         if(Weight[Appear_Edge_id.left.find(index)->second] >= edge_threshold) {
             real_graph->update_with_edge_insertion(a, b);
+            // real_graph->insert(index);
         }
         
     }
