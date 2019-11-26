@@ -1,3 +1,6271 @@
+which file do you want to deal with? 
+The Edge Weight Threshold you want to set is ? 
+The Time Threshold you want to set is ?
+The truss decomposition time is : 0s
+The TCP index construction time is : 0s
+global_k_max is : 5
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 [5, 4], [5, 3], [5, 2], 
+2 [5, 1], 
+3 [5, 1], 
+4 [5, 1], 
+k_max is : 5
+Gx is as followed
+6 G
+index is 5 : (1, 2), the weight is 5
+index is 6 : (1, 3), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 11 : (2, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+vertex2union is as followed 
+1 2
+2 3
+3 4
+4 4
+MST is as followed
+5 6 7 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [5, 4], [5, 3], [5, 2], 
+2 [5, 0], 
+3 [5, 0], 
+4 [5, 5], [5, 0], 
+5 [5, 8], [5, 6], [5, 4], 
+6 [5, 5], 
+8 [5, 5], 
+k_max is : 5
+Gx is as followed
+12 G
+index is 2 : (0, 2), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 11 : (2, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+index is 14 : (5, 8), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 17 : (4, 5), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 20 : (4, 8), the weight is 5
+index is 24 : (4, 6), the weight is 5
+vertex2union is as followed 
+0 2
+2 3
+3 4
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+2 3 4 14 16 17 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [5, 4], [5, 3], [5, 1], 
+1 [5, 0], 
+3 [5, 0], 
+4 [5, 0], [3, 7], 
+7 [3, 4], 
+k_max is : 5
+Gx is as followed
+7 G
+index is 1 : (0, 1), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 6 : (1, 3), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+index is 28 : (4, 7), the weight is 3
+vertex2union is as followed 
+0 1
+1 3
+3 4
+4 7
+7 7
+MST is as followed
+1 3 4 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [5, 4], [5, 2], [5, 1], 
+1 [5, 0], 
+2 [5, 0], 
+4 [5, 0], 
+k_max is : 5
+Gx is as followed
+6 G
+index is 1 : (0, 1), the weight is 5
+index is 2 : (0, 2), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 5 : (1, 2), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 11 : (2, 4), the weight is 5
+vertex2union is as followed 
+0 1
+1 2
+2 4
+4 4
+MST is as followed
+1 2 4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [5, 1], 
+1 [5, 8], [5, 3], [5, 0], 
+2 [5, 3], [3, 7], 
+3 [5, 2], [5, 1], 
+5 [5, 8], 
+6 [5, 9], [5, 8], 
+7 [3, 2], 
+8 [5, 6], [5, 5], [5, 1], [3, 10], 
+9 [5, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 5
+Gx is as followed
+18 G
+index is 1 : (0, 1), the weight is 5
+index is 2 : (0, 2), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 5 : (1, 2), the weight is 5
+index is 6 : (1, 3), the weight is 5
+index is 8 : (1, 5), the weight is 5
+index is 9 : (1, 6), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 5
+index is 15 : (5, 9), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 18 : (8, 9), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 5
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 5
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+1 6 10 12 14 19 21 22 25 29 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [5, 6], [5, 4], 
+4 [5, 1], 
+6 [5, 8], [5, 1], 
+8 [5, 9], [5, 6], 
+9 [5, 8], 
+k_max is : 5
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 5
+index is 9 : (1, 6), the weight is 5
+index is 18 : (8, 9), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 20 : (4, 8), the weight is 5
+index is 22 : (6, 9), the weight is 5
+index is 23 : (4, 9), the weight is 5
+index is 24 : (4, 6), the weight is 5
+index is 29 : (1, 8), the weight is 5
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+7 9 18 19 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [5, 5], [5, 4], 
+4 [5, 1], 
+5 [5, 9], [5, 8], [5, 1], 
+8 [5, 5], 
+9 [5, 5], 
+k_max is : 5
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 5
+index is 8 : (1, 5), the weight is 5
+index is 14 : (5, 8), the weight is 5
+index is 15 : (5, 9), the weight is 5
+index is 17 : (4, 5), the weight is 5
+index is 18 : (8, 9), the weight is 5
+index is 20 : (4, 8), the weight is 5
+index is 23 : (4, 9), the weight is 5
+index is 29 : (1, 8), the weight is 5
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+7 8 14 15 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 [3, 4], 
+4 [3, 2], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 11 : (2, 4), the weight is 3
+vertex2union is as followed 
+2 4
+4 4
+MST is as followed
+11 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [5, 6], [5, 5], [5, 4], 
+4 [5, 1], [3, 10], 
+5 [5, 9], [5, 1], 
+6 [5, 1], 
+9 [5, 5], 
+10 [3, 4], 
+k_max is : 5
+Gx is as followed
+10 G
+index is 7 : (1, 4), the weight is 5
+index is 8 : (1, 5), the weight is 5
+index is 9 : (1, 6), the weight is 5
+index is 15 : (5, 9), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 17 : (4, 5), the weight is 5
+index is 22 : (6, 9), the weight is 5
+index is 23 : (4, 9), the weight is 5
+index is 24 : (4, 6), the weight is 5
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+7 8 9 15 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [5, 5], 
+5 [5, 8], [5, 6], [5, 4], 
+6 [5, 5], 
+8 [5, 5], 
+k_max is : 5
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 17 : (4, 5), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 20 : (4, 8), the weight is 5
+index is 24 : (4, 6), the weight is 5
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 16 17 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [3, 11], [3, 8], 
+8 [3, 4], 
+11 [3, 4], 
+k_max is : 3
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 3
+index is 26 : (4, 11), the weight is 3
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [3, 10], 
+10 [3, 4], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)5
+trussness: (0, 2)5
+trussness: (0, 3)5
+trussness: (0, 4)5
+trussness: (1, 2)5
+trussness: (1, 3)5
+trussness: (1, 4)5
+trussness: (1, 5)5
+trussness: (1, 6)5
+trussness: (2, 3)5
+trussness: (2, 4)5
+trussness: (2, 7)3
+trussness: (3, 4)5
+trussness: (5, 8)5
+trussness: (5, 9)5
+trussness: (5, 6)5
+trussness: (4, 5)5
+trussness: (8, 9)5
+trussness: (6, 8)5
+trussness: (4, 8)5
+trussness: (8, 10)3
+trussness: (6, 9)5
+trussness: (4, 9)5
+trussness: (4, 6)5
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)3
+trussness: (1, 8)5
+3
+----------------------DELETE LINK 1 and 2 -----------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [5, 4], [5, 3], [5, 2], 
+2 [5, 0], 
+3 [5, 0], 
+4 [5, 5], [5, 0], 
+5 [5, 8], [5, 6], [5, 4], 
+6 [5, 5], 
+8 [5, 5], 
+k_max is : 5
+Gx is as followed
+12 G
+index is 2 : (0, 2), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 11 : (2, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+index is 14 : (5, 8), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 17 : (4, 5), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 20 : (4, 8), the weight is 5
+index is 24 : (4, 6), the weight is 5
+vertex2union is as followed 
+0 2
+2 3
+3 4
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+2 3 4 14 16 17 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [5, 4], [5, 3], [5, 1], 
+1 [5, 0], 
+3 [5, 0], 
+4 [5, 0], [3, 7], 
+7 [3, 4], 
+k_max is : 5
+Gx is as followed
+7 G
+index is 1 : (0, 1), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 6 : (1, 3), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+index is 28 : (4, 7), the weight is 3
+vertex2union is as followed 
+0 1
+1 3
+3 4
+4 7
+7 7
+MST is as followed
+1 3 4 28 
+k value is 5
+--------------next is edge expansion--------------
+(0, 1)  3 
+(0, 2)  3 
+(0, 3)  3 
+(0, 4)  3 
+(1, 2)  3 
+(1, 3)  3 
+(1, 4)  6 
+(1, 5)  3 
+(1, 6)  3 
+(2, 3)  3 
+(2, 4)  3 
+(3, 4)  3 
+(5, 8)  4 
+(5, 9)  3 
+(5, 6)  4 
+(4, 5)  4 
+(8, 9)  3 
+(6, 8)  4 
+(4, 8)  4 
+(6, 9)  3 
+(4, 9)  3 
+(4, 6)  4 
+(1, 8)  3 
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+0 1 is 4
+0 2 is 4
+0 3 is 4
+0 4 is 4
+1 2 is 4
+1 3 is 4
+1 4 is 4
+1 5 is 4
+1 6 is 4
+2 3 is 4
+2 4 is 4
+3 4 is 4
+5 8 is 4
+5 9 is 4
+5 6 is 4
+4 5 is 4
+8 9 is 4
+6 8 is 4
+4 8 is 4
+6 9 is 4
+4 9 is 4
+4 6 is 4
+1 8 is 4
+k value is 4
+--------------next is edge expansion--------------
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+k value is 3
+--------------next is edge expansion--------------
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+The update with edge deletion time is : 0s
+unique id is 1 erase is 2
+unique id is 2 erase is 1
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [4, 4], [4, 3], 
+3 [4, 0], 
+4 [4, 5], [4, 0], 
+5 [4, 8], [4, 6], [4, 4], 
+6 [4, 5], 
+8 [4, 5], 
+k_max is : 4
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+index is 14 : (5, 8), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 24 : (4, 6), the weight is 4
+vertex2union is as followed 
+MST is as followed
+3 4 14 16 17 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [4, 4], [4, 3], 
+3 [4, 0], 
+4 [4, 0], [3, 7], 
+7 [3, 4], 
+k_max is : 4
+Gx is as followed
+4 G
+index is 3 : (0, 3), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+index is 28 : (4, 7), the weight is 3
+vertex2union is as followed 
+MST is as followed
+3 4 28 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 [5, 4], [5, 3], 
+2 [5, 3], 
+3 [5, 2], [5, 1], 
+4 [5, 1], 
+k_max is : 5
+Gx is as followed
+5 G
+index is 6 : (1, 3), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 11 : (2, 4), the weight is 5
+index is 13 : (3, 4), the weight is 5
+vertex2union is as followed 
+1 2
+2 3
+3 4
+4 4
+MST is as followed
+6 7 10 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [5, 4], [5, 2], [5, 1], 
+1 [5, 0], 
+2 [5, 0], 
+4 [5, 0], 
+k_max is : 5
+Gx is as followed
+5 G
+index is 1 : (0, 1), the weight is 5
+index is 2 : (0, 2), the weight is 5
+index is 4 : (0, 4), the weight is 5
+index is 7 : (1, 4), the weight is 5
+index is 11 : (2, 4), the weight is 5
+vertex2union is as followed 
+0 1
+1 2
+2 4
+4 4
+MST is as followed
+1 2 4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [5, 1], 
+1 [5, 8], [5, 3], [5, 0], 
+2 [5, 3], [3, 7], 
+3 [5, 2], [5, 1], 
+5 [5, 8], 
+6 [5, 9], [5, 8], 
+7 [3, 2], 
+8 [5, 6], [5, 5], [5, 1], [3, 10], 
+9 [5, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 5
+Gx is as followed
+17 G
+index is 1 : (0, 1), the weight is 5
+index is 2 : (0, 2), the weight is 5
+index is 3 : (0, 3), the weight is 5
+index is 6 : (1, 3), the weight is 5
+index is 8 : (1, 5), the weight is 5
+index is 9 : (1, 6), the weight is 5
+index is 10 : (2, 3), the weight is 5
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 5
+index is 15 : (5, 9), the weight is 5
+index is 16 : (5, 6), the weight is 5
+index is 18 : (8, 9), the weight is 5
+index is 19 : (6, 8), the weight is 5
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 5
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 5
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+1 6 10 12 14 19 21 22 25 29 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 [4, 4], 
+2 [4, 4], 
+3 [4, 4], 
+4 [4, 3], [4, 2], [4, 1], 
+k_max is : 4
+Gx is as followed
+5 G
+index is 6 : (1, 3), the weight is 4
+index is 7 : (1, 4), the weight is 4
+index is 10 : (2, 3), the weight is 4
+index is 11 : (2, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+vertex2union is as followed 
+1 2
+2 3
+3 4
+4 4
+MST is as followed
+7 11 13 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [4, 4], [4, 3], 
+3 [4, 0], 
+4 [4, 5], [4, 0], 
+5 [4, 8], [4, 6], [4, 4], 
+6 [4, 5], 
+8 [4, 5], 
+k_max is : 4
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+index is 14 : (5, 8), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 24 : (4, 6), the weight is 4
+vertex2union is as followed 
+MST is as followed
+3 4 14 16 17 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [4, 4], [4, 3], 
+3 [4, 0], 
+4 [4, 0], [3, 7], 
+7 [3, 4], 
+k_max is : 4
+Gx is as followed
+4 G
+index is 3 : (0, 3), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+index is 28 : (4, 7), the weight is 3
+vertex2union is as followed 
+MST is as followed
+3 4 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [4, 4], 
+1 [4, 4], 
+2 [4, 4], 
+4 [4, 2], [4, 1], [4, 0], 
+k_max is : 4
+Gx is as followed
+5 G
+index is 1 : (0, 1), the weight is 4
+index is 2 : (0, 2), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 7 : (1, 4), the weight is 4
+index is 11 : (2, 4), the weight is 4
+vertex2union is as followed 
+0 1
+1 2
+2 4
+4 4
+MST is as followed
+4 7 11 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [4, 3], 
+1 [4, 8], [4, 3], 
+2 [4, 3], [3, 7], 
+3 [4, 2], [4, 1], [4, 0], 
+5 [4, 6], 
+6 [4, 9], [4, 8], [4, 5], 
+7 [3, 2], 
+8 [4, 6], [4, 1], [3, 10], 
+9 [4, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 4
+Gx is as followed
+17 G
+index is 1 : (0, 1), the weight is 4
+index is 2 : (0, 2), the weight is 4
+index is 3 : (0, 3), the weight is 4
+index is 6 : (1, 3), the weight is 4
+index is 8 : (1, 5), the weight is 4
+index is 9 : (1, 6), the weight is 4
+index is 10 : (2, 3), the weight is 4
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 4
+index is 15 : (5, 9), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 18 : (8, 9), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 4
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 4
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+3 6 10 12 16 19 21 22 25 29 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [4, 8], 
+4 [4, 6], 
+6 [4, 9], [4, 4], 
+8 [4, 9], [4, 1], 
+9 [4, 8], [4, 6], 
+k_max is : 4
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 4
+index is 9 : (1, 6), the weight is 4
+index is 18 : (8, 9), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 22 : (6, 9), the weight is 4
+index is 23 : (4, 9), the weight is 4
+index is 24 : (4, 6), the weight is 4
+index is 29 : (1, 8), the weight is 4
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [4, 8], 
+4 [4, 9], [4, 8], [4, 5], 
+5 [4, 4], 
+8 [4, 4], [4, 1], 
+9 [4, 4], 
+k_max is : 4
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 4
+index is 8 : (1, 5), the weight is 4
+index is 14 : (5, 8), the weight is 4
+index is 15 : (5, 9), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 18 : (8, 9), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 23 : (4, 9), the weight is 4
+index is 29 : (1, 8), the weight is 4
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 [3, 4], 
+4 [3, 2], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 11 : (2, 4), the weight is 3
+vertex2union is as followed 
+2 4
+4 4
+MST is as followed
+11 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [4, 6], 
+4 [4, 6], [3, 10], 
+5 [4, 9], 
+6 [4, 9], [4, 4], [4, 1], 
+9 [4, 6], [4, 5], 
+10 [3, 4], 
+k_max is : 4
+Gx is as followed
+10 G
+index is 7 : (1, 4), the weight is 4
+index is 8 : (1, 5), the weight is 4
+index is 9 : (1, 6), the weight is 4
+index is 15 : (5, 9), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 22 : (6, 9), the weight is 4
+index is 23 : (4, 9), the weight is 4
+index is 24 : (4, 6), the weight is 4
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [4, 6], 
+5 [4, 6], 
+6 [4, 8], [4, 5], [4, 4], 
+8 [4, 6], 
+k_max is : 4
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 24 : (4, 6), the weight is 4
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [3, 11], [3, 8], 
+8 [3, 4], 
+11 [3, 4], 
+k_max is : 3
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 3
+index is 26 : (4, 11), the weight is 3
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [3, 10], 
+10 [3, 4], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)4
+trussness: (0, 2)4
+trussness: (0, 3)4
+trussness: (0, 4)4
+trussness: (1, 3)4
+trussness: (1, 4)4
+trussness: (1, 5)4
+trussness: (1, 6)4
+trussness: (2, 3)4
+trussness: (2, 4)4
+trussness: (2, 7)3
+trussness: (3, 4)4
+trussness: (5, 8)4
+trussness: (5, 9)4
+trussness: (5, 6)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)3
+trussness: (1, 8)4
+----------------------DELETE LINK 1 and 3 -----------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [4, 4], [4, 3], 
+3 [4, 0], 
+4 [4, 5], [4, 0], 
+5 [4, 8], [4, 6], [4, 4], 
+6 [4, 5], 
+8 [4, 5], 
+k_max is : 4
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+index is 14 : (5, 8), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 17 : (4, 5), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 20 : (4, 8), the weight is 4
+index is 24 : (4, 6), the weight is 4
+vertex2union is as followed 
+MST is as followed
+3 4 14 16 17 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [4, 4], 
+1 [4, 4], 
+2 [4, 4], 
+4 [4, 2], [4, 1], [4, 0], 
+k_max is : 4
+Gx is as followed
+5 G
+index is 1 : (0, 1), the weight is 4
+index is 2 : (0, 2), the weight is 4
+index is 4 : (0, 4), the weight is 4
+index is 7 : (1, 4), the weight is 4
+index is 11 : (2, 4), the weight is 4
+vertex2union is as followed 
+0 1
+1 2
+2 4
+4 4
+MST is as followed
+4 7 11 
+k value is 4
+--------------next is edge expansion--------------
+(0, 1)  2 
+(0, 2)  2 
+(0, 3)  3 
+(0, 4)  3 
+(1, 3)  2 
+(1, 4)  5 
+(1, 5)  3 
+(1, 6)  3 
+(2, 3)  2 
+(2, 4)  2 
+(3, 4)  3 
+(5, 8)  4 
+(5, 9)  3 
+(5, 6)  4 
+(4, 5)  4 
+(8, 9)  3 
+(6, 8)  4 
+(4, 8)  4 
+(6, 9)  3 
+(4, 9)  3 
+(4, 6)  4 
+(1, 8)  3 
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+0 1 is 3
+0 2 is 3
+0 3 is 3
+0 4 is 3
+1 3 is 3
+1 4 is 3
+1 5 is 3
+1 6 is 3
+2 3 is 3
+2 4 is 3
+3 4 is 3
+5 8 is 3
+5 9 is 3
+5 6 is 3
+4 5 is 3
+8 9 is 3
+6 8 is 3
+4 8 is 3
+6 9 is 3
+4 9 is 3
+4 6 is 3
+1 8 is 3
+k value is 3
+--------------next is edge expansion--------------
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+The update with edge deletion time is : 0s
+unique id is 1 erase is 3
+unique id is 3 erase is 1
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [3, 4], 
+4 [3, 5], [3, 0], 
+5 [3, 8], [3, 6], [3, 4], 
+6 [3, 5], 
+8 [3, 5], 
+k_max is : 3
+Gx is as followed
+7 G
+index is 4 : (0, 4), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 24 : (4, 6), the weight is 3
+vertex2union is as followed 
+MST is as followed
+4 14 16 17 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [3, 4], [3, 2], 
+2 [3, 0], 
+4 [3, 0], 
+k_max is : 3
+Gx is as followed
+3 G
+index is 2 : (0, 2), the weight is 3
+index is 4 : (0, 4), the weight is 3
+index is 11 : (2, 4), the weight is 3
+vertex2union is as followed 
+MST is as followed
+2 4 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 [4, 4], 
+2 [4, 4], 
+3 [4, 4], 
+4 [4, 3], [4, 2], [4, 1], 
+k_max is : 4
+Gx is as followed
+4 G
+index is 7 : (1, 4), the weight is 4
+index is 10 : (2, 3), the weight is 4
+index is 11 : (2, 4), the weight is 4
+index is 13 : (3, 4), the weight is 4
+vertex2union is as followed 
+1 2
+2 3
+3 4
+4 4
+MST is as followed
+7 11 13 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [4, 3], [4, 1], 
+1 [4, 8], [4, 0], 
+2 [4, 3], [3, 7], 
+3 [4, 2], [4, 0], 
+5 [4, 6], 
+6 [4, 9], [4, 8], [4, 5], 
+7 [3, 2], 
+8 [4, 6], [4, 1], [3, 10], 
+9 [4, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 4
+Gx is as followed
+16 G
+index is 1 : (0, 1), the weight is 4
+index is 2 : (0, 2), the weight is 4
+index is 3 : (0, 3), the weight is 4
+index is 8 : (1, 5), the weight is 4
+index is 9 : (1, 6), the weight is 4
+index is 10 : (2, 3), the weight is 4
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 4
+index is 15 : (5, 9), the weight is 4
+index is 16 : (5, 6), the weight is 4
+index is 18 : (8, 9), the weight is 4
+index is 19 : (6, 8), the weight is 4
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 4
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 4
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+1 3 10 12 16 19 21 22 25 29 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 [3, 4], 
+2 [3, 4], 
+3 [3, 4], 
+4 [3, 3], [3, 2], [3, 1], 
+k_max is : 3
+Gx is as followed
+4 G
+index is 7 : (1, 4), the weight is 3
+index is 10 : (2, 3), the weight is 3
+index is 11 : (2, 4), the weight is 3
+index is 13 : (3, 4), the weight is 3
+vertex2union is as followed 
+1 2
+2 3
+3 4
+4 4
+MST is as followed
+7 11 13 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [3, 4], 
+4 [3, 5], [3, 0], 
+5 [3, 8], [3, 6], [3, 4], 
+6 [3, 5], 
+8 [3, 5], 
+k_max is : 3
+Gx is as followed
+7 G
+index is 4 : (0, 4), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 24 : (4, 6), the weight is 3
+vertex2union is as followed 
+MST is as followed
+4 14 16 17 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [3, 4], 
+3 [3, 4], 
+4 [3, 7], [3, 3], [3, 0], 
+7 [3, 4], 
+k_max is : 3
+Gx is as followed
+4 G
+index is 3 : (0, 3), the weight is 3
+index is 4 : (0, 4), the weight is 3
+index is 13 : (3, 4), the weight is 3
+index is 28 : (4, 7), the weight is 3
+vertex2union is as followed 
+MST is as followed
+4 13 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [3, 4], [3, 2], 
+2 [3, 0], 
+4 [3, 0], 
+k_max is : 3
+Gx is as followed
+3 G
+index is 2 : (0, 2), the weight is 3
+index is 4 : (0, 4), the weight is 3
+index is 11 : (2, 4), the weight is 3
+vertex2union is as followed 
+MST is as followed
+2 4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [3, 3], [3, 1], 
+1 [3, 8], [3, 0], 
+2 [3, 7], [3, 3], 
+3 [3, 2], [3, 0], 
+5 [3, 6], 
+6 [3, 9], [3, 8], [3, 5], 
+7 [3, 2], 
+8 [3, 10], [3, 6], [3, 1], 
+9 [3, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 3
+Gx is as followed
+16 G
+index is 1 : (0, 1), the weight is 3
+index is 2 : (0, 2), the weight is 3
+index is 3 : (0, 3), the weight is 3
+index is 8 : (1, 5), the weight is 3
+index is 9 : (1, 6), the weight is 3
+index is 10 : (2, 3), the weight is 3
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+1 3 10 12 16 19 21 22 25 29 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [3, 8], 
+4 [3, 6], 
+6 [3, 9], [3, 4], 
+8 [3, 9], [3, 1], 
+9 [3, 8], [3, 6], 
+k_max is : 3
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 3
+index is 9 : (1, 6), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 24 : (4, 6), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [3, 8], 
+4 [3, 9], [3, 8], [3, 5], 
+5 [3, 4], 
+8 [3, 4], [3, 1], 
+9 [3, 4], 
+k_max is : 3
+Gx is as followed
+9 G
+index is 7 : (1, 4), the weight is 3
+index is 8 : (1, 5), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 [3, 4], 
+4 [3, 2], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 11 : (2, 4), the weight is 3
+vertex2union is as followed 
+2 4
+4 4
+MST is as followed
+11 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [3, 6], 
+4 [3, 10], [3, 6], 
+5 [3, 9], 
+6 [3, 9], [3, 4], [3, 1], 
+9 [3, 6], [3, 5], 
+10 [3, 4], 
+k_max is : 3
+Gx is as followed
+10 G
+index is 7 : (1, 4), the weight is 3
+index is 8 : (1, 5), the weight is 3
+index is 9 : (1, 6), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 24 : (4, 6), the weight is 3
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [3, 6], 
+5 [3, 6], 
+6 [3, 8], [3, 5], [3, 4], 
+8 [3, 6], 
+k_max is : 3
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 24 : (4, 6), the weight is 3
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [3, 11], [3, 8], 
+8 [3, 4], 
+11 [3, 4], 
+k_max is : 3
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 3
+index is 26 : (4, 11), the weight is 3
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [3, 10], 
+10 [3, 4], 
+k_max is : 3
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)3
+trussness: (0, 2)3
+trussness: (0, 3)3
+trussness: (0, 4)3
+trussness: (1, 4)3
+trussness: (1, 5)3
+trussness: (1, 6)3
+trussness: (2, 3)3
+trussness: (2, 4)3
+trussness: (2, 7)3
+trussness: (3, 4)3
+trussness: (5, 8)3
+trussness: (5, 9)3
+trussness: (5, 6)3
+trussness: (4, 5)3
+trussness: (8, 9)3
+trussness: (6, 8)3
+trussness: (4, 8)3
+trussness: (8, 10)3
+trussness: (6, 9)3
+trussness: (4, 9)3
+trussness: (4, 6)3
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)3
+trussness: (1, 8)3
+----------------------DELETE LINK 1 and 4 -----------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 [3, 4], 
+4 [3, 5], [3, 0], 
+5 [3, 8], [3, 6], [3, 4], 
+6 [3, 5], 
+8 [3, 5], 
+k_max is : 3
+Gx is as followed
+7 G
+index is 4 : (0, 4), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 24 : (4, 6), the weight is 3
+vertex2union is as followed 
+MST is as followed
+4 14 16 17 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [3, 3], [3, 1], 
+1 [3, 8], [3, 0], 
+2 [3, 7], [3, 3], 
+3 [3, 2], [3, 0], 
+5 [3, 6], 
+6 [3, 9], [3, 8], [3, 5], 
+7 [3, 2], 
+8 [3, 10], [3, 6], [3, 1], 
+9 [3, 6], 
+10 [3, 11], [3, 8], 
+11 [3, 10], 
+k_max is : 3
+Gx is as followed
+16 G
+index is 1 : (0, 1), the weight is 3
+index is 2 : (0, 2), the weight is 3
+index is 3 : (0, 3), the weight is 3
+index is 8 : (1, 5), the weight is 3
+index is 9 : (1, 6), the weight is 3
+index is 10 : (2, 3), the weight is 3
+index is 12 : (2, 7), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 21 : (8, 10), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 25 : (10, 11), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+0 8
+1 8
+2 3
+3 7
+5 8
+6 9
+7 10
+8 3
+9 8
+10 11
+11 11
+MST is as followed
+1 3 10 12 16 19 21 22 25 29 
+k value is 3
+--------------next is edge expansion--------------
+(0, 1)  1 
+(0, 2)  2 
+(0, 3)  2 
+(0, 4)  3 
+(1, 4)  4 
+(1, 5)  3 
+(1, 6)  3 
+(2, 3)  2 
+(2, 4)  3 
+(2, 7)  1 
+(3, 4)  2 
+(5, 8)  4 
+(5, 9)  3 
+(5, 6)  4 
+(4, 5)  4 
+(8, 9)  3 
+(6, 8)  4 
+(4, 8)  5 
+(8, 10)  1 
+(6, 9)  3 
+(4, 9)  3 
+(4, 6)  4 
+(10, 11)  1 
+(4, 11)  1 
+(4, 10)  2 
+(4, 7)  1 
+(1, 8)  3 
+--------------next is edge eviction--------------
+--------------next is edge update--------------
+0 1 is 2
+0 2 is 2
+0 3 is 2
+0 4 is 2
+1 4 is 2
+1 5 is 2
+1 6 is 2
+2 3 is 2
+2 4 is 2
+2 7 is 2
+3 4 is 2
+5 8 is 2
+5 9 is 2
+5 6 is 2
+4 5 is 2
+8 9 is 2
+6 8 is 2
+4 8 is 2
+8 10 is 2
+6 9 is 2
+4 9 is 2
+4 6 is 2
+10 11 is 2
+4 11 is 2
+4 10 is 2
+4 7 is 2
+1 8 is 2
+The update with edge deletion time is : 0s
+unique id is 1 erase is 4
+unique id is 4 erase is 1
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], [2, 6], 
+6 [2, 5], 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 16 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], [2, 2], 
+2 [2, 7], [2, 0], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 [2, 2], 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+12 G
+index is 2 : (0, 2), the weight is 2
+index is 3 : (0, 3), the weight is 2
+index is 10 : (2, 3), the weight is 2
+index is 12 : (2, 7), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+2 3 12 14 15 16 21 25 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 [3, 4], 
+3 [3, 4], 
+4 [3, 3], [3, 2], 
+k_max is : 3
+Gx is as followed
+3 G
+index is 10 : (2, 3), the weight is 3
+index is 11 : (2, 4), the weight is 3
+index is 13 : (3, 4), the weight is 3
+vertex2union is as followed 
+2 4
+3 4
+4 4
+MST is as followed
+11 13 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [3, 8], 
+4 [3, 6], 
+6 [3, 9], [3, 4], 
+8 [3, 9], [3, 1], 
+9 [3, 8], [3, 6], 
+k_max is : 3
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 19 : (6, 8), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 24 : (4, 6), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [3, 8], 
+4 [3, 9], [3, 8], [3, 5], 
+5 [3, 4], 
+8 [3, 4], [3, 1], 
+9 [3, 4], 
+k_max is : 3
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 3
+index is 14 : (5, 8), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 18 : (8, 9), the weight is 3
+index is 20 : (4, 8), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 29 : (1, 8), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [3, 6], 
+4 [3, 10], [3, 6], 
+5 [3, 9], 
+6 [3, 9], [3, 4], [3, 1], 
+9 [3, 6], [3, 5], 
+10 [3, 4], 
+k_max is : 3
+Gx is as followed
+9 G
+index is 8 : (1, 5), the weight is 3
+index is 9 : (1, 6), the weight is 3
+index is 15 : (5, 9), the weight is 3
+index is 16 : (5, 6), the weight is 3
+index is 17 : (4, 5), the weight is 3
+index is 22 : (6, 9), the weight is 3
+index is 23 : (4, 9), the weight is 3
+index is 24 : (4, 6), the weight is 3
+index is 27 : (4, 10), the weight is 3
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 [2, 4], 
+3 [2, 4], 
+4 [2, 3], [2, 2], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 10 : (2, 3), the weight is 2
+index is 11 : (2, 4), the weight is 2
+index is 13 : (3, 4), the weight is 2
+vertex2union is as followed 
+2 4
+3 4
+4 4
+MST is as followed
+11 13 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], [2, 6], 
+6 [2, 5], 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 16 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [2, 4], 
+3 [2, 4], 
+4 [2, 7], [2, 3], [2, 0], 
+7 [2, 4], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 3 : (0, 3), the weight is 2
+index is 4 : (0, 4), the weight is 2
+index is 13 : (3, 4), the weight is 2
+index is 28 : (4, 7), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 13 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+2 [2, 4], 
+4 [2, 2], [2, 0], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 2 : (0, 2), the weight is 2
+index is 4 : (0, 4), the weight is 2
+index is 11 : (2, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 11 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], [2, 2], 
+2 [2, 7], [2, 0], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 [2, 2], 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+12 G
+index is 2 : (0, 2), the weight is 2
+index is 3 : (0, 3), the weight is 2
+index is 10 : (2, 3), the weight is 2
+index is 12 : (2, 7), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+2 3 12 14 15 16 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 6], 
+6 [2, 9], [2, 4], 
+8 [2, 9], [2, 1], 
+9 [2, 8], [2, 6], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], [2, 5], 
+5 [2, 4], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 [2, 4], 
+4 [2, 2], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 11 : (2, 4), the weight is 2
+vertex2union is as followed 
+2 4
+4 4
+MST is as followed
+11 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 6], 
+6 [2, 8], [2, 5], [2, 4], 
+8 [2, 6], 
+k_max is : 2
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 3)2
+trussness: (2, 4)2
+trussness: (2, 7)2
+trussness: (3, 4)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (5, 6)2
+trussness: (4, 5)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 2 and 3 -----------------
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [2, 4], 
+3 [2, 4], 
+4 [2, 7], [2, 3], [2, 0], 
+7 [2, 4], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 3 : (0, 3), the weight is 2
+index is 4 : (0, 4), the weight is 2
+index is 13 : (3, 4), the weight is 2
+index is 28 : (4, 7), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 13 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+2 [2, 4], 
+4 [2, 2], [2, 0], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 2 : (0, 2), the weight is 2
+index is 4 : (0, 4), the weight is 2
+index is 11 : (2, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 11 
+The update with edge deletion time is : 0s
+unique id is 2 erase is 3
+unique id is 3 erase is 2
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [2, 4], 
+4 [2, 7], [2, 0], 
+7 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 4 : (0, 4), the weight is 2
+index is 28 : (4, 7), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+4 [2, 0], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 4 : (0, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 [2, 4], 
+3 [2, 4], 
+4 [2, 3], [2, 2], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 11 : (2, 4), the weight is 2
+index is 13 : (3, 4), the weight is 2
+vertex2union is as followed 
+2 4
+3 4
+4 4
+MST is as followed
+11 13 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], [2, 2], 
+2 [2, 7], [2, 0], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 [2, 2], 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+11 G
+index is 2 : (0, 2), the weight is 2
+index is 3 : (0, 3), the weight is 2
+index is 12 : (2, 7), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+2 3 12 14 15 16 21 25 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 [2, 4], 
+3 [2, 4], 
+4 [2, 3], [2, 2], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 11 : (2, 4), the weight is 2
+index is 13 : (3, 4), the weight is 2
+vertex2union is as followed 
+2 4
+3 4
+4 4
+MST is as followed
+11 13 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], [2, 6], 
+6 [2, 5], 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 16 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [2, 4], 
+4 [2, 7], [2, 0], 
+7 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 4 : (0, 4), the weight is 2
+index is 28 : (4, 7), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 28 
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+4 [2, 0], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 4 : (0, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], [2, 2], 
+2 [2, 7], [2, 0], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 [2, 2], 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+11 G
+index is 2 : (0, 2), the weight is 2
+index is 3 : (0, 3), the weight is 2
+index is 12 : (2, 7), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+2 3 12 14 15 16 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 6], 
+6 [2, 9], [2, 4], 
+8 [2, 9], [2, 1], 
+9 [2, 8], [2, 6], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], [2, 5], 
+5 [2, 4], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 [2, 4], 
+4 [2, 2], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 11 : (2, 4), the weight is 2
+vertex2union is as followed 
+2 4
+4 4
+MST is as followed
+11 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 6], 
+6 [2, 8], [2, 5], [2, 4], 
+8 [2, 6], 
+k_max is : 2
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 4)2
+trussness: (2, 7)2
+trussness: (3, 4)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (5, 6)2
+trussness: (4, 5)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 2 and 4 -----------------
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 [2, 4], 
+4 [2, 7], [2, 0], 
+7 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 4 : (0, 4), the weight is 2
+index is 28 : (4, 7), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 28 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], [2, 2], 
+2 [2, 7], [2, 0], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 [2, 2], 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+11 G
+index is 2 : (0, 2), the weight is 2
+index is 3 : (0, 3), the weight is 2
+index is 12 : (2, 7), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+2 3 12 14 15 16 21 25 
+The update with edge deletion time is : 0s
+unique id is 2 erase is 4
+unique id is 4 erase is 2
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+3 14 15 16 21 25 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 [2, 4], 
+4 [2, 3], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 13 : (3, 4), the weight is 2
+vertex2union is as followed 
+3 4
+4 4
+MST is as followed
+13 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 [2, 4], 
+4 [2, 3], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 13 : (3, 4), the weight is 2
+vertex2union is as followed 
+3 4
+4 4
+MST is as followed
+13 
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], [2, 6], 
+6 [2, 5], 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 16 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+4 [2, 0], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 4 : (0, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+3 14 15 16 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 6], 
+6 [2, 9], [2, 4], 
+8 [2, 9], [2, 1], 
+9 [2, 8], [2, 6], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], [2, 5], 
+5 [2, 4], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 6], 
+6 [2, 8], [2, 5], [2, 4], 
+8 [2, 6], 
+k_max is : 2
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (3, 4)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (5, 6)2
+trussness: (4, 5)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 3 and 4 -----------------
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 [2, 4], 
+4 [2, 0], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 4 : (0, 4), the weight is 2
+vertex2union is as followed 
+MST is as followed
+4 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 [2, 3], 
+3 [2, 0], 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 3 : (0, 3), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+3 14 15 16 21 25 
+The update with edge deletion time is : 0s
+unique id is 3 erase is 4
+unique id is 4 erase is 3
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 15 16 21 25 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], [2, 6], 
+6 [2, 5], 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 16 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+5 [2, 9], [2, 8], [2, 6], 
+6 [2, 5], 
+7 
+8 [2, 10], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 15 16 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 6], 
+6 [2, 9], [2, 4], 
+8 [2, 9], [2, 1], 
+9 [2, 8], [2, 6], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], [2, 5], 
+5 [2, 4], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+9 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 6], 
+6 [2, 8], [2, 5], [2, 4], 
+8 [2, 6], 
+k_max is : 2
+Gx is as followed
+6 G
+index is 14 : (5, 8), the weight is 2
+index is 16 : (5, 6), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+16 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (5, 6)2
+trussness: (4, 5)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 5 and 6 -----------------
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 6], 
+6 [2, 9], [2, 4], 
+8 [2, 9], [2, 1], 
+9 [2, 8], [2, 6], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 9 : (1, 6), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 6
+6 9
+8 9
+9 9
+MST is as followed
+18 22 24 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], [2, 5], 
+5 [2, 4], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 8
+8 9
+9 9
+MST is as followed
+17 20 23 29 
+The update with edge deletion time is : 0s
+unique id is 5 erase is 6
+unique id is 6 erase is 5
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 [2, 8], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 19 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+5 [2, 9], [2, 8], 
+6 [2, 8], 
+7 
+8 [2, 10], [2, 6], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 15 19 21 25 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 8], 
+6 [2, 8], [2, 4], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+5 G
+index is 14 : (5, 8), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 19 24 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 [2, 8], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 19 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+5 [2, 9], [2, 8], 
+6 [2, 8], 
+7 
+8 [2, 10], [2, 6], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 15 19 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+8 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 8], 
+6 [2, 8], [2, 4], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+5 G
+index is 14 : (5, 8), the weight is 2
+index is 17 : (4, 5), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (4, 5)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 5 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+5 [2, 9], [2, 8], 
+6 [2, 8], 
+7 
+8 [2, 10], [2, 6], [2, 5], 
+9 [2, 5], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 14 : (5, 8), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 15 19 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+The update with edge deletion time is : 0s
+unique id is 4 erase is 5
+unique id is 5 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 8], 
+7 
+8 [2, 10], [2, 9], [2, 6], 
+9 [2, 8], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+5 G
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 19 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 9], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 18 : (8, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 29 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 8], 
+6 [2, 8], [2, 4], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 19 24 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 [2, 8], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 19 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 8], 
+7 
+8 [2, 10], [2, 9], [2, 6], 
+9 [2, 8], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+5 G
+index is 18 : (8, 9), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 19 21 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 9], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 18 : (8, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 8], 
+8 [2, 9], [2, 4], [2, 1], 
+9 [2, 8], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 18 : (8, 9), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+18 20 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 8], 
+6 [2, 8], [2, 4], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 19 24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 8 and 9 -----------------
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], 
+4 [2, 10], [2, 6], 
+5 [2, 9], 
+6 [2, 9], [2, 4], [2, 1], 
+9 [2, 6], [2, 5], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+7 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 15 : (5, 9), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+1 4
+4 5
+5 6
+6 9
+9 10
+10 10
+MST is as followed
+9 15 22 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 [2, 8], 
+6 [2, 8], [2, 4], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+index is 20 : (4, 8), the weight is 2
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+4 6
+5 8
+6 6
+8 6
+MST is as followed
+14 19 24 
+The update with edge deletion time is : 0s
+unique id is 8 erase is 9
+unique id is 9 erase is 8
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], [2, 5], 
+4 [2, 10], [2, 6], 
+5 [2, 1], 
+6 [2, 4], [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 9 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 
+6 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+MST is as followed
+24 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], [2, 8], 
+7 
+8 [2, 10], [2, 6], 
+9 [2, 6], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+19 21 22 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+20 23 29 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 [2, 8], 
+8 [2, 6], [2, 5], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 14 : (5, 8), the weight is 2
+index is 19 : (6, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+14 19 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], [2, 8], 
+7 
+8 [2, 10], [2, 6], 
+9 [2, 6], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 19 : (6, 8), the weight is 2
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+19 21 22 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+20 23 29 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], [2, 5], 
+4 [2, 10], [2, 6], 
+5 [2, 1], 
+6 [2, 4], [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 9 24 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 
+6 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+MST is as followed
+24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (6, 8)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 6 and 8 -----------------
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 [2, 8], 
+4 [2, 9], [2, 8], 
+8 [2, 4], [2, 1], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 20 : (4, 8), the weight is 2
+index is 23 : (4, 9), the weight is 2
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+MST is as followed
+20 23 29 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 6], [2, 5], 
+4 [2, 10], [2, 6], 
+5 [2, 1], 
+6 [2, 4], [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+4 G
+index is 8 : (1, 5), the weight is 2
+index is 9 : (1, 6), the weight is 2
+index is 24 : (4, 6), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 9 24 27 
+The update with edge deletion time is : 0s
+unique id is 6 erase is 8
+unique id is 8 erase is 6
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 [2, 9], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 23 : (4, 9), the weight is 2
+vertex2union is as followed 
+MST is as followed
+23 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+4 [2, 10], 
+5 [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 8 : (1, 5), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 27 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], 
+7 
+8 [2, 10], 
+9 [2, 6], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+6 9
+8 10
+9 9
+10 11
+11 11
+MST is as followed
+21 22 25 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], 
+7 
+8 [2, 10], 
+9 [2, 6], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+6 9
+8 10
+9 9
+10 11
+11 11
+MST is as followed
+21 22 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 [2, 9], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 23 : (4, 9), the weight is 2
+vertex2union is as followed 
+MST is as followed
+23 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+4 [2, 10], 
+5 [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 8 : (1, 5), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 27 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 
+6 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+MST is as followed
+24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], [2, 8], 
+8 [2, 4], 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 20 : (4, 8), the weight is 2
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 8
+8 11
+11 11
+MST is as followed
+20 26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (4, 8)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 8 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], 
+7 
+8 [2, 10], 
+9 [2, 6], 
+10 [2, 11], [2, 8], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+3 G
+index is 21 : (8, 10), the weight is 2
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+6 9
+8 10
+9 9
+10 11
+11 11
+MST is as followed
+21 22 25 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+4 [2, 10], 
+5 [2, 1], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 8 : (1, 5), the weight is 2
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 27 
+The update with edge deletion time is : 0s
+unique id is 4 erase is 8
+unique id is 8 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], 
+7 
+9 [2, 6], 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+22 25 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], 
+8 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 11
+11 11
+MST is as followed
+26 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 [2, 9], 
+7 
+9 [2, 6], 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+2 G
+index is 22 : (6, 9), the weight is 2
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+22 25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 [2, 9], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 23 : (4, 9), the weight is 2
+vertex2union is as followed 
+MST is as followed
+23 
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 
+6 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+MST is as followed
+24 
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], 
+8 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 11
+11 11
+MST is as followed
+26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (6, 9)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 6 and 9 -----------------
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 [2, 9], 
+9 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 23 : (4, 9), the weight is 2
+vertex2union is as followed 
+MST is as followed
+23 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 [2, 6], 
+5 
+6 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 24 : (4, 6), the weight is 2
+vertex2union is as followed 
+MST is as followed
+24 
+The update with edge deletion time is : 0s
+unique id is 6 erase is 9
+unique id is 9 erase is 6
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+9 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+10 11
+11 11
+MST is as followed
+25 
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+9 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+10 11
+11 11
+MST is as followed
+25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], 
+8 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 11
+11 11
+MST is as followed
+26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 9 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+9 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+10 11
+11 11
+MST is as followed
+25 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+4 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+The update with edge deletion time is : 0s
+unique id is 4 erase is 9
+unique id is 9 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], 
+8 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 11
+11 11
+MST is as followed
+26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (4, 6)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 6 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+6 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+The update with edge deletion time is : 0s
+unique id is 4 erase is 6
+unique id is 6 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 [2, 11], 
+8 
+11 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 26 : (4, 11), the weight is 2
+vertex2union is as followed 
+4 11
+11 11
+MST is as followed
+26 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (4, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 11 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 [2, 11], 
+11 [2, 10], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 25 : (10, 11), the weight is 2
+vertex2union is as followed 
+MST is as followed
+25 
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+4 [2, 10], 
+10 [2, 4], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 27 : (4, 10), the weight is 2
+vertex2union is as followed 
+4 10
+10 10
+MST is as followed
+27 
+The update with edge deletion time is : 0s
+unique id is 4 erase is 11
+unique id is 11 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 10 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+4 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+The update with edge deletion time is : 0s
+unique id is 4 erase is 10
+unique id is 10 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (4, 7)2
+trussness: (1, 8)2
+----------------------DELETE LINK 4 and 7 -----------------
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+The update with edge deletion time is : 0s
+unique id is 4 erase is 7
+unique id is 7 erase is 4
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 [2, 8], 
+8 [2, 1], 
+9 
+k_max is : 2
+Gx is as followed
+1 G
+index is 29 : (1, 8), the weight is 2
+vertex2union is as followed 
+1 8
+8 8
+MST is as followed
+29 
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (1, 8)2
+----------------------DELETE LINK 1 and 8 -----------------
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 [2, 8], 
+6 
+8 [2, 5], 
+k_max is : 2
+Gx is as followed
+1 G
+index is 14 : (5, 8), the weight is 2
+vertex2union is as followed 
+5 8
+8 8
+MST is as followed
+14 
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+1 [2, 5], 
+5 [2, 1], 
+10 
+k_max is : 2
+Gx is as followed
+1 G
+index is 8 : (1, 5), the weight is 2
+vertex2union is as followed 
+MST is as followed
+8 
+The update with edge deletion time is : 0s
+unique id is 1 erase is 8
+unique id is 8 erase is 1
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 
+6 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+5 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+---------------------next_is_neighbor_delete_update---------------------
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 
+8 
+9 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+--------------next is TCP update trussness  decrease--------------
+----------------------------------------
+Block_id is 0
+Neighbors have : 
+1 
+2 
+3 
+4 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 1
+Neighbors have : 
+0 
+5 
+6 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 2
+Neighbors have : 
+0 
+7 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 3
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 4
+Neighbors have : 
+0 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 5
+Neighbors have : 
+1 
+8 
+9 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 6
+Neighbors have : 
+1 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 7
+Neighbors have : 
+2 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 8
+Neighbors have : 
+5 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 9
+Neighbors have : 
+5 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 10
+Neighbors have : 
+8 
+11 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+----------------------------------------
+Block_id is 11
+Neighbors have : 
+10 
+k_max is : 0
+Gx is as followed
+0 G
+vertex2union is as followed 
+MST is as followed
+
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)2
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)2
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
 ----------------------ADD LINK 1 and 8 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
@@ -178,6 +6446,18 @@ Gx is as followed
 vertex2union is as followed 
 MST is as followed
 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 7 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -334,6 +6614,19 @@ Gx is as followed
 vertex2union is as followed 
 MST is as followed
 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 10 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -494,6 +6787,20 @@ Gx is as followed
 vertex2union is as followed 
 MST is as followed
 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)2
+trussness: (4, 10)2
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 11 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
@@ -691,6 +6998,21 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 6 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -866,6 +7188,22 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (4, 6)2
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 9 -----------------
 k1 is 2 k2 is 2
 The update with edge insertion time is : 0s
@@ -1045,6 +7383,23 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (4, 9)2
+trussness: (4, 6)2
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 6 and 9 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
@@ -1257,6 +7612,24 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (8, 10)2
+trussness: (6, 9)3
+trussness: (4, 9)3
+trussness: (4, 6)3
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 8 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
@@ -1474,6 +7847,25 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)2
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (4, 8)3
+trussness: (8, 10)3
+trussness: (6, 9)3
+trussness: (4, 9)3
+trussness: (4, 6)3
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 6 and 8 -----------------
 k1 is 3 k2 is 3
 --------------next is edge expansion--------------
@@ -1706,6 +8098,26 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)3
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)2
+trussness: (6, 8)3
+trussness: (4, 8)3
+trussness: (8, 10)3
+trussness: (6, 9)3
+trussness: (4, 9)3
+trussness: (4, 6)3
+trussness: (10, 11)3
+trussness: (4, 11)3
+trussness: (4, 10)3
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 8 and 9 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
@@ -2101,6 +8513,27 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)3
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)3
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 4 and 5 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
@@ -2366,6 +8799,28 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)3
+trussness: (1, 6)3
+trussness: (2, 7)2
+trussness: (5, 8)3
+trussness: (5, 9)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)2
+trussness: (1, 8)3
 ----------------------ADD LINK 5 and 6 -----------------
 k1 is 4 k2 is 4
 --------------next is edge expansion--------------
@@ -2378,7 +8833,7 @@ k1 is 4 k2 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
-The update with edge insertion time is : 0s
+The update with edge insertion time is : 0.015625s
 --------------next is TCP update while insert--------------
 here here 
 8hhh
@@ -2747,11 +9202,37 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)2
+trussness: (0, 4)2
+trussness: (1, 5)4
+trussness: (1, 6)4
+trussness: (2, 7)2
+trussness: (5, 8)4
+trussness: (5, 9)4
+trussness: (5, 6)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)2
+trussness: (1, 8)4
 ----------------------ADD LINK 3 and 4 -----------------
-k1 is 3 k2 is 3
+k1 is 2 k2 is 3
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
+0 3 is 3
+0 4 is 3
+3 4 is 3
 The update with edge insertion time is : 0s
 --------------next is TCP update while insert--------------
 here here 
@@ -2775,6 +9256,24 @@ here here
 here here 
 8 10 hhh
 --------------next is TCP update trussness  increase--------------
+------------------Here is the triangle update----------------------
+x is 0 y is 3 z is 4
+y_z_weight is 3 y_z_index is 13
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 3 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 3 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 3
+y_z_weight is 3 y_z_index is 13
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 3 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 3 y_z_index is 4
 ----------------------------------------
 Block_id is 0
 Neighbors have : 
@@ -3021,6 +9520,30 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)2
+trussness: (0, 3)3
+trussness: (0, 4)3
+trussness: (1, 5)4
+trussness: (1, 6)4
+trussness: (2, 7)2
+trussness: (3, 4)3
+trussness: (5, 8)4
+trussness: (5, 9)4
+trussness: (5, 6)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)2
+trussness: (1, 8)4
 ----------------------ADD LINK 2 and 4 -----------------
 k1 is 2 k2 is 3
 --------------next is edge expansion--------------
@@ -3346,12 +9869,39 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)3
+trussness: (0, 3)3
+trussness: (0, 4)3
+trussness: (1, 5)4
+trussness: (1, 6)4
+trussness: (2, 4)3
+trussness: (2, 7)3
+trussness: (3, 4)3
+trussness: (5, 8)4
+trussness: (5, 9)4
+trussness: (5, 6)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)3
+trussness: (1, 8)4
 ----------------------ADD LINK 2 and 3 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
 --------------next is edge eviction--------------
 --------------next is edge update--------------
 0 2 is 4
+0 3 is 4
+0 4 is 4
 2 3 is 4
 2 4 is 4
 3 4 is 4
@@ -3399,6 +9949,46 @@ y_z_weight is 4 y_z_index is 4
 x is 4 y is 0 z is 2
 y_z_weight is 4 y_z_index is 2
 (0, 3) 3, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 0 y is 3 z is 2
+y_z_weight is 4 y_z_index is 10
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 2
+y_z_weight is 4 y_z_index is 2
+------------------Here is the triangle update----------------------
+x is 2 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
+------------------Here is the triangle update----------------------
+x is 0 y is 3 z is 4
+y_z_weight is 4 y_z_index is 13
+(2, 3) 4, (2, 4) 4, 
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
+(0, 2) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 2
+y_z_weight is 4 y_z_index is 11
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 2
+y_z_weight is 4 y_z_index is 2
+------------------Here is the triangle update----------------------
+x is 2 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
+------------------Here is the triangle update----------------------
+x is 0 y is 4 z is 3
+y_z_weight is 4 y_z_index is 13
+(2, 4) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 4 y is 0 z is 3
+y_z_weight is 4 y_z_index is 3
+(0, 2) 4, (2, 3) 4, 
+------------------Here is the triangle update----------------------
+x is 3 y is 0 z is 4
+y_z_weight is 4 y_z_index is 4
 ------------------Here is the triangle update----------------------
 x is 2 y is 4 z is 0
 y_z_weight is 4 y_z_index is 4
@@ -3711,6 +10301,32 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)2
+trussness: (0, 2)4
+trussness: (0, 3)4
+trussness: (0, 4)4
+trussness: (1, 5)4
+trussness: (1, 6)4
+trussness: (2, 3)4
+trussness: (2, 4)4
+trussness: (2, 7)3
+trussness: (3, 4)4
+trussness: (5, 8)4
+trussness: (5, 9)4
+trussness: (5, 6)4
+trussness: (4, 5)4
+trussness: (8, 9)4
+trussness: (6, 8)4
+trussness: (4, 8)4
+trussness: (8, 10)3
+trussness: (6, 9)4
+trussness: (4, 9)4
+trussness: (4, 6)4
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)3
+trussness: (1, 8)4
 ----------------------ADD LINK 1 and 4 -----------------
 k1 is 4 k2 is 5
 --------------next is edge expansion--------------
@@ -4564,6 +11180,33 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)3
+trussness: (0, 2)4
+trussness: (0, 3)4
+trussness: (0, 4)4
+trussness: (1, 4)5
+trussness: (1, 5)5
+trussness: (1, 6)5
+trussness: (2, 3)4
+trussness: (2, 4)4
+trussness: (2, 7)3
+trussness: (3, 4)4
+trussness: (5, 8)5
+trussness: (5, 9)5
+trussness: (5, 6)5
+trussness: (4, 5)5
+trussness: (8, 9)5
+trussness: (6, 8)5
+trussness: (4, 8)5
+trussness: (8, 10)3
+trussness: (6, 9)5
+trussness: (4, 9)5
+trussness: (4, 6)5
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)3
+trussness: (1, 8)5
 ----------------------ADD LINK 1 and 3 -----------------
 k1 is 3 k2 is 4
 --------------next is edge expansion--------------
@@ -4919,6 +11562,34 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)4
+trussness: (0, 2)4
+trussness: (0, 3)4
+trussness: (0, 4)4
+trussness: (1, 3)4
+trussness: (1, 4)5
+trussness: (1, 5)5
+trussness: (1, 6)5
+trussness: (2, 3)4
+trussness: (2, 4)4
+trussness: (2, 7)3
+trussness: (3, 4)4
+trussness: (5, 8)5
+trussness: (5, 9)5
+trussness: (5, 6)5
+trussness: (4, 5)5
+trussness: (8, 9)5
+trussness: (6, 8)5
+trussness: (4, 8)5
+trussness: (8, 10)3
+trussness: (6, 9)5
+trussness: (4, 9)5
+trussness: (4, 6)5
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)3
+trussness: (1, 8)5
 ----------------------ADD LINK 1 and 2 -----------------
 k1 is 4 k2 is 5
 --------------next is edge expansion--------------
@@ -5538,5 +12209,34 @@ vertex2union is as followed
 10 10
 MST is as followed
 27 
+trussness: (0, 1)5
+trussness: (0, 2)5
+trussness: (0, 3)5
+trussness: (0, 4)5
+trussness: (1, 2)5
+trussness: (1, 3)5
+trussness: (1, 4)5
+trussness: (1, 5)5
+trussness: (1, 6)5
+trussness: (2, 3)5
+trussness: (2, 4)5
+trussness: (2, 7)3
+trussness: (3, 4)5
+trussness: (5, 8)5
+trussness: (5, 9)5
+trussness: (5, 6)5
+trussness: (4, 5)5
+trussness: (8, 9)5
+trussness: (6, 8)5
+trussness: (4, 8)5
+trussness: (8, 10)3
+trussness: (6, 9)5
+trussness: (4, 9)5
+trussness: (4, 6)5
+trussness: (10, 11)4
+trussness: (4, 11)4
+trussness: (4, 10)4
+trussness: (4, 7)3
+trussness: (1, 8)5
 which vertex do you want to query: 
 Do you want to choose the k value ? 0 is yes, else is no 

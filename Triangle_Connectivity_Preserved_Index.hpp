@@ -524,6 +524,25 @@ struct Real_Graph {
         }
     }
 
+    bool insert_dynamic(vector<int> edge) {
+        int edge_index = Appear_Edge_id.left.find(edge)->second;
+        if (Used_Edges.count(edge_index) == 0) {
+            Used_Edges.insert(edge_index);
+            Used_edges_queue.push_back(edge_index);
+            // TODO 此处可以引起动态更新的操作
+            int tag = 0;
+            if (Real_Vertexs.count(edge[0]) == 0 || Real_Vertexs.count(edge[1]) == 0) {
+                tag = 1;
+                Real_Edges_Trussness[edge_index] = 2;
+            }
+            this->insert_vertex(edge[0], edge[1]);
+            this->insert_vertex(edge[1], edge[0]);
+            // TODO 判断边的数目是否超过边的数目控制，如果超过，则在此处引起边的删除操作
+            return (tag == 0);
+        }
+        return false;
+    }
+
     void insert_vertex(int u, int v) {
         if (Real_Vertexs.count(u) == 0) {
             Real_Vertexs[u] = new TCP_index(u);
@@ -747,11 +766,15 @@ struct Real_Graph {
 
  
     void update_with_edge_insertion(int u, int v) {
-        clock_t startTime = clock();
         // TODO G.insert(e0)
         // Real_Vertexs[u]->display();
         // Real_Vertexs[v]->display();
-        this->insert(get_edge_help(u, v));
+        bool re = insert_dynamic(get_edge_help(u, v));
+        if (re == false) {
+            this->display();
+            return;
+        }
+        clock_t startTime = clock();
         int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         pair<int, int> k1_k2 = pair<int, int> ();
         // 利用前一步计算出的交集
@@ -1362,6 +1385,7 @@ struct Real_Graph {
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
             i->second->display();
         }
+        cout << "Real_Edges_Trussness size is " << Real_Edges_Trussness.size() << endl;
         for(map<int, int>::iterator i = Real_Edges_Trussness.begin(); i != Real_Edges_Trussness.end(); i++) {
             vector<int> temp = Appear_Edge_id.right.find(i->first)->second;
             cout << "trussness: (" << temp[0] << ", " << temp[1] << ")" << i->second << endl;
