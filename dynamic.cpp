@@ -127,6 +127,7 @@ int main() {
             break;
         }
         cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
+        // 避免重复插入
         int edge_index = Appear_Edge_id.size() + 1;
         Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
         graph.real_graph->update_with_edge_insertion(u, v);
@@ -162,14 +163,5 @@ int main() {
             // graph.display_detail(graph.real_graph->query_processing(v_q));
         }
     }
-    // int min_edge_index = 0;
-    // int l1, l2, l3;
-    // while(cin >> l1 >> l2 >> l3) {
-    //     if (l1 == 0 && l2 == 0 && l3 == 0) break;
-    //     cout << "----------------------add_update_MST_find_unique_path-----------------" << endl;
-    //     cout << graph.real_graph->Real_Vertexs[l1]->add_update_MST_find_unique_path(l2, l3, min_edge_index) << endl;
-    //     cout << "min_edge_index is" << min_edge_index << endl;
-    // }
-
     return 0;
 }
