@@ -125,7 +125,7 @@ struct TCP_index {
     TCP_index(int unique_id) {
         this->unique_id = unique_id;
         NBs = map<int, set<pair<int, int>, greater<pair<int, int> > > > ();
-        k_max = 0;
+        k_max = 2;
         G_x = map<int, int> ();
         MST = set<int> ();
         vertex2union = map<int, int> ();
@@ -224,7 +224,7 @@ struct TCP_index {
         vertex2union.erase(v);
         NBs.erase(v);
         // k_max重置
-        k_max = 0;
+        k_max = 2;
     }
 
     void insert_MST_dynamic(int u, int v, int edge_index) {
@@ -264,7 +264,7 @@ struct TCP_index {
             NBs[u].erase(make_pair(temp_weight, v));
             NBs[v].erase(make_pair(temp_weight, u));
             this->G_x[edge_index] = w_xyz;
-            k_max = 0;
+            k_max = 2;
             set<int> V2_wu = this->compute_Vk(u, w_xyz_old);
             set<int> V2_wv = this->compute_Vk(v, w_xyz_old);
             map<int, int> u_v_replace = map<int, int> ();
@@ -315,7 +315,7 @@ struct TCP_index {
             NBs[v].erase(make_pair(temp_weight, u));
             G_x.erase(edge_index);
             // ??
-            k_max = 0;
+            k_max = 2;
             set<int> V2_wu = this->compute_Vk(u, compute_k_value);
             set<int> V2_wv = this->compute_Vk(v, compute_k_value);
             map<int, int> u_v_replace = map<int, int> ();
@@ -577,14 +577,15 @@ struct Real_Graph {
                 break;
             }
         }
-        int now_index = i;
-        int now_size = sups[i].second.size();
-        i--;
-        for(; i >= 0; i--) {
-            if(sups[i].second.size() == now_size && i != now_index) {
-                swap(sups[i+1], sups[now_index]);
-            }
-        }
+        // int now_index = i;
+        // int now_size = sups[i].second.size();
+        // i--;
+        // for(; i >= 0; i--) {
+        //     if(sups[i].second.size() == now_size && i != now_index) {
+        //         swap(sups[i+1], sups[now_index]);
+        //     }
+        // }
+        sort(sups.begin(), sups.end(), ascending_cmp);
     }
 
     void display(deque<pair<int, set<int> > > sups) {
@@ -1357,7 +1358,7 @@ struct Real_Graph {
         }
         else {
             // Real_Vertexs[u]->vertex2union.clear();
-            Real_Vertexs[u]->k_max =0;
+            Real_Vertexs[u]->k_max =2;
         }
         // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
         // Real_Vertexs[u]->display();
