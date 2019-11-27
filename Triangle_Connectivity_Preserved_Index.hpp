@@ -305,7 +305,7 @@ struct TCP_index {
             this->G_x.erase(edge_index);
             if (NBs[u].size() == 0) vertex2union.erase(u);
             if (NBs[v].size() == 0) vertex2union.erase(v);
-            if (G_x.size() == 0) vertex2union.clear();
+            // if (G_x.size() == 0) vertex2union.clear();
         }
         else {
             // k_max的更新，vertex_union的更新、MST、NBs
@@ -333,7 +333,7 @@ struct TCP_index {
                 // 更新vertex_union
                 if (NBs[u].size() == 0) vertex2union.erase(u);
                 if (NBs[v].size() == 0) vertex2union.erase(v);
-                if (G_x.size() == 0) vertex2union.clear();
+                // if (G_x.size() == 0) vertex2union.clear();
                 re_compute_union_vertex();
             }
             else {
@@ -856,14 +856,14 @@ struct Real_Graph {
             for(int i = 0; i < s_help.size(); i++) {
                 s_help2index[s_help[i].first] = i;
             }
-            int delete_num = 0;
+            // int delete_num = 0;
             while(1) {
                 if (s_help.size() > 0 && s_help[0].second <= k-2) {
                     
                     int x_y_index = s_help[0].first;
                     Lk[k].erase(x_y_index);
                     s_help.pop_front();
-                    delete_num++;
+                    // delete_num++;
                     vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
                     int x = temp[0];
                     int y = temp[1];
@@ -877,26 +877,47 @@ struct Real_Graph {
                         if(z_x_t == k && Lk[k].count(z_x_index) == 0) continue;
                         if(z_y_t == k && Lk[k].count(z_y_index) == 0) continue;
                         if(Lk[k].count(z_x_index) != 0) {
-                            int real_index = s_help2index[z_x_index] - delete_num;
-                            s_help[real_index].second--;
-                            int times = s_help[real_index].second;
-                            int swap_index = real_index - 1;
-                            for(; swap_index >= 0; swap_index--) {
-                                if(s_help[swap_index].second == times) {
-                                    swap(s_help[swap_index+1], s_help[real_index]);
+                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                                if(p->first == z_x_index) {
+                                    p->second--;
                                 }
                             }
+                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+
+
+                            // int real_index = s_help2index[z_x_index] - delete_num;
+                            // s_help[real_index].second--;
+                            // int times = s_help[real_index].second;
+                            // int swap_index = real_index - 1;
+                            // for(; swap_index >= 0; swap_index--) {
+                            //     if(s_help[swap_index].second == times) {
+                            //         swap(s_help[swap_index+1], s_help[real_index]);
+                            //         // s_help2index的变化
+                            //         s_help2index[s_help[swap_index+1].first] = s_help2index[z_x_index];
+
+                            //         swap(s_help2index[s_help[swap_index+1].first], s_help2index[s_help[real_index].first]);
+                            //         // s_help2index[s_help[i].first] = i;
+                            //     }
+                            // }
                         }
                         if(Lk[k].count(z_y_index) != 0) {
-                            int real_index = s_help2index[z_y_index] - delete_num;
-                            s_help[real_index].second--;
-                            int times = s_help[real_index].second;
-                            int swap_index = real_index - 1;
-                            for(; swap_index >= 0; swap_index--) {
-                                if(s_help[swap_index].second == times) {
-                                    swap(s_help[swap_index+1], s_help[real_index]);
+                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                                if(p->first == z_y_index) {
+                                    p->second--;
                                 }
                             }
+                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+                            // int real_index = s_help2index[z_y_index] - delete_num;
+                            // s_help[real_index].second--;
+                            // int times = s_help[real_index].second;
+                            // int swap_index = real_index - 1;
+                            // for(; swap_index >= 0; swap_index--) {
+                            //     if(s_help[swap_index].second == times) {
+                            //         swap(s_help[swap_index+1], s_help[real_index]);
+                            //         // s_help2index的变化
+                            //         swap(s_help2index[s_help[swap_index+1].first], s_help2index[s_help[real_index].first]);
+                            //     }
+                            // }
                         }
                     }
                 }
@@ -1219,28 +1240,41 @@ struct Real_Graph {
                         if(z_x_t == k && Lk[k].count(z_x_index) == 0) continue;
                         if(z_y_t == k && Lk[k].count(z_y_index) == 0) continue;
                         if(Lk[k].count(z_x_index) != 0) {
-                            int real_index = s_help2index[z_x_index] - delete_num;
-                            s_help[real_index].second--;
-                            int times = s_help[real_index].second;
-                            int swap_index = real_index - 1;
-                            for(; swap_index >= 0; swap_index--) {
-                                if(s_help[swap_index].second == times) {
-                                    swap(s_help[swap_index+1], s_help[real_index]);
+                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                                if(p->first == z_x_index) {
+                                    p->second--;
                                 }
                             }
+                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+                            // int real_index = s_help2index[z_x_index] - delete_num;
+                            // s_help[real_index].second--;
+                            // int times = s_help[real_index].second;
+                            // int swap_index = real_index - 1;
+                            // for(; swap_index >= 0; swap_index--) {
+                            //     if(s_help[swap_index].second == times) {
+                            //         swap(s_help[swap_index+1], s_help[real_index]);
+                            //         swap(s_help2index[s_help[swap_index+1].first], s_help2index[s_help[real_index].first]);
+                            //     }
+                            // }
                             // vector<int> x_z_temp = Appear_Edge_id.right.find(z_x_index)->second;
                             // cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
                         }
                         if(Lk[k].count(z_y_index) != 0) {
-                            int real_index = s_help2index[z_y_index] - delete_num;
-                            s_help[real_index].second--;
-                            int times = s_help[real_index].second;
-                            int swap_index = real_index - 1;
-                            for(; swap_index >= 0; swap_index--) {
-                                if(s_help[swap_index].second == times) {
-                                    swap(s_help[swap_index+1], s_help[real_index]);
+                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                                if(p->first == z_y_index) {
+                                    p->second--;
                                 }
                             }
+                            // int real_index = s_help2index[z_y_index] - delete_num;
+                            // s_help[real_index].second--;
+                            // int times = s_help[real_index].second;
+                            // int swap_index = real_index - 1;
+                            // for(; swap_index >= 0; swap_index--) {
+                            //     if(s_help[swap_index].second == times) {
+                            //         swap(s_help[swap_index+1], s_help[real_index]);
+                            //         swap(s_help2index[s_help[swap_index+1].first], s_help2index[s_help[real_index].first]);
+                            //     }
+                            // }
                             // vector<int> x_z_temp = Appear_Edge_id.right.find(z_y_index)->second;
                             // cout << "(" << x_z_temp[0] << ", " << x_z_temp[1] << ") is decrease now! \n";
                         }
@@ -1322,7 +1356,7 @@ struct Real_Graph {
             }
         }
         else {
-            Real_Vertexs[u]->vertex2union.clear();
+            // Real_Vertexs[u]->vertex2union.clear();
             Real_Vertexs[u]->k_max =0;
         }
         // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";

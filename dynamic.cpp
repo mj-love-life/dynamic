@@ -109,33 +109,57 @@ int main() {
     v_q = 1;
     k = 1;
     
-    // int u, v;
-    // while(cin >> u >> v) {
-    //     if(u == 0 && v == 0) {
-    //         break;
-    //     }
-    //     cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
-    //     // int edge_index = Appear_Edge_id.size() + 1;
-    //     // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-    //     // graph.real_graph->update_with_edge_insertion(u, v);
-    //     graph.real_graph->update_with_edge_deletion(u, v);
-    //     // cout << "----------------------display the real_graph-----------------" << endl;
-    //     // graph.real_graph->display();
-    // }
+    int u, v;
+    while(cin >> u >> v) {
+        if(u == 0 && v == 0) {
+            break;
+        }
+        cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
+        // int edge_index = Appear_Edge_id.size() + 1;
+        // Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
+        // graph.real_graph->update_with_edge_insertion(u, v);
+        graph.real_graph->update_with_edge_deletion(u, v);
+        // cout << "----------------------display the real_graph-----------------" << endl;
+        // graph.real_graph->display();
+    }
     
-    // while(cin >> u >> v) {
-    //     if(u == 0 && v == 0) {
-    //         break;
+    // int choice2;
+    // while(cin >> choice2 >> u >> v) {
+    //     if (choice2 == 999) break;
+    //     else if (choice2 == 0 ){
+    //         cout << "----------------------DELETE LINK " << u << " and " << v << " -----------------" << endl;
+    //         graph.real_graph->update_with_edge_deletion(u, v);
     //     }
-    //     cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
-    //     // 避免重复插入
-    //     int edge_index = Appear_Edge_id.size() + 1;
-    //     Appear_Edge_id.left.insert(make_pair(get_edge_help(u, v), edge_index));
-    //     graph.real_graph->update_with_edge_insertion(u, v);
-    //     // graph.real_graph->update_with_edge_deletion(u, v);
-    //     // cout << "----------------------display the real_graph-----------------" << endl;
-    //     // graph.real_graph->display();
+    //     else {
+    //         cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
+    //         vector<int> index = get_edge_help(u, v);
+    //         if(Appear_Edge_id.left.count(index) == 0) {
+    //             // 此处使下标从1开始，因为在query的过程中需要进行逆向的操作
+    //             int edge_index = Appear_Edge_id.size() + 1;
+    //             Appear_Edge_id.left.insert(make_pair(index, edge_index));
+    //         }
+    //         graph.real_graph->update_with_edge_insertion(u, v);
+    //     }
     // }
+
+    while(cin >> u >> v) {
+        if(u == 0 && v == 0) {
+            break;
+        }
+        cout << "----------------------ADD LINK " << u << " and " << v << " -----------------" << endl;
+        // 避免重复插入
+        vector<int> index = get_edge_help(u, v);
+        if(Appear_Edge_id.left.count(index) == 0) {
+            // 此处使下标从1开始，因为在query的过程中需要进行逆向的操作
+            int edge_index = Appear_Edge_id.size() + 1;
+            Appear_Edge_id.left.insert(make_pair(index, edge_index));
+        }
+        graph.real_graph->update_with_edge_insertion(u, v);
+        // graph.real_graph->update_with_edge_deletion(u, v);
+        // cout << "----------------------display the real_graph-----------------" << endl;
+        // graph.real_graph->display();
+    }
+    graph.real_graph->display();
     while(1){
         cout << "which vertex do you want to query: " << endl;
         // getchar();
