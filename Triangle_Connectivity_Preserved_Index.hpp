@@ -19,36 +19,13 @@
 #include <boost/bimap/vector_of.hpp>
 #include <boost/bimap/tags/tagged.hpp>
 #include <queue>
+#include "res.hpp"
 
 using namespace boost::bimaps;
 using namespace boost;
 using namespace std;
 
 
-// bimap 仅仅支持只读的结构
-// 改成bimap双向map
-// block info to unique id
-extern bimap<string, int> block_info_id;
-bimap<string, int> block_info_id = bimap<string, int> ();
-
-// 用于双向存储
-// edge vertex to edge unique id
-extern bimap<vector<int>, int> Appear_Edge_id;
-bimap<vector<int>, int> Appear_Edge_id =bimap<vector<int>, int> ();
-
-
-// 用于记录所有的Block的hash_id
-extern int block_count;
-extern int global_k_max;
-int global_k_max = 0;
-int block_count = 0;
-extern int edge_threshold;
-extern double time_threshold;
-// 用于记录边的结构
-
-// 全局变量
-extern map<int, int> Weight;
-map<int, int> Weight = map<int, int> ();
 
 
 // 时间复杂度：O(m + n)
@@ -122,6 +99,7 @@ struct TCP_index {
     // 并查集
     map<int, int> vertex2union;
     map<int, set<pair<int, int>, greater<pair<int, int> > > > NBs;
+    set<int> NB_set;
     TCP_index(int unique_id) {
         this->unique_id = unique_id;
         NBs = map<int, set<pair<int, int>, greater<pair<int, int> > > > ();
@@ -129,6 +107,7 @@ struct TCP_index {
         G_x = map<int, int> ();
         MST = set<int> ();
         vertex2union = map<int, int> ();
+        NB_set = set<int> ();
     }
 
     void restart_MST_dynamic() {
@@ -157,6 +136,7 @@ struct TCP_index {
     void insert_neighbor(int nb) {
         if(NBs.count(nb) == 0) {
             NBs[nb] = set<pair<int, int>, greater<pair<int, int> > > ();
+            NB_set.insert(nb);
         }
     }
 
@@ -165,11 +145,13 @@ struct TCP_index {
     }
 
     set<int> get_NB_set() {
-        set<int> result = set<int> ();
-        for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
-            result.insert(i->first);
-        }
-        return result;
+        // TODO 不知道是否有必要
+        // set<int> result = set<int> ();
+        // for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
+        //     result.insert(i->first);
+        // }
+        // return result;
+        return NB_set;
     }
 
     vector<pair<int, int> > get_sortNB(map<int, int> Real_Edges_Trussness) {
@@ -223,6 +205,7 @@ struct TCP_index {
         // cout << "unique id is " << unique_id << " erase is " << v << endl;
         vertex2union.erase(v);
         NBs.erase(v);
+        NB_set.erase(v);
         // k_max重置
         k_max = 2;
     }
@@ -512,8 +495,7 @@ struct Real_Graph {
         Used_edges_queue = deque<int> ();
     }
 
-    void insert(vector<int> edge) {
-        int edge_index = Appear_Edge_id.left.find(edge)->second;
+    void insert(vector<int> edge, int edge_index) {
         if (Used_Edges.count(edge_index) == 0) {
             Used_Edges.insert(edge_index);
             Used_edges_queue.push_back(edge_index);
@@ -523,14 +505,13 @@ struct Real_Graph {
         }
     }
 
-    bool insert_dynamic(vector<int> edge) {
-        int edge_index = Appear_Edge_id.left.find(edge)->second;
+    bool insert_dynamic(vector<int> edge, int edge_index) {
         if (Used_Edges.count(edge_index) == 0) {
             // if (Used_edges_queue.size() > 10000) {
             //     int edge_index = Used_edges_queue[0];
             //     Used_edges_queue.pop_front();
             //     vector<int> edge_vertex = Appear_Edge_id.right.find(edge_index)->second;
-            //     update_with_edge_deletion(edge_vertex[0], edge_vertex[1]);
+            //     update_with_edge_deletion(edge_vertex[0], edge_vertex[1], edge_index);
             // }
             Used_Edges.insert(edge_index);
             Used_edges_queue.push_back(edge_index);
@@ -563,12 +544,12 @@ struct Real_Graph {
             max_size = max(max_size, int(result[*i].size()));
         }
         deque<pair<int, set<int> > > temp_result(result.begin(), result.end());
-        // TODO 暂时使用快排
+        // 此处使用快排
         sort(temp_result.begin(), temp_result.end(), ascending_cmp);
         return temp_result;
     }
 
-    // TODO 待改进
+    // 已经改进
     void decrese_one(int edge_index,  deque<pair<int, set<int> > >& sups, int vertex) {
         int i = 0;
         for(; i != sups.size(); i++) {
@@ -626,6 +607,151 @@ struct Real_Graph {
         cout << "The truss decomposition time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
     }
 
+    /*
+        以下部分为改进的函数
+    */
+
+    // 重写一遍get_sup2函数
+    map<int, set<int> > get_sup2(map<int, pair<int, int> > & k_value_current_index, bimap<int, int> &edge2index, vector<int> &bucket_sort) {
+        cout << "getting support ..." << endl;
+        clock_t startTime = clock();
+        map<int, set<int> > result = map<int, set<int> > ();
+        map<int, int> k_value_size_temp = map<int, int> ();
+        int temp_value = 0;
+
+        int count_num = 0;
+        double find_time = 0;
+        double insert_time = 0;
+        int inbalance_time = 0;
+        for(set<int>::iterator i = Used_Edges.begin(); i != Used_Edges.end(); i++) {
+            count_num++;
+            clock_t startTime2 = clock();
+            vector<int> Edge_index = Appear_Edge_id.right.find(*i)->second;
+            find_time += ((double) (clock() - startTime2) / CLOCKS_PER_SEC);
+            startTime2 = clock();
+            result[*i] = set<int> ();
+            set<int> u_nb = Real_Vertexs[Edge_index[0]]->get_NB_set();
+            set<int> v_nb = Real_Vertexs[Edge_index[1]]->get_NB_set();
+            if(int(u_nb.size()) >= 4 * int(v_nb.size()) ||  4 * int(u_nb.size()) <= int(v_nb.size())) inbalance_time++;
+            set_intersection(u_nb.begin(), u_nb.end(), v_nb.begin(), v_nb.end(), inserter(result[*i], result[*i].begin()));
+            // result.insert(make_pair(*i, get_map_key_intersection(Real_Vertexs[Edge_index[0]]->getNB(), Real_Vertexs[Edge_index[1]]->getNB())));
+            insert_time += ((double) (clock() - startTime2) / CLOCKS_PER_SEC);
+            temp_value = int(result[*i].size());
+            k_value_size_temp.count(temp_value) == 0 ? k_value_size_temp[temp_value] = 1 : k_value_size_temp[temp_value]++;
+            // if(count_num % 10000 == 0) {
+            //     cout << "The " << count_num << "edge support time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
+            //     cout << "find edge time is: "  << find_time << "s" << endl;
+            //     cout << "insert edge time is: " << insert_time << "s" << endl;
+            //     cout << "inbalance_time: " << inbalance_time << endl;
+            //     find_time = 0;
+            //     insert_time = 0;
+            // }
+        }
+        int now_index = 0;
+        // k -> start_index, len
+        k_value_current_index = map<int, pair<int, int> >();
+        for(map<int, int>::iterator i = k_value_size_temp.begin(); i != k_value_size_temp.end(); i++) {
+            temp_value = now_index;
+            k_value_current_index[i->first] = make_pair(temp_value, i->second);
+            now_index += i->second;
+            i->second = temp_value;
+        }
+        // k_value_size_temp: k->start_index
+        // 桶排存索引
+        for(map<int, set<int> >::iterator i = result.begin(); i != result.end(); i++) {
+            int i_size = i->second.size();
+            edge2index.left.insert(make_pair(i->first, k_value_size_temp[i_size]));
+            bucket_sort[k_value_size_temp[i_size]] = i->first;
+            k_value_size_temp[i_size]++;
+        }
+        return result;
+    }
+
+    void decrese_one3(int edge_index,  map<int, set<int> >& sups, int vertex, int delete_num, 
+        map<int, pair<int, int> > & k_value_index, bimap<int, int> & edge2index, vector<int> &bucket_sort) {
+        int now_index = edge2index.left.find(edge_index)->second;
+        sups[edge_index].erase(vertex);
+        int now_size = sups[edge_index].size();
+        // 插在k_value_index[now_size+1].first交换
+        int swap_index = k_value_index[now_size + 1].first;
+        int edge_index2 = bucket_sort[swap_index];
+        if (swap_index != now_index) {
+            swap(bucket_sort[now_index], bucket_sort[swap_index]);
+            auto pos = edge2index.left.find(edge_index);
+            edge2index.left.replace_data(pos, -1);
+            auto pos2 = edge2index.left.find(edge_index2);
+            edge2index.left.replace_data(pos2, now_index);
+            edge2index.left.replace_data(pos, swap_index);
+        }
+        if (k_value_index.count(now_size) == 0) {   
+            k_value_index[now_size] = make_pair(swap_index, 1);
+            // k_value_index的更新
+        }
+        else {
+            k_value_index[now_size].second++;
+        }
+        k_value_index[now_size + 1].first++;
+        k_value_index[now_size + 1].second--;
+        if(k_value_index[now_size + 1].second == 0) {
+            k_value_index.erase(now_size + 1);
+        }
+    }
+    void truss_decomposition2() {
+        cout << "truss decomposing ..." << endl;
+        clock_t startTime = clock();
+        int max_size = 0;
+        // 排完序记录每个k值出现的位置以及长度
+        // k-> appear_index, length
+        map<int, pair<int, int> > k_value_index = map<int, pair<int, int> > ();
+        // edge_index -> deque_index
+        bimap<int, int> edge2index = bimap<int, int> ();
+
+        // 创建一定大小的vector
+        vector<int> bucket_sort(int(Used_Edges.size()));
+        map<int, set<int> > sups = get_sup2(k_value_index, edge2index, bucket_sort);
+        set<int> Used_Edges_temp = Used_Edges;
+        int k = 2;
+        int count = 0;
+        cout << "The get support value time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
+        int delete_num = 0;
+        int sups_size = sups.size();
+        while(Used_Edges_temp.size() > 0) {
+            while(delete_num < sups_size && sups[bucket_sort[delete_num]].size() <= (k - 2)) {
+                int delete_sups_size = sups[bucket_sort[delete_num]].size();
+                int edge_index = bucket_sort[delete_num];
+                count++;
+                k_value_index[delete_sups_size].first++;
+                k_value_index[delete_sups_size].second--;
+                if(k_value_index[delete_sups_size].second == 0) {
+                    k_value_index.erase(delete_sups_size);
+                }
+                int u = Appear_Edge_id.right.find(edge_index)->second[0];
+                int v = Appear_Edge_id.right.find(edge_index)->second[1];
+                if (Real_Vertexs[u]->getNB().size() > Real_Vertexs[v]->getNB().size()) {
+                    swap(u, v);
+                }
+                for(set<int>::iterator i =  sups[edge_index].begin(); i !=  sups[edge_index].end(); i++) {
+                    decrese_one3(Appear_Edge_id.left.find(get_edge_help(*i, u))->second, sups, v, delete_num, k_value_index, edge2index, bucket_sort);
+                    decrese_one3(Appear_Edge_id.left.find(get_edge_help(*i, v))->second, sups, u, delete_num, k_value_index, edge2index, bucket_sort);
+                }
+                Real_Edges_Trussness[edge_index] = k;
+                // Real_Vertexs[u]->get_trussness(v, k);
+                // Real_Vertexs[v]->get_trussness(u, k);
+                Used_Edges_temp.erase(edge_index);
+                if(count % 100000 == 0) {
+                    cout << "The 100000 edge deal time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
+                }
+                delete_num++;
+            }
+            // 获取trussness值
+            k = k + 1;
+        }
+        cout << "The truss decomposition time is : " << (double) (clock() - startTime) / CLOCKS_PER_SEC << "s" << endl;
+    }
+    /*
+        以上部分为改进后的函数
+    */
+
     int get_triangle_w(int x, int y, int z) {
         return min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(x, y))->second], \
         min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(z, y))->second],\
@@ -633,7 +759,7 @@ struct Real_Graph {
     }
 
     void tcp_index_construction() {
-        this->truss_decomposition();
+        this->truss_decomposition2();
         // this->cal_G_x();
         clock_t startTime = clock();
         for(map<int, TCP_index *>::iterator i = Real_Vertexs.begin(); i != Real_Vertexs.end(); i++) {
@@ -728,7 +854,7 @@ struct Real_Graph {
                 }
             }
         }
-        cout << "The query processing time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+        // cout << "The query processing time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
         return result;
     }
 
@@ -770,17 +896,16 @@ struct Real_Graph {
     }
 
  
-    void update_with_edge_insertion(int u, int v) {
+    void update_with_edge_insertion(int u, int v, int edge_index) {
         // TODO G.insert(e0)
         // Real_Vertexs[u]->display();
         // Real_Vertexs[v]->display();
-        bool re = insert_dynamic(get_edge_help(u, v));
+        bool re = insert_dynamic(get_edge_help(u, v), edge_index);
         if (re == false) {
             // this->display();
             return;
         }
         clock_t startTime = clock();
-        int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         pair<int, int> k1_k2 = pair<int, int> ();
         // 利用前一步计算出的交集
         set<int> inter_section = get_k1_k2(u, v, k1_k2);
@@ -936,7 +1061,13 @@ struct Real_Graph {
                 // cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
             }
         }
-        cout << "The update with edge insertion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+        if(Used_Edges.size() % 100 == 0) {
+            total_time += (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC);
+            cout << Used_Edges.size() << " ";
+            cout << "The update with edge insertion time is : " << total_time << "s" << endl;
+            total_time = 0;
+        }
+        
 
         //TODO 下面是更新TCP部分
 
@@ -949,6 +1080,7 @@ struct Real_Graph {
         // cout << "--------------next is TCP update trussness  increase--------------" << endl;
         index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
         // this->display();
+        total_time += (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC);
     }
 
 
@@ -1128,11 +1260,10 @@ struct Real_Graph {
     }
 
     // 目前的测试是没有问题的,TODO 有一点问题哦
-    void update_with_edge_deletion(int u, int v) {
+    void update_with_edge_deletion(int u, int v, int edge_index) {
         clock_t startTime = clock();
         // Real_Vertexs[u]->display();
         // Real_Vertexs[v]->display();
-        int edge_index = Appear_Edge_id.left.find(get_edge_help(u, v))->second;
         int k_max = Real_Edges_Trussness[edge_index];
         this->delete_edge(u, v, edge_index);
         map<int, set<int> > Lk = map<int, set<int> > ();
@@ -1296,7 +1427,7 @@ struct Real_Graph {
             //     cout << display_temp[0] << " " << display_temp[1] << " is " <<  k - 1 <<  endl;
             // }
         }
-        cout << "The update with edge deletion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
+        // cout << "The update with edge deletion time is : " << (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC) << "s" << endl;
         // TODO 添加对边删除时的更新操作
         update_TCP_index_with_edge_deletion(u, v, edge_index, old_edge_trussness, change_edge_index);
         old_edge_trussness.erase(edge_index);
@@ -1457,20 +1588,27 @@ struct Appear_Graph {
     // 插入一条新出现的边
     void insert(int a, int b) {
         vector<int> index = get_edge_help(a, b);
+        int edge_index = 0;
         if(Appear_Edge_id.left.count(index) == 0) {
             // 此处使下标从1开始，因为在query的过程中需要进行逆向的操作
-            int edge_index = Appear_Edge_id.size() + 1;
+            edge_index = Appear_Edge_id.size() + 1;
             Appear_Edge_id.left.insert(make_pair(index, edge_index));
             Weight[edge_index] = 1;
         }
         else {
-            Weight[Appear_Edge_id.left.find(index)->second]++;
+            edge_index = Appear_Edge_id.left.find(index)->second;
+            Weight[edge_index]++;
         }
-        if(Weight[Appear_Edge_id.left.find(index)->second] >= edge_threshold) {
-            real_graph->update_with_edge_insertion(a, b);
+        // TODO 此处改成为==的时候插入，所以需要考虑删除的操作如何进行处理
+        if(Weight[edge_index] == weight_threshold) {
+            if(dynamic_or_static == 1) {
+                real_graph->insert(index, edge_index);
+            }
+            else {
+                real_graph->update_with_edge_insertion(a, b, edge_index);
+            }
             // real_graph->insert(index);
         }
-        
     }
 
     void display_detail(set<int> results) {
