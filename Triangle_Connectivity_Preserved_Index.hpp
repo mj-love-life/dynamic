@@ -1397,6 +1397,7 @@ struct Real_Graph {
                                     p->second--;
                                 }
                             }
+                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
                             // int real_index = s_help2index[z_y_index] - delete_num;
                             // s_help[real_index].second--;
                             // int times = s_help[real_index].second;
