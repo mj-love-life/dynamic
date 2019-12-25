@@ -895,6 +895,42 @@ struct Real_Graph {
         return inter_section;
     }
 
+    // 注意使用引用
+    void trussness_update_with_edge_update_decrease(map<int, pair<int, int> > & s_help_bucket_help, map<int, int>& s_help2index, deque<pair<int, int> >& s_help, int edge_index) {
+        // cout << "----------------------------------------" << endl;
+        // for(map<int, pair<int, int> >::iterator i = s_help_bucket_help.begin(); i != s_help_bucket_help.end(); i++) {
+        //     cout << i->first << ": " << i->second.first << " " << i->second.second << endl;
+        // }
+        // for(int i = 0; i < s_help.size(); i++) {
+        //     cout << i << " " << s_help[i].first << " " << s_help[i].second << endl;
+        // }
+        int real_deque_index = s_help2index[edge_index];
+        int real_s_value = s_help[real_deque_index].second;
+        s_help[real_deque_index].second--;
+        int now_s_value = real_s_value - 1;
+        int swap_deque_index = s_help_bucket_help[real_s_value].first;
+        int swap_edge_index = s_help[swap_deque_index].first;
+        // cout << "real_s_value: " << real_s_value << " now_s_value " << now_s_value << endl;
+        // cout << "swap_deque_index: " << swap_deque_index << " real_deque_index " << real_deque_index << endl;
+        // cout << "edge_index " << edge_index << " swap_edge_index " << swap_edge_index << endl;
+        if(swap_deque_index != real_deque_index) {
+            // s_help 的更新有问题
+            swap(s_help[swap_deque_index], s_help[real_deque_index]);
+            swap(s_help2index[edge_index], s_help2index[swap_edge_index]);
+        }
+        if(s_help_bucket_help.count(now_s_value) == 0) {
+            s_help_bucket_help[now_s_value] = make_pair(swap_deque_index, 1);
+        }
+        else {
+            s_help_bucket_help[now_s_value].second++;
+        }
+        s_help_bucket_help[real_s_value].first++;
+        s_help_bucket_help[real_s_value].second--;
+        if(s_help_bucket_help[real_s_value].second == 0) {
+            s_help_bucket_help.erase(real_s_value);
+        }
+    }
+
  
     void update_with_edge_insertion(int u, int v, int edge_index) {
         // TODO G.insert(e0)
@@ -978,18 +1014,30 @@ struct Real_Graph {
             // 将k_level_nums进行排序
             deque<pair<int, int> > s_help(k_level_nums.begin(), k_level_nums.end());
             sort(s_help.begin(), s_help.end(), ascending_cmp2);
+            // TODO 一下部分使用桶排
+            // k-> appear_index, length
+            map<int, pair<int, int> > s_help_bucket_help = map<int, pair<int, int> > ();
+            // 存储 edge_id -> index
+            // 使用下标索引
             map<int, int> s_help2index = map<int, int> ();
             for(int i = 0; i < s_help.size(); i++) {
+                if(s_help_bucket_help.count(s_help[i].second) == 1) {
+                    s_help_bucket_help[s_help[i].second].second++;
+                }
+                else {
+                    s_help_bucket_help[s_help[i].second] = make_pair(i, 1);
+                }
                 s_help2index[s_help[i].first] = i;
             }
-            // int delete_num = 0;
+            // 判断当前的删除值
+            int delete_num = 0;
             while(1) {
-                if (s_help.size() > 0 && s_help[0].second <= k-2) {
-                    
-                    int x_y_index = s_help[0].first;
+                if (s_help.size() > delete_num && s_help[delete_num].second <= k-2) {
+                    // cout << "delete_num is :" << delete_num << " delete_index : " << s_help[delete_num].first << " delete_second: " << s_help[delete_num].second << endl;
+                    int x_y_index = s_help[delete_num].first;
                     Lk[k].erase(x_y_index);
-                    s_help.pop_front();
-                    // delete_num++;
+                    // s_help.pop_front();
+                    delete_num++;
                     vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
                     int x = temp[0];
                     int y = temp[1];
@@ -1003,14 +1051,19 @@ struct Real_Graph {
                         if(z_x_t == k && Lk[k].count(z_x_index) == 0) continue;
                         if(z_y_t == k && Lk[k].count(z_y_index) == 0) continue;
                         if(Lk[k].count(z_x_index) != 0) {
-                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
-                                if(p->first == z_x_index) {
-                                    p->second--;
-                                }
-                            }
-                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+                            /*
+                            以下是传统的快排方式
+                            */
+                            // for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                            //     if(p->first == z_x_index) {
+                            //         p->second--;
+                            //     }
+                            // }
+                            // sort(s_help.begin(), s_help.end(), ascending_cmp2);
 
-
+                            /*
+                            以下使用桶排的方式进行更新\=              
+                            */
                             // int real_index = s_help2index[z_x_index] - delete_num;
                             // s_help[real_index].second--;
                             // int times = s_help[real_index].second;
@@ -1025,14 +1078,15 @@ struct Real_Graph {
                             //         // s_help2index[s_help[i].first] = i;
                             //     }
                             // }
+                            trussness_update_with_edge_update_decrease(s_help_bucket_help, s_help2index, s_help, z_x_index);
                         }
                         if(Lk[k].count(z_y_index) != 0) {
-                            for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
-                                if(p->first == z_y_index) {
-                                    p->second--;
-                                }
-                            }
-                            sort(s_help.begin(), s_help.end(), ascending_cmp2);
+                            // for(deque<pair<int, int> >::iterator p = s_help.begin(); p!= s_help.end(); p++) {
+                            //     if(p->first == z_y_index) {
+                            //         p->second--;
+                            //     }
+                            // }
+                            // sort(s_help.begin(), s_help.end(), ascending_cmp2);
                             // int real_index = s_help2index[z_y_index] - delete_num;
                             // s_help[real_index].second--;
                             // int times = s_help[real_index].second;
@@ -1044,6 +1098,7 @@ struct Real_Graph {
                             //         swap(s_help2index[s_help[swap_index+1].first], s_help2index[s_help[real_index].first]);
                             //     }
                             // }
+                            trussness_update_with_edge_update_decrease(s_help_bucket_help, s_help2index, s_help, z_y_index);
                         }
                     }
                 }

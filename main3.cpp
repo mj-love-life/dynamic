@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
     cout << "global edge num is : " << graph.real_graph->Used_Edges.size() << endl;
     cout << "global_k_max is : " <<  global_k_max << endl;
     dynamic_or_static = 0;
-    deal_file(1000, 20777);
+    deal_file(1000, 3387388);
     cout << "global_vertex num is : " << graph.real_graph->Real_Vertexs.size() << endl;
     cout << "global edge num is : " << graph.real_graph->Used_Edges.size() << endl;
     cout << "global_k_max is : " <<  global_k_max << endl;

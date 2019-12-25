@@ -244,7 +244,8 @@ int main(int argc, char **argv) {
     while(ajust_wight_threshold > 0){
         cout << "global_vertex num is : " << graph.real_graph->Real_Vertexs.size() << endl;
         cout << "global edge num is : " << graph.real_graph->Used_Edges.size() << endl;
-        graph.real_graph->truss_decomposition2();
+        // 动态的时候不需要这个操作
+        // graph.real_graph->truss_decomposition2();
         cout << "global_k_max is : " <<  global_k_max << endl;
         // 增加允许动态调整weight_threshold
         cin >> ajust_wight_threshold;
@@ -253,7 +254,7 @@ int main(int argc, char **argv) {
             graph.real_graph = new Real_Graph();
             cin >> weight_threshold;
             for(auto i = Appear_Edge_id.left.begin(); i != Appear_Edge_id.left.end(); i++) {
-                if (Weight[i->second] >= weight_threshold) {
+                if (Weight[i->second] == weight_threshold) {
                     graph.real_graph->insert(i->first, i->second);
                 }
             }
