@@ -124,6 +124,7 @@ int main(int argc, char **argv) {
     cout << "global_vertex num is : " << graph.real_graph->Real_Vertexs.size() << endl;
     cout << "global edge num is : " << graph.real_graph->Used_Edges.size() << endl;
     cout << "global_k_max is : " <<  global_k_max << endl;
+    cout << "global_update time: " << total_update_time << endl;
     write_query_file();
     // read_file.close();
     // read_file.open("./data/" + string(argv[1]));

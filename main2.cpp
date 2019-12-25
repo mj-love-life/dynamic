@@ -26,6 +26,7 @@ ofstream unique_block_info_file, result_file;
 double time_threshold, alpha;
 bool logistic_or_physics, query_all;
 int start_attr, end_attr;
+// 通过控制dynamic_or_static进行控制动态与静态
 int dynamic_or_static = 0;
 void display(set<int> results) {
     for(set<int>::iterator i = results.begin(); i != results.end(); i++) {
@@ -142,6 +143,9 @@ int get_id() {
     return temp.first;
 }
 
+// TODO 训练函数与测试函数
+
+
 int main(int argc, char **argv) {
     if (argc != 11) {
         cout << "The argc is not enough" << endl;
@@ -170,8 +174,9 @@ int main(int argc, char **argv) {
     }
     cout << "global_vertex num is : " << graph.real_graph->Real_Vertexs.size() << endl;
     cout << "global edge num is : " << graph.real_graph->Used_Edges.size() << endl;
-    graph.real_graph->truss_decomposition();
+    graph.real_graph->truss_decomposition2();
     cout << "global_k_max is : " <<  global_k_max << endl;
+    cout << "global_update time: " << total_update_time << endl;
     write_query_file();
     read_file.close();
     read_file.open("./data/" + string(argv[1]));

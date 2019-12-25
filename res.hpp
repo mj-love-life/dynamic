@@ -31,8 +31,8 @@ bimap<string, int> block_info_id = bimap<string, int> ();
 
 // 用于双向存储
 // edge vertex to edge unique id
-extern bimap<vector<int>, int> Appear_Edge_id;
-bimap<vector<int>, int> Appear_Edge_id =bimap<vector<int>, int> ();
+extern bimap<pair<int, int>, int> Appear_Edge_id;
+bimap<pair<int, int>, int> Appear_Edge_id = bimap<pair<int, int>, int> ();
 
 
 // 用于记录所有的Block的hash_id
@@ -63,3 +63,5 @@ extern int dynamic_or_static;
 
 extern double total_time;
 double total_time = 0;
+extern double total_update_time;
+double total_update_time = 0;

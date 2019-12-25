@@ -1,3 +1,12 @@
+res.hpp文件中
+// 用于双向存储
+// edge vertex to edge unique id
+extern bimap<vector<int>, int> Appear_Edge_id;
+bimap<vector<int>, int> Appear_Edge_id =bimap<vector<int>, int> ();
+
+
+Triangle_Connectivity_Preserved_Index.hpp文件中
+
 #ifndef TRIANGLE_CONNECTIVITY_PRESERVED_INDEX
 #define TRIANGLE_CONNECTIVITY_PRESERVED_INDEX
 #include <iostream>
@@ -57,7 +66,7 @@ set<int> get_neighbor_set(set<int> u_nb, set<int> v_nb) {
 
 
 // ascending
-bool ascending_cmp(const pair<int, set<int> > &p1, const pair<int, set<int> > &p2) {
+bool ascending_cmp(const pair<int, set<int> > &p1, const pair<int, set<int>> &p2) {
 	return p1.second.size()< p2.second.size();
 }
 
@@ -75,13 +84,6 @@ vector<int> get_edge_help(int u, int v) {
     }
     vector<int> result = {u, v};
     return result;
-}
-
-pair<int, int> get_edge_pair_help(int u, int v) {
-    if (u > v) {
-        swap(u, v);
-    }
-    return make_pair(u, v);
 }
 
 vector<pair<int, int> > sort_map(map<int, int> NBs, bool ascending=false) {
@@ -164,7 +166,7 @@ struct TCP_index {
     vector<pair<int, int> > get_sortNB(map<int, int> Real_Edges_Trussness) {
         map<int, int> result = map<int, int> ();
         for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator i = NBs.begin(); i != NBs.end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_pair_help(i->first, unique_id))->second;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->first, unique_id))->second;
             result[i->first] = Real_Edges_Trussness[edge_index];
         }
         return sort_map(result, false);
@@ -202,8 +204,8 @@ struct TCP_index {
     // NBs存的是最大生成树中的元素，所以更新MST的时候才会引起NBs的更新
     void insert_MST_static(int edge_index) {
         MST.insert(edge_index);
-        int u = Appear_Edge_id.right.find(edge_index)->second.first;
-        int v = Appear_Edge_id.right.find(edge_index)->second.second;
+        int u = Appear_Edge_id.right.find(edge_index)->second[0];
+        int v = Appear_Edge_id.right.find(edge_index)->second[1];
         NBs[u].insert(make_pair(G_x[edge_index], v));
         NBs[v].insert(make_pair(G_x[edge_index], u));
     }
@@ -229,9 +231,9 @@ struct TCP_index {
             i->second = i->first;
         }
         for(set<int>::iterator i = MST.begin(); i != MST.end(); i++) {
-            pair<int, int> temp = Appear_Edge_id.right.find(*i)->second;
-            if(!query_in_one_union(temp.first, temp.second)) {
-                union_two_vertex(temp.first, temp.second);
+            vector<int> temp = Appear_Edge_id.right.find(*i)->second;
+            if(!query_in_one_union(temp[0], temp[1])) {
+                union_two_vertex(temp[0], temp[1]);
             }
         }
     }
@@ -262,7 +264,7 @@ struct TCP_index {
             for(set<int>::iterator u_re = V2_wu.begin(); u_re != V2_wu.end(); u_re++) {
                 for(set<int>::iterator v_re = V2_wv.begin(); v_re != V2_wv.end(); v_re++) {
                     if (*u_re == *v_re) continue;
-                    int u_v_index = Appear_Edge_id.left.find(get_edge_pair_help(*u_re, *v_re))->second;
+                    int u_v_index = Appear_Edge_id.left.find(get_edge_help(*u_re, *v_re))->second;
                     if (G_x.count(u_v_index) == 1 && G_x[u_v_index] == w_xyz_old) {
                         u_v_replace[u_v_index] = G_x[u_v_index];
                     }
@@ -279,9 +281,9 @@ struct TCP_index {
                 // 找到最大的值
                 max_index = u_v_replace.begin()->first;
                 MST.insert(max_index);
-                pair<int, int> temp = Appear_Edge_id.right.find(max_index)->second;
-                NBs[temp.first].insert(make_pair(u_v_replace[max_index], temp.second));
-                NBs[temp.second].insert(make_pair(u_v_replace[max_index], temp.first));
+                vector<int> temp = Appear_Edge_id.right.find(max_index)->second;
+                NBs[temp[0]].insert(make_pair(u_v_replace[max_index], temp[1]));
+                NBs[temp[1]].insert(make_pair(u_v_replace[max_index], temp[0]));
             }
             // 重新计算k_max值
             re_compute_k_max();
@@ -313,7 +315,7 @@ struct TCP_index {
             for(set<int>::iterator u_re = V2_wu.begin(); u_re != V2_wu.end(); u_re++) {
                 for(set<int>::iterator v_re = V2_wv.begin(); v_re != V2_wv.end(); v_re++) {
                     if (*u_re == *v_re) continue;
-                    int u_v_index = Appear_Edge_id.left.find(get_edge_pair_help(*u_re, *v_re))->second;
+                    int u_v_index = Appear_Edge_id.left.find(get_edge_help(*u_re, *v_re))->second;
                     if (G_x.count(u_v_index) == 1) {
                         u_v_replace[u_v_index] = G_x[u_v_index];
                     }
@@ -333,9 +335,9 @@ struct TCP_index {
                     if (i->second > u_v_replace[max_index]) max_index = i->first;
                 }
                 MST.insert(max_index);
-                pair<int, int> temp = Appear_Edge_id.right.find(max_index)->second;
-                NBs[temp.first].insert(make_pair(u_v_replace[max_index], temp.second));
-                NBs[temp.second].insert(make_pair(u_v_replace[max_index], temp.first));
+                vector<int> temp = Appear_Edge_id.right.find(max_index)->second;
+                NBs[temp[0]].insert(make_pair(u_v_replace[max_index], temp[1]));
+                NBs[temp[1]].insert(make_pair(u_v_replace[max_index], temp[0]));
             }
             // 重新计算k_max值
             re_compute_k_max();
@@ -349,7 +351,7 @@ struct TCP_index {
         finded.insert(u);
         int tag = 0;
         for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_pair_help(i->second, u))->second;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->second, u))->second;
             int x_temp = i->second;
             if (finded.count(x_temp) == 0) {
                 results.push_back(edge_index);
@@ -373,7 +375,7 @@ struct TCP_index {
         set<int> finded = set<int> ();
         finded.insert(u);
         for(set<pair<int, int>, greater<pair<int, int> > >::iterator i = NBs[u].begin(); i != NBs[u].end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_pair_help(i->second, u))->second;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(i->second, u))->second;
             int x_temp = i->second;
             if (finded.count(x_temp) == 0) {
                 results.push_back(edge_index);
@@ -415,9 +417,9 @@ struct TCP_index {
 
     
     void update_MST(int u, int v, int new_weight, int old_edge_index, int new_edge_index) {
-        pair<int, int> delete_uv = Appear_Edge_id.right.find(old_edge_index)->second;
-        int delete_u = delete_uv.first;
-        int delete_v = delete_uv.second;
+        vector<int> delete_uv = Appear_Edge_id.right.find(old_edge_index)->second;
+        int delete_u = delete_uv[0];
+        int delete_v = delete_uv[1];
         NBs[delete_u].erase(make_pair(G_x[old_edge_index], delete_v));
         NBs[delete_v].erase(make_pair(G_x[old_edge_index], delete_u));
         NBs[u].insert(make_pair(new_weight, v));
@@ -473,7 +475,7 @@ struct TCP_index {
         cout << "Gx is as followed" << endl;
         cout << G_x.size() << " G\n";
         for(map<int, int>::iterator i = G_x.begin(); i != G_x.end(); i++) {
-            cout << "index is " << i->first << " : (" << Appear_Edge_id.right.find(i->first)->second.first << ", " << Appear_Edge_id.right.find(i->first)->second.second << "), the weight is " << i->second << endl;
+            cout << "index is " << i->first << " : (" << Appear_Edge_id.right.find(i->first)->second[0] << ", " << Appear_Edge_id.right.find(i->first)->second[1] << "), the weight is " << i->second << endl;
         }
         cout << "vertex2union is as followed " << endl;
         for(map<int, int>::iterator i = vertex2union.begin(); i != vertex2union.end(); i++) {
@@ -502,17 +504,17 @@ struct Real_Graph {
         Used_edges_queue = deque<int> ();
     }
 
-    void insert(pair<int, int> edge, int edge_index) {
+    void insert(vector<int> edge, int edge_index) {
         if (Used_Edges.count(edge_index) == 0) {
             Used_Edges.insert(edge_index);
             Used_edges_queue.push_back(edge_index);
             // TODO 此处可以引起动态更新的操作
-            this->insert_vertex(edge.first, edge.second);
-            this->insert_vertex(edge.second, edge.first);
+            this->insert_vertex(edge[0], edge[1]);
+            this->insert_vertex(edge[1], edge[0]);            
         }
     }
 
-    bool insert_dynamic(pair<int, int> edge, int edge_index) {
+    bool insert_dynamic(vector<int> edge, int edge_index) {
         if (Used_Edges.count(edge_index) == 0) {
             // if (Used_edges_queue.size() > 10000) {
             //     int edge_index = Used_edges_queue[0];
@@ -523,12 +525,12 @@ struct Real_Graph {
             Used_Edges.insert(edge_index);
             Used_edges_queue.push_back(edge_index);
             int tag = 0;
-            if (Real_Vertexs.count(edge.first) == 0 || Real_Vertexs.count(edge.second) == 0) {
+            if (Real_Vertexs.count(edge[0]) == 0 || Real_Vertexs.count(edge[1]) == 0) {
                 tag = 1;
                 Real_Edges_Trussness[edge_index] = 2;
             }
-            this->insert_vertex(edge.first, edge.second);
-            this->insert_vertex(edge.second, edge.first);
+            this->insert_vertex(edge[0], edge[1]);
+            this->insert_vertex(edge[1], edge[0]);
             // TODO 判断边的数目是否超过边的数目控制，如果超过，则在此处引起边的删除操作
             return (tag == 0);
         }
@@ -546,8 +548,8 @@ struct Real_Graph {
         map<int, set<int> > result = map<int, set<int> >();
         max_size = 0;
         for(set<int>::iterator i = Used_Edges.begin(); i != Used_Edges.end(); i++) {
-            pair<int, int> Edge_index = Appear_Edge_id.right.find(*i)->second;
-            result[*i] = get_neighbor_set(Real_Vertexs[Edge_index.first]->get_NB_set(), Real_Vertexs[Edge_index.second]->get_NB_set());
+            vector<int> Edge_index = Appear_Edge_id.right.find(*i)->second;
+            result[*i] = get_neighbor_set(Real_Vertexs[Edge_index[0]]->get_NB_set(), Real_Vertexs[Edge_index[1]]->get_NB_set());
             max_size = max(max_size, int(result[*i].size()));
         }
         deque<pair<int, set<int> > > temp_result(result.begin(), result.end());
@@ -595,14 +597,14 @@ struct Real_Graph {
                 // cout << "hhh" << endl;
                 pair<int, set<int> > lowest_e = sups[0];
                 sups.pop_front();
-                int u = Appear_Edge_id.right.find(lowest_e.first)->second.first;
-                int v = Appear_Edge_id.right.find(lowest_e.first)->second.second;
+                int u = Appear_Edge_id.right.find(lowest_e.first)->second[0];
+                int v = Appear_Edge_id.right.find(lowest_e.first)->second[1];
                 if (Real_Vertexs[u]->getNB().size() > Real_Vertexs[v]->getNB().size()) {
                     swap(u, v);
                 }
                 for(set<int>::iterator i = lowest_e.second.begin(); i != lowest_e.second.end(); i++) {
-                    decrese_one(Appear_Edge_id.left.find(get_edge_pair_help(*i, u))->second, sups, v);
-                    decrese_one(Appear_Edge_id.left.find(get_edge_pair_help(*i, v))->second, sups, u);
+                    decrese_one(Appear_Edge_id.left.find(get_edge_help(*i, u))->second, sups, v);
+                    decrese_one(Appear_Edge_id.left.find(get_edge_help(*i, v))->second, sups, u);
                 }
                 Real_Edges_Trussness[lowest_e.first] = k;
                 //Real_Vertexs[u]->get_k_value(k);
@@ -633,12 +635,12 @@ struct Real_Graph {
         for(set<int>::iterator i = Used_Edges.begin(); i != Used_Edges.end(); i++) {
             count_num++;
             clock_t startTime2 = clock();
-            pair<int, int> Edge_index = Appear_Edge_id.right.find(*i)->second;
+            vector<int> Edge_index = Appear_Edge_id.right.find(*i)->second;
             find_time += ((double) (clock() - startTime2) / CLOCKS_PER_SEC);
             startTime2 = clock();
             result[*i] = set<int> ();
-            set<int> u_nb = Real_Vertexs[Edge_index.first]->get_NB_set();
-            set<int> v_nb = Real_Vertexs[Edge_index.second]->get_NB_set();
+            set<int> u_nb = Real_Vertexs[Edge_index[0]]->get_NB_set();
+            set<int> v_nb = Real_Vertexs[Edge_index[1]]->get_NB_set();
             if(int(u_nb.size()) >= 4 * int(v_nb.size()) ||  4 * int(u_nb.size()) <= int(v_nb.size())) inbalance_time++;
             set_intersection(u_nb.begin(), u_nb.end(), v_nb.begin(), v_nb.end(), inserter(result[*i], result[*i].begin()));
             // result.insert(make_pair(*i, get_map_key_intersection(Real_Vertexs[Edge_index[0]]->getNB(), Real_Vertexs[Edge_index[1]]->getNB())));
@@ -732,14 +734,14 @@ struct Real_Graph {
                 if(k_value_index[delete_sups_size].second == 0) {
                     k_value_index.erase(delete_sups_size);
                 }
-                int u = Appear_Edge_id.right.find(edge_index)->second.first;
-                int v = Appear_Edge_id.right.find(edge_index)->second.second;
+                int u = Appear_Edge_id.right.find(edge_index)->second[0];
+                int v = Appear_Edge_id.right.find(edge_index)->second[1];
                 if (Real_Vertexs[u]->getNB().size() > Real_Vertexs[v]->getNB().size()) {
                     swap(u, v);
                 }
                 for(set<int>::iterator i =  sups[edge_index].begin(); i !=  sups[edge_index].end(); i++) {
-                    decrese_one3(Appear_Edge_id.left.find(get_edge_pair_help(*i, u))->second, sups, v, delete_num, k_value_index, edge2index, bucket_sort);
-                    decrese_one3(Appear_Edge_id.left.find(get_edge_pair_help(*i, v))->second, sups, u, delete_num, k_value_index, edge2index, bucket_sort);
+                    decrese_one3(Appear_Edge_id.left.find(get_edge_help(*i, u))->second, sups, v, delete_num, k_value_index, edge2index, bucket_sort);
+                    decrese_one3(Appear_Edge_id.left.find(get_edge_help(*i, v))->second, sups, u, delete_num, k_value_index, edge2index, bucket_sort);
                 }
                 Real_Edges_Trussness[edge_index] = k;
                 // Real_Vertexs[u]->get_trussness(v, k);
@@ -760,9 +762,9 @@ struct Real_Graph {
     */
 
     int get_triangle_w(int x, int y, int z) {
-        return min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_pair_help(x, y))->second], \
-        min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_pair_help(z, y))->second],\
-        Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_pair_help(x, z))->second]));
+        return min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(x, y))->second], \
+        min( Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(z, y))->second],\
+        Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(x, z))->second]));
     }
 
     void tcp_index_construction() {
@@ -775,8 +777,8 @@ struct Real_Graph {
             for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator z = NBs.begin(); z != NBs.end(); z++) {
                 for(map<int, set<pair<int, int>, greater<pair<int, int> > > >::iterator y = z; y != NBs.end(); y++) {
                     if(y == z) continue;
-                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_pair_help(y->first, z->first))->second) == 1) {
-                        int y_z_index = Appear_Edge_id.left.find(get_edge_pair_help(y->first, z->first))->second;
+                    if(Real_Edges_Trussness.count(Appear_Edge_id.left.find(get_edge_help(y->first, z->first))->second) == 1) {
+                        int y_z_index = Appear_Edge_id.left.find(get_edge_help(y->first, z->first))->second;
                         int w_temp = get_triangle_w(i->first, y->first, z->first);
                         i->second->insert_G_x(y_z_index, w_temp);
                     }
@@ -789,8 +791,8 @@ struct Real_Graph {
             int temp_index = 0;
             for(int k = i->second->k_max; k >= 2; k--) {
                 for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
-                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.first;
-                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.second;
+                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
                     if (! i->second->query_in_one_union(y, z)){
                         i->second->union_two_vertex(y, z);
                         i->second->insert_MST_static(descending_G_x[temp_index].first);
@@ -822,7 +824,7 @@ struct Real_Graph {
                 break;
             }
             bool flag = (Vq > Vq_Neighbor[i].first);
-            int vq_u = Appear_Edge_id.left.find(get_edge_pair_help(Vq, Vq_Neighbor[i].first))->second;
+            int vq_u = Appear_Edge_id.left.find(get_edge_help(Vq, Vq_Neighbor[i].first))->second;
             int temp_count = flag? visited.count(-1 * vq_u) : visited.count(vq_u);
             if (Vq_Neighbor[i].second >= k && temp_count == 0) {
                 stack<int> Q = stack<int> ();
@@ -834,18 +836,18 @@ struct Real_Graph {
                         int x, y;
                         if(x_y < 0) {
                             x_y *= (-1);
-                            pair<int, int> temp = Appear_Edge_id.right.find(x_y)->second;
-                            x = temp.second;
-                            y = temp.first;
+                            vector<int> temp = Appear_Edge_id.right.find(x_y)->second;
+                            x = temp[1];
+                            y = temp[0];
                         }
                         else {
-                            pair<int, int> temp = Appear_Edge_id.right.find(x_y)->second;
-                            x = temp.first;
-                            y = temp.second;
+                            vector<int> temp = Appear_Edge_id.right.find(x_y)->second;
+                            x = temp[0];
+                            y = temp[1];
                         }
                         set<int> Vk_x_y = Real_Vertexs[x]->compute_Vk(y, k);
                         for(set<int>::iterator z = Vk_x_y.begin(); z != Vk_x_y.end(); z++) {
-                            int x_z = Appear_Edge_id.left.find(get_edge_pair_help(x, *z))->second;
+                            int x_z = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
                             if(x > *z) {
                                 x_z *= -1;
                             }
@@ -874,8 +876,8 @@ struct Real_Graph {
         set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
         int max_k = 0;
         for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
-            int min_k = min(Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_pair_help(u, *i))->second], \
-            Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_pair_help(v, *i))->second]);
+            int min_k = min(Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(u, *i))->second], \
+            Real_Edges_Trussness[Appear_Edge_id.left.find(get_edge_help(v, *i))->second]);
             inter_section_result.push_back(min_k);
             max_k = max(max_k, min_k);
         }
@@ -943,7 +945,7 @@ struct Real_Graph {
         // TODO G.insert(e0)
         // Real_Vertexs[u]->display();
         // Real_Vertexs[v]->display();
-        bool re = insert_dynamic(get_edge_pair_help(u, v), edge_index);
+        bool re = insert_dynamic(get_edge_help(u, v), edge_index);
         if (re == false) {
             // this->display();
             return;
@@ -966,8 +968,8 @@ struct Real_Graph {
             Lk[k] = set<int> ();
         }
         for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++) {
-            int t_wu_edge_index = Appear_Edge_id.left.find(get_edge_pair_help(*w, u))->second;
-            int t_wv_edge_index = Appear_Edge_id.left.find(get_edge_pair_help(*w, v))->second;
+            int t_wu_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, u))->second;
+            int t_wv_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, v))->second;
             int t_wu = Real_Edges_Trussness[t_wu_edge_index];
             int t_wv = Real_Edges_Trussness[t_wv_edge_index];
             k = min(t_wu, t_wv);
@@ -991,15 +993,15 @@ struct Real_Graph {
                 int x_y_index = Q.top();
                 Q.pop();
                 k_level_nums[x_y_index] = 0;
-                pair<int, int> temp = Appear_Edge_id.right.find(x_y_index)->second;
-                int x = temp.first;
-                int y = temp.second;
+                vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                int x = temp[0];
+                int y = temp[1];
                 // cout << "x is " << x << " y is " << y << endl;
                 set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
                 for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
                     // cout << "z is " << *z << endl;
-                    int z_x_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, x))->second;
-                    int z_y_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, y))->second;
+                    int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                    int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
                     int z_x_t = Real_Edges_Trussness[z_x_index];
                     int z_y_t = Real_Edges_Trussness[z_y_index];
                     if(z_x_t < k || z_y_t < k) continue;
@@ -1045,13 +1047,13 @@ struct Real_Graph {
                     Lk[k].erase(x_y_index);
                     // s_help.pop_front();
                     delete_num++;
-                    pair<int, int> temp = Appear_Edge_id.right.find(x_y_index)->second;
-                    int x = temp.first;
-                    int y = temp.second;
+                    vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                    int x = temp[0];
+                    int y = temp[1];
                     set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
                     for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
-                        int z_x_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, x))->second;
-                        int z_y_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, y))->second;
+                        int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                        int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
                         int z_x_t = Real_Edges_Trussness[z_x_index];
                         int z_y_t = Real_Edges_Trussness[z_y_index];
                         if(z_x_t < k || z_y_t < k) continue;
@@ -1123,7 +1125,7 @@ struct Real_Graph {
                 // cout << display_temp[0] << " " << display_temp[1] << " is " <<  k + 1 <<  endl;
             }
         }
-        if(Used_Edges.size() % 10000 == 0) {
+        if(Used_Edges.size() % 100 == 0) {
             total_time += (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC);
             cout << Used_Edges.size() << " ";
             cout << "The update with edge insertion time is : " << total_time << "s" << endl;
@@ -1142,9 +1144,7 @@ struct Real_Graph {
         // cout << "--------------next is TCP update trussness  increase--------------" << endl;
         index_update_with_trussness_increase(old_edge_trussness, change_edge_index);
         // this->display();
-        double temp =  (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC);
-        total_time += temp;
-        total_update_time += temp;
+        total_time += (double) (clock() - startTime) / (1.0 * CLOCKS_PER_SEC);
     }
 
 
@@ -1167,14 +1167,14 @@ struct Real_Graph {
         // TODO 下面步骤的必要性
         set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
         for(set<int>::iterator i = G_x_set.begin(); i != G_x_set.end(); i++) {
-            pair<int, int> edge = Appear_Edge_id.right.find(*i)->second;
-            int new_w = get_triangle_w(u, edge.first, edge.second);
+            vector<int> edge = Appear_Edge_id.right.find(*i)->second;
+            int new_w = get_triangle_w(u, edge[0], edge[1]);
             // 删除MST中的东西
             Real_Vertexs[u]->G_x[*i] = new_w;
             Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, new_w);
         }
         for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_pair_help(v, *i))->second;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
             Real_Vertexs[u]->G_x[edge_index] = get_triangle_w(u, v, *i);
             Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, Real_Vertexs[u]->G_x[edge_index]);
         }
@@ -1186,8 +1186,8 @@ struct Real_Graph {
         // cout << Real_Vertexs[u]->k_max << " Real_Vertexs[u]->k_max\n";
         for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
             for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
-                int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.first;
-                int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.second;
+                int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
                 if (! Real_Vertexs[u]->query_in_one_union(y, z)){
                     Real_Vertexs[u]->union_two_vertex(y, z);
                     Real_Vertexs[u]->insert_MST_static(descending_G_x[temp_index].first);
@@ -1270,14 +1270,14 @@ struct Real_Graph {
         for(map<int, int>::iterator i = old_edge_trussness.begin(); i != old_edge_trussness.end(); i++) {
             int x_y_index = i->first;
             int x_y_old_trussness = i->second;
-            pair<int, int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
-            int x = x_y_vec.first;
-            int y = x_y_vec.second;
+            vector<int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
+            int x = x_y_vec[0];
+            int y = x_y_vec[1];
             int x_y_trussness = Real_Edges_Trussness[x_y_index];
             set<int> inter_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
             for(set<int>::iterator z = inter_section.begin(); z != inter_section.end(); z++) {
-                int x_z_index = Appear_Edge_id.left.find(get_edge_pair_help(x, *z))->second;
-                int y_z_index = Appear_Edge_id.left.find(get_edge_pair_help(y, *z))->second;
+                int x_z_index = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
+                int y_z_index = Appear_Edge_id.left.find(get_edge_help(y, *z))->second;
                 int x_z_old_trussness, y_z_old_trussness, x_z_trussness, y_z_trussness;
                 if (change_edge_index.count(x_z_index) == 0) {
                     x_z_old_trussness = Real_Edges_Trussness[x_z_index];
@@ -1342,8 +1342,8 @@ struct Real_Graph {
         }
         set<int> inter_section = get_neighbor_set(Real_Vertexs[u]->get_NB_set(), Real_Vertexs[v]->get_NB_set());
         for(set<int>::iterator w = inter_section.begin(); w != inter_section.end(); w++) {
-            int t_wu_edge_index = Appear_Edge_id.left.find(get_edge_pair_help(*w, u))->second;
-            int t_wv_edge_index = Appear_Edge_id.left.find(get_edge_pair_help(*w, v))->second;
+            int t_wu_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, u))->second;
+            int t_wv_edge_index = Appear_Edge_id.left.find(get_edge_help(*w, v))->second;
             int t_wu = Real_Edges_Trussness[t_wu_edge_index];
             int t_wv = Real_Edges_Trussness[t_wv_edge_index];
             k = min(t_wu, t_wv);
@@ -1368,15 +1368,15 @@ struct Real_Graph {
                 int x_y_index = Q.top();
                 Q.pop();
                 k_level_nums[x_y_index] = 0;
-                pair<int, int> temp = Appear_Edge_id.right.find(x_y_index)->second;
-                int x = temp.first;
-                int y = temp.second;
+                vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                int x = temp[0];
+                int y = temp[1];
                 // cout << "x is " << x << " y is " << y << endl;
                 set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
                 for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
                     // cout << "z is " << *z << endl;
-                    int z_x_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, x))->second;
-                    int z_y_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, y))->second;
+                    int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                    int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
                     int z_x_t = Real_Edges_Trussness[z_x_index];
                     int z_y_t = Real_Edges_Trussness[z_y_index];
                     if(z_x_t < k || z_y_t < k) continue;
@@ -1423,13 +1423,13 @@ struct Real_Graph {
 
                     s_help.pop_front();
                     delete_num++;
-                    pair<int, int> temp = Appear_Edge_id.right.find(x_y_index)->second;
-                    int x = temp.first;
-                    int y = temp.second;
+                    vector<int> temp = Appear_Edge_id.right.find(x_y_index)->second;
+                    int x = temp[0];
+                    int y = temp[1];
                     set<int> z_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
                     for(set<int>::iterator z = z_section.begin(); z != z_section.end(); z++) {
-                        int z_x_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, x))->second;
-                        int z_y_index = Appear_Edge_id.left.find(get_edge_pair_help(*z, y))->second;
+                        int z_x_index = Appear_Edge_id.left.find(get_edge_help(*z, x))->second;
+                        int z_y_index = Appear_Edge_id.left.find(get_edge_help(*z, y))->second;
                         int z_x_t = Real_Edges_Trussness[z_x_index];
                         int z_y_t = Real_Edges_Trussness[z_y_index];
                         if(z_x_t < k || z_y_t < k) continue;
@@ -1506,7 +1506,7 @@ struct Real_Graph {
     void update_erasetion_vertex(int u, int v, map<int, int> old_edge_trussness, set<int> change_edge_index, set<int>inter_section) {
         // 删除G_x中与v相连的边
         for(set<int>::iterator i = inter_section.begin(); i != inter_section.end(); i++) {
-            int edge_index = Appear_Edge_id.left.find(get_edge_pair_help(v, *i))->second;
+            int edge_index = Appear_Edge_id.left.find(get_edge_help(v, *i))->second;
             Real_Vertexs[u]->G_x.erase(edge_index);
         }
         // 注意对k_max的操作
@@ -1514,8 +1514,8 @@ struct Real_Graph {
         // TODO 下面步骤的必要性
         set<int> G_x_inter_set = get_neighbor_set(G_x_set, change_edge_index);
         for(set<int>::iterator i = G_x_set.begin(); i != G_x_set.end(); i++) {
-            pair<int, int> edge = Appear_Edge_id.right.find(*i)->second;
-            int new_w = get_triangle_w(u, edge.first, edge.second);
+            vector<int> edge = Appear_Edge_id.right.find(*i)->second;
+            int new_w = get_triangle_w(u, edge[0], edge[1]);
             Real_Vertexs[u]->G_x[*i] = new_w;
             Real_Vertexs[u]->k_max = max(Real_Vertexs[u]->k_max, new_w);
         }
@@ -1531,8 +1531,8 @@ struct Real_Graph {
             Real_Vertexs[u]->k_max = descending_G_x[0].second;
             for(int k = Real_Vertexs[u]->k_max; k >= 2; k--) {
                 for(;temp_index < G_x_size && descending_G_x[temp_index].second == k; temp_index++) {
-                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.first;
-                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second.second;
+                    int y = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[0];
+                    int z = Appear_Edge_id.right.find(descending_G_x[temp_index].first)->second[1];
                     if (! Real_Vertexs[u]->query_in_one_union(y, z)){
                         // cout << "here here \n";
                         // cout << y <<" " <<z << " hhh" << endl;
@@ -1580,14 +1580,14 @@ struct Real_Graph {
         for(map<int, int>::iterator i = old_edge_trussness.begin(); i != old_edge_trussness.end(); i++) {
             int x_y_index = i->first;
             int x_y_old_trussness = i->second;
-            pair<int, int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
-            int x = x_y_vec.first;
-            int y = x_y_vec.second;
+            vector<int> x_y_vec = Appear_Edge_id.right.find(x_y_index)->second;
+            int x = x_y_vec[0];
+            int y = x_y_vec[1];
             int x_y_trussness = Real_Edges_Trussness[x_y_index];
             set<int> inter_section = get_neighbor_set(Real_Vertexs[x]->get_NB_set(), Real_Vertexs[y]->get_NB_set());
             for(set<int>::iterator z = inter_section.begin(); z != inter_section.end(); z++) {
-                int x_z_index = Appear_Edge_id.left.find(get_edge_pair_help(x, *z))->second;
-                int y_z_index = Appear_Edge_id.left.find(get_edge_pair_help(y, *z))->second;
+                int x_z_index = Appear_Edge_id.left.find(get_edge_help(x, *z))->second;
+                int y_z_index = Appear_Edge_id.left.find(get_edge_help(y, *z))->second;
                 int x_z_old_trussness, y_z_old_trussness, x_z_trussness, y_z_trussness;
                 if (change_edge_index.count(x_z_index) == 0) {
                     x_z_old_trussness = Real_Edges_Trussness[x_z_index];
@@ -1625,8 +1625,8 @@ struct Real_Graph {
         }
         cout << "Real_Edges_Trussness size is " << Real_Edges_Trussness.size() << endl;
         for(map<int, int>::iterator i = Real_Edges_Trussness.begin(); i != Real_Edges_Trussness.end(); i++) {
-            pair<int, int> temp = Appear_Edge_id.right.find(i->first)->second;
-            cout << "trussness: (" << temp.first << ", " << temp.second << ")" << i->second << endl;
+            vector<int> temp = Appear_Edge_id.right.find(i->first)->second;
+            cout << "trussness: (" << temp[0] << ", " << temp[1] << ")" << i->second << endl;
         }
         cout  << "Used Edge is ";
         for(set<int>::iterator i = Used_Edges.begin(); i != Used_Edges.end(); i++) {
@@ -1652,7 +1652,7 @@ struct Appear_Graph {
 
     // 插入一条新出现的边
     void insert(int a, int b) {
-        pair<int, int> index = get_edge_pair_help(a, b);
+        vector<int> index = get_edge_help(a, b);
         int edge_index = 0;
         if(Appear_Edge_id.left.count(index) == 0) {
             // 此处使下标从1开始，因为在query的过程中需要进行逆向的操作

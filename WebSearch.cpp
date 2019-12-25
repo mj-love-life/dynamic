@@ -247,6 +247,7 @@ int main(int argc, char **argv) {
         // 动态的时候不需要这个操作
         // graph.real_graph->truss_decomposition2();
         cout << "global_k_max is : " <<  global_k_max << endl;
+        cout << "global_update time: " << total_update_time << endl;
         // 增加允许动态调整weight_threshold
         cin >> ajust_wight_threshold;
         if(ajust_wight_threshold) {
