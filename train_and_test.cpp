@@ -73,7 +73,10 @@ void physics_deal_file(ifstream &read_file) {
         //     cout << "Deal with " << count << " line" << endl;
         // }
         // TODO 切割符号
-        split(info, request_stream, is_any_of(" "));
+        if(request_stream.size() == 0) {
+            break;
+        }
+        split(info, request_stream, is_any_of(" "), token_compress_on);
         pair<int, double> temp= pre_deal2(info);
         // 插入点集中
         int block_id = temp.first;
@@ -119,7 +122,10 @@ void logistic_deal_file(ifstream& read_file) {
         //     cout << "Deal with " << count << " line" << endl;
         // }
         // TODO 切割符号
-        split(info, request_stream, is_any_of(" "));
+        if(request_stream.size() == 0) {
+            break;
+        }
+        split(info, request_stream, is_any_of(" "), token_compress_on);
         pair<int, double> temp= pre_deal2(info);
         // 插入点集中
         int block_id = temp.first;
@@ -167,7 +173,7 @@ int get_id() {
     string request_stream;
     getline(cin, request_stream);
     vector<string> info;
-    split(info, request_stream, is_any_of(" "));
+    split(info, request_stream, is_any_of(" "), token_compress_on);
     pair<int, double> temp= pre_deal2(info);
     return temp.first;
 }
@@ -196,7 +202,10 @@ void logistic_deal_file_train(ifstream& read_file) {
         //     cout << "Deal with " << count << " line" << endl;
         // }
         // TODO 切割符号
-        split(info, request_stream, is_any_of(" "));
+        if(request_stream.size() == 0) {
+            break;
+        }
+        split(info, request_stream, is_any_of(" "), token_compress_on);
         pair<int, double> temp= pre_deal2(info);
 
         // 计算准确率
